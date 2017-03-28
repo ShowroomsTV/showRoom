@@ -3,7 +3,7 @@ var path = require('path');
 var fs = require('fs');
 
 
-mongoose.connect('mongodb://localhost/mini-store');
+mongoose.connect('mongodb://localhost/showRooms');
 
 var models_path = path.join(__dirname, '../models/');
 

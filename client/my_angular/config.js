@@ -8,17 +8,18 @@ app.config(function($routeProvider) {
     })
     .when('/register', {
       templateUrl: '/partials/register.html',
-      controller: 'indexController'
+      controller: 'indexController',
+      css: 'assets/register.css'
     })
-     .when('/dashboard', {
+    .when('/dashboard', {
       templateUrl: '/partials/dashboard.html',
       controller: 'dashboardController'
     })
-      .when('/show/:id', {
+    .when('/show/:id', {
       templateUrl: '/partials/show_one.html',
       controller: 'showOneController'
     })
-       .when('/show', {
+    .when('/show', {
       templateUrl: '/partials/show_all.html',
       controller: 'showAllController'
     })
