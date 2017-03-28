@@ -1,11 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+  </head>
+  <body>
 
-<div id="shows" class="shows_left">
-    <ul id="">
-      <li><a href="#">Your Favorites</a></li>
-      <li><a href="#">Popular Shows</a></li>
-      <li><a href="#">All Shows</a></li>
-    </ul>
-</div>
+    <div id="shows" class="fixed-action-btn horizontal click-to-toggle">
+      <a class="btn-floating btn-large red">
+          <i class="material-icons">movie_filter</i>
+        <ul>
+          <li><a class="btn-floating red"><i class="material-icons">favorite_border</i>Your Favorites</a></li>
+          <li><a class="btn-floating red"><i class="material-icons">trending_up</i>Popular Shows</a></li>
+          <li><a class="btn-floating red"><i class="material-icons">view_array</i>All Shows</a></li>
+        </ul>
+    </div>
+
+
 <div class="shows_grid">
     <div class="grid_item">
       <img src="http://epguides.com/Billions/cast.jpg" class="img-rounded" alt="Billions" width="304" height="236">
@@ -35,5 +49,6 @@
     <div class="grid_item">
       <img src="cinqueterre.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
     </div>
-
+</body>
 </div>
+</html>
