@@ -30,5 +30,5 @@ require('./server/config/mongoose.js');
 require('./server/config/routes.js')(app);
 
 app.listen(6789, function(){
-	console.log("(┛◉Д◉)┛彡┻━┻")
+	console.log("Server running")
 })

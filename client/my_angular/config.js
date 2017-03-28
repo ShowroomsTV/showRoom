@@ -3,22 +3,26 @@ var app = angular.module('app', ['ngRoute', 'ngMessages']);
 app.config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '/partials/login.html',
+      templateUrl: '/partials/home.html',
       controller: 'indexController'
     })
     .when('/register', {
       templateUrl: '/partials/register.html',
       controller: 'indexController'
     })
-     .when('/dashboard', {
+    .when('/login', {
+      templateUrl: '/partials/login.html',
+      controller: 'indexController'
+    })
+    .when('/dashboard', {
       templateUrl: '/partials/dashboard.html',
       controller: 'dashboardController'
     })
-      .when('/show/:id', {
+    .when('/show/:id', {
       templateUrl: '/partials/show_one.html',
       controller: 'showOneController'
     })
-       .when('/show', {
+    .when('/show', {
       templateUrl: '/partials/show_all.html',
       controller: 'showAllController'
     })

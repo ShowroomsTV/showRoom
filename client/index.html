@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<script src='angular/angular.js'></script>
+	<script src='angular-route/angular-route.js'></script>
+	<script src='angular-messages/angular-messages.js'></script>
+	<script src='my_angular/config.js'></script>
+	<script src='my_angular/Userfactory.js'></script>
+	<script src='my_angular/Showfactory.js'></script>
+	<script src='my_angular/chat_room_controller.js'></script>
+	<script src='my_angular/show_all_controller.js'></script>
+	<script src='my_angular/show_one_controller.js'></script>
+	<script src='my_angular/show_user_controller.js'></script>
+	<script src='my_angular/index_controller.js'></script>
+	<script src='my_angular/dashboard_controller.js'></script>
+	<link rel="stylesheet" type="text/css" href='assets/dashboard.css'>
+	<link rel="stylesheet" type="text/css" href='assets/show_all.css'>
+	<link rel="stylesheet" type="text/css" href='assets/show_one.css'>
+	<link rel="stylesheet" type="text/css" href='assets/chat_room.css'>
+	<link rel="stylesheet" type="text/css" href='assets/login.css'>
+	<link rel="stylesheet" type="text/css" href='assets/register.css'>
+	<link rel="stylesheet" type="text/css" href='assets/show_user.css'>
+	<link rel="stylesheet" type="text/css" href='assets/home.css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <style media="screen">
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+        }
+        .right{
+            margin-right: 2%;
+            margin-top: 13px;
+            display: inline-block;
+        }
+        .midright{
+            margin-right: 2%;
+            margin-left: 83%;
+            margin-top: 13px;
+            display: inline-block;
+        }
+        .left{
+            margin-top: 13px;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .nav{
+            background-color: white;
+            padding: 0px;
+            height: 50px;
+            width: 100%;
+        }
+        .form{
+            width: 50%;
+            margin-left: 20%;
+            margin-top: 10%;
+            color: white;
+        }
+        input[type=submit]{
+            background-color: inherit;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="nav">
+            <a href="#!/" class="left" name="button">Home</a>
+            <a href="#!/login" class="right" name="button">Login</a>
+            <a href="#!/register" class="midright" name="button">Register</a>
+        </div>
+        <div ng-view="">
+    	</div>
+    </body>
+</html>
+
