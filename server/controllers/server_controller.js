@@ -42,7 +42,9 @@ module.exports = {
   logout: function(req,res){
     req.session.destroy();
     res.redirect('/');
+
   }
+
   // tvmaze.showIndex(0, function(err, res){
   //  if(err){
   //     console.log(err)
@@ -60,6 +62,3 @@ module.exports = {
   //   })
 
 }
-
-
-
