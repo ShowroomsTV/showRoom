@@ -1,9 +1,5 @@
- .carousel-inner > .item > img,
- .carousel-inner > .item > a > img {-
-  width: 50%;
-  margin: auto;
-  }
-  .myProfile{
+/******** TOP NAV BAR*********/
+.myProfile{
      margin-right: 2%;
 }
 .dashboardLink{
@@ -17,3 +13,27 @@
     margin-top: 13px;
     display: inline-block;
 }
+/******** END OF TOP NAV BAR*********/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+#container{
+  width: 950px;
+  background-color: beigh;
+  margin: 0px auto;
+  padding-left: 15px;
+}
+
+#user_shows{
+  width: 20px;
+  height: 50px;
+  border: black solid 1px;
+}
+ .carousel-inner > .item > img,
+ .carousel-inner > .item > a > img {-
+  width: 50%;
+  margin: auto;
+  }
+
