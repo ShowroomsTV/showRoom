@@ -1,0 +1,19 @@
+ .carousel-inner > .item > img,
+ .carousel-inner > .item > a > img {-
+  width: 50%;
+  margin: auto;
+  }
+  .myProfile{
+     margin-right: 2%;
+}
+.dashboardLink{
+    margin-right: 2%;
+    margin-top: 13px;
+    display: inline-block;
+}
+.alertLink{
+    margin-right: 2%;
+    margin-left: 67%;
+    margin-top: 13px;
+    display: inline-block;
+}

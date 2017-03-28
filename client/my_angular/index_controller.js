@@ -1,4 +1,3 @@
-
 app.controller('indexController',['$scope', '$routeParams','UserFactory', function($scope,$routeParams,UserFactory){
 	$scope.register = function(user){
 		console.log("controller",user);
@@ -6,9 +5,5 @@ app.controller('indexController',['$scope', '$routeParams','UserFactory', functi
 	}
 	$scope.login = function(user){
 		UserFactory.login(user);
-	}
-	
-	$scope.logout = function(user){
-		UserFactory.logout(user);
 	}
 }])

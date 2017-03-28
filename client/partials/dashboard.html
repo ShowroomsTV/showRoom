@@ -1,57 +1,50 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <style>
- .carousel-inner > .item > img,
- .carousel-inner > .item > a > img {-
-  width: 50%;
-  margin: auto;
-  }
-  </style>
-<title></title>
-</head>
-<body style="background color:;background-color:beige;">
+<div class="nav">
+    <a href="#!/show" class="dashboardLink" name="button">All Shows</a>
+    <a href="#" class="alertLink"  name="button">Alert</a>
+    <a href="#!/user/{{user._id}}" class="myProfileLink"  name="button">My profile</a>
+    <a href="/logout" class="right" name="button">Logout</a>
+</div>
 <div id="container">
     <h1>Top Shows</h1>
     <div class="container">
-<br>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-<!-- Indicators -->
-<ol class="carousel-indicators">
-  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-  <li data-target="#myCarousel" data-slide-to="1"></li>
-  <li data-target="#myCarousel" data-slide-to="2"></li>
-  <li data-target="#myCarousel" data-slide-to="3"></li>
-</ol>
+	<br>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+		<ol class="carousel-indicators">
+		  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		  <li data-target="#myCarousel" data-slide-to="1"></li>
+		  <li data-target="#myCarousel" data-slide-to="2"></li>
+		  <li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
 
-<!-- Wrapper for slides -->
-<div class="carousel-inner" role="listbox">
-  <div class="item active">
-    <img src="https://teecity.com/images/stores/0.45246100%201479370171_walking_dead_season_6_thumb800.jpg" alt="Walking Dead" width="460" height="345">
-  </div>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+		  <div class="item active">
+		    <img src="https://teecity.com/images/stores/0.45246100%201479370171_walking_dead_season_6_thumb800.jpg" alt="Walking Dead" width="460" height="345">
+		  </div>
 
-  <div class="item">
-    <img src="http://images.techtimes.com/data/images/full/251811/games-of-thrones.png" alt="Chania" width="Game Of Thrones" height="345">
-  </div>
+		  <div class="item">
+		    <img src="http://images.techtimes.com/data/images/full/251811/games-of-thrones.png" alt="Chania" width="Game Of Thrones" height="345">
+		  </div>
 
-  <div class="item">
-    <img src="http://theredlist.com/media/database/films/tv-series/comedy-and-romance/1970/mash.H/004-mash-theredlist.jpg" alt="M.A..S.H" width="460" height="345">
-  </div>
+		  <div class="item">
+		    <img src="http://theredlist.com/media/database/films/tv-series/comedy-and-romance/1970/mash.H/004-mash-theredlist.jpg" alt="M.A..S.H" width="460" height="345">
+		  </div>
 
-  <div class="item">
-    <img src="http://epguides.com/Billions/cast.jpg" alt="Billions" width="460" height="345">
-  </div>
-</div>
+		  <div class="item">
+		    <img src="http://epguides.com/Billions/cast.jpg" alt="Billions" width="460" height="345">
+		  </div>
+		</div>
 
-<!-- Left and right controls -->
-<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  <span class="sr-only">Previous</span>
-</a>
-<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  <span class="sr-only">Next</span>
-</a>
-</div>
-    </div>
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+		</div>
+	</div>
 </div>
