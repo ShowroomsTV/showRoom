@@ -1,6 +1,7 @@
 var serverController = require('./../controllers/server_controller.js')
 
-module.exports = function(app)
+module.exports = function(app){
+
 
 	app.get('/login', serverController.login);
 	app.post('/register', serverController.register);

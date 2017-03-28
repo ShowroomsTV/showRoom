@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var tvmaze = require("tvmaze-node");
+// var tvmaze = require("tvmaze-node");
 
 module.exports = {
   register: function(req,res){
@@ -34,20 +34,24 @@ module.exports = {
   logout: function(req,res){
     req.session.destroy();
     res.redirect('/');
-  },
-  tvmaze.showIndex(0, function(err, res){
-   if(err){
-      console.log(err)
-    }
-    else {
-      var show = JSON.parse(res)
-      // console.log(show);
-         for (var i = 0; i < show.length; i++) {
-           console.log(show[i]['name']);
-           console.log(show[i]['genres']);
-           console.log(show[i]['image']);
-           console.log("***********************************************");
-         }
-      }
-    })
+  }
+  // tvmaze.showIndex(0, function(err, res){
+  //  if(err){
+  //     console.log(err)
+  //   }
+  //   else {
+  //     var show = JSON.parse(res)
+  //     // console.log(show);
+  //        for (var i = 0; i < show.length; i++) {
+  //          console.log(show[i]['name']);
+  //          console.log(show[i]['genres']);
+  //          console.log(show[i]['image']);
+  //          console.log("***********************************************");
+  //        }
+  //     }
+  //   })
+
 }
+
+
+

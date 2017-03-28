@@ -43,4 +43,4 @@ app.factory('UserFactory', ['$http', '$location', function($http,$location){
 			console.log(res)
 		})
 	}
-}
+}])
