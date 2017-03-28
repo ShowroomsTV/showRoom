@@ -22,30 +22,36 @@
 	<link rel="stylesheet" type="text/css" href='assets/register.css'>
 	<link rel="stylesheet" type="text/css" href='assets/show_user.css'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style media="screen">
         body {
+            background-image: url("jeremy-yap-160713.jpg");
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
             width: 100%;
             height: 100%;
-            background-color: #000000;
+            background-color: black;
         }
-        .right{
+        .navright{
             margin-right: 2%;
             margin-top: 13px;
             display: inline-block;
         }
-        .midright{
+        .navmidright{
             margin-right: 2%;
             margin-left: 83%;
             margin-top: 13px;
             display: inline-block;
         }
-        .left{
+        .navleft{
             margin-top: 13px;
             display: inline-block;
             margin-left: 20px;
         }
         .nav{
-            background-color: white;
+            background-color: #000000;
             padding: 0px;
             height: 50px;
             width: 100%;
@@ -57,18 +63,24 @@
             color: white;
         }
         input[type=submit]{
-            background-color: inherit;
+            background-color: #700000;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
     </head>
     <body>
         <div class="nav">
-            <a type="button" class="left" name="button">Home</a>
-            <a type="button" class="right" name="button">Login</a>
-            <a href="#!/register" type="button" class="midright" name="button">Register</a>
+            <a type="button" class="navleft" name="button">Home</a>
+            <a type="button" class="navright" name="button">Login</a>
+            <a href="#!/register" type="button" class="navmidright" name="button">Register</a>
         </div>
         <div ng-view="">
     	</div>
     </body>
 </html>
-
