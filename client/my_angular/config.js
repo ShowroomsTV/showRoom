@@ -8,8 +8,7 @@ app.config(function($routeProvider) {
     })
     .when('/register', {
       templateUrl: '/partials/register.html',
-      controller: 'indexController',
-      css: 'assets/register.css'
+      controller: 'indexController'
     })
     .when('/dashboard', {
       templateUrl: '/partials/dashboard.html',
