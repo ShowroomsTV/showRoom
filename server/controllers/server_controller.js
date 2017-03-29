@@ -1,26 +1,34 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var bcrypt = require('bcryptjs');
 // var tvmaze = require("tvmaze-node");
 
 module.exports = {
   register: function(req,res){
-    var user = new User(req.body);
-    user.save(function(err,data){
-      if(err){
-        res.status(400).send("User did not save (╯°□°)╯︵ ┻━┻")
-      }else{
-        req.session.user = data;
-        res.status(200).send('ヾ(⌐■_■)ノ♪');
-      }
-    })
+    var salt = bcrypt.genSaltSync(10);
+    if(req.body.password == req.body.pass_conf){
+      var hash = bcrypt.hashSync(req.body.password, salt);
+      var user = new User({name:req.body.name, email:req.body.email,phone: req.body.phone, password: hash});
+      user.save(function(err,data){
+        if(err){
+          console.log(err)
+          res.status(400).send("User did not save (╯°□°)╯︵ ┻━┻")
+        }else{
+          req.session.user = data;
+          res.status(200).send('ヾ(⌐■_■)ノ♪');
+        }
+      })
+    }
   },
   login: function(req,res){
-    User.findOne({email:req.body.email}, function(err,data){
-      if(data == null){
+    User.findOne({email:req.body.email}, function(err,user){
+      if(err){
         res.status(400).send("User not found (╯°□°)╯︵ ┻━┻");
       }else{
-        req.session.user = data;
-        res.sendStatus(200);
+        if (bcrypt.compareSync(req.body.password, user.password)) {
+          req.session.user = user;
+          res.sendStatus(200);
+        }
       }
     })
   },
@@ -34,7 +42,9 @@ module.exports = {
   logout: function(req,res){
     req.session.destroy();
     res.redirect('/');
+
   }
+
   // tvmaze.showIndex(0, function(err, res){
   //  if(err){
   //     console.log(err)
@@ -52,6 +62,3 @@ module.exports = {
   //   })
 
 }
-
-
-

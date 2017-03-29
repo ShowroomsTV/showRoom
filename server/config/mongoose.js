@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var path = require('path');
 var fs = require('fs');
 
+mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost/showRooms');
 
