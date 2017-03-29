@@ -22,6 +22,19 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 		}, function(res){
 			console.log(res)
 		})
-	}
+	};
+	factory.addFavorite = function(name){
+		console.log("factory",name)
+		$http({
+			url:'/show/favorite',
+			method: 'POST',
+			data: {movie_name: name}
+		}).then(function(res){
+			console.log(res);
+			// $location.url('/');
+		}, function(res){
+			console.log(res);
+		})
+	};
 	return factory;
 }])

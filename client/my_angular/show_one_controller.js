@@ -10,18 +10,18 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 		UserFactory.logout(user);
 	}
 
-	function getShows(){
-		ShowFactory.getShows(function(data){
-			// console.log(data);
-			$scope.shows = data;
-		})
-	}
-	getShows();
-
 	function getOneShow(name){
 		ShowFactory.getOneShow(name,function(data){
+			console.log("getOne",data)
 			$scope.show = data;
 		})
 	}
 	getOneShow($routeParams.name);
+
+	$scope.addFavorite = function(name){
+		console.log("controller", name)
+		ShowFactory.addFavorite(name);
+		getOneShow($routeParams.name);
+	}
 }])
+// if ( show[i]['rating']['average'] > 9) {

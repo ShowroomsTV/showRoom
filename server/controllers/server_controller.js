@@ -40,7 +40,7 @@ module.exports = {
   allShows: function(req,res){
     tvmaze.showIndex(0, function(err, data){
    if(err){
-      console.log(err)
+      res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
     }
     else {
       var show = JSON.parse(data)
@@ -49,29 +49,37 @@ module.exports = {
     })
   },
   oneShow: function(req,res){
-    tvmaze.singleShow(req.params.name, {single : true } , function(err, data ){ // Need to pass :name to this function and replace "Lost"
-     if(err){
-        console.log(err)
+    tvmaze.singleShow('('+ req.params.name+')', {single : true } , function(err, data ){ 
+      if(err){
+        res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
       }
       else {
+        // var stringify = JSON.stringify(data)
         var show = JSON.parse(data)
         res.json(show);
       }
     })
   },
-  topShows: function(req,res){
-    tvmaze.showIndex(0, function(err, data){
-   if(err){
-      console.log(err)
-    }
-    else {
-      var show = JSON.parse(data)
-          res.json(show);
-             // if ( show[i]['rating']['average'] > 9) {
-             //    topShows.push(i);
-         
-         // }
-    }
-  })
-}
+  addFavorite: function(req,res){
+       console.log("user session",req.session.user.id)
+       console.log("Name of movie is",req.body)
+      tvmaze.singleShow(req.params.name, {single : true } , function(err, show){
+     console.log(err)
+      var user = req.session.user.id
+      if(err){
+        res.status(400).send("Show not found")
+           console.log(err)
+      }
+      else {
+        var stringify = JSON.stringify(show)
+        var newShow = JSON.parse(stringify);
+        user.shows.push(newShow);
+        if(err){
+          res.status(400).send("Show not saved")
+        } else{
+          res.sendStatus(200);
+        }
+      }
+    })
+  }
 }
