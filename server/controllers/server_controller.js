@@ -69,7 +69,7 @@ module.exports = {
           res.json(show);
              // if ( show[i]['rating']['average'] > 9) {
              //    topShows.push(i);
-         
+
          // }
     }
   })

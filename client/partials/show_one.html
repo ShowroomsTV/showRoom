@@ -9,37 +9,41 @@
             <div class="card">
                   <div class="card-image">
                     <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
-                    <span class="card-title">{{show.name}}</span>
+                    <!-- <span class="card-title">{{show.name}}</span> -->
                   </div>
                   <div class="card-content">
-                        <p/><i class="material-icons">tv</i></p>
-                        <p>Raiting{{show.raiting.average}}</p>
+                                          <!-- =====Show Picture======= -->
+                        <p/><i class="material-icons">tv</i> <i class="material-icons">favorite</i> Add to Favorites </p>
+                        <p>Rating: {{show.rating.average}}</p>
                         <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
                         <p>Premiered: {{show.premiered}}</p>
-                       <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
+                        <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
+
                   </div>
                   <div class="card-action">
                     <p><a href="#!/show/{{show.id}}/chatroom">Chat about {{show.name}} <i class="material-icons">chat_bubble_outline</i></a></p>
                   </div>
             </div>
-            <!-- Description -->
+                                              <!-- =====Show Info===== -->
                 <div class="showinfo">
-                        <h2><i class="material-icons">description</i> Description</h2>
+                        <h2 class="card-title">{{show.name}}</h2>
+                        <h3><i class="material-icons">description</i> Description</h3>
                         <span id="summary" style="display:none;">{{show.summary}}</span>
                         <span id="show_summary"></span>
-                        <p>Raiting{{show.raiting.average}}</p>
                         <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
                         <p>Premiered: {{show.premiered}}</p>
                         <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
+
                 </div>
 
-    <div class="Right_Column">
+    <div class="Right_Column">                                     <!-- ======USER COMMANDS========= -->
             <div class="user_commands">
                 <h2>{{user.name}}</h2>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">account_box</i>Showtime Account</div>
-                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                      <div class="collapsible-header"><i class="material-icons">account_box</i>My favorite shows</div>
+                      <div class="collapsible-body"><span>Edit Account</span></div>
+                      <div class="collapsible-body"><span>My Profile</span></div>
                     </li>
                     <li>
                       <div class="collapsible-header"><i class="material-icons">chat</i>Chat Rooms</div>
@@ -47,10 +51,20 @@
                     </li>
                     <li>
                       <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
-                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                      <div class="collapsible-body"><span><form class="col s12">
+                            <div class="row">
+                               <label>Materialize Switch</label>
+                               <div class="switch"><label>Off<input type="checkbox" checked><span class="lever"></span>On</label></div>
+                            </div>
+                            <div class="row">
+                               <label>Materialize Disabled Switch</label>
+                               <div class="switch"><label>Off<input disabled type="checkbox"><span class="lever"></span>On</label></div>
+                            </div>
+                         </form></span></div>
                     </li>
                 </ul>
             </div>
+                                      <!-- ========= People to Follow ==========  -->
             <div class="People_to_follow">
                 <h2>Show Followers</h2>
                     <p>Here is where users look at profiles of other users with similar interests</p>
@@ -83,7 +97,7 @@
       window.setTimeout(function() {
         console.log($("#summary").text());
         $("#show_summary").html($.parseHTML($('#summary').text()))
-      }, 200)
+      }, 1005)
 
     })()
 
