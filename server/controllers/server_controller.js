@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-
 var User = mongoose.model('User');
 var bcrypt = require('bcryptjs');
 var tvmaze = require("tvmaze-node");
@@ -37,61 +36,42 @@ module.exports = {
     req.session.destroy();
     res.redirect('/');
   },
-  allShows: tvmaze.showIndex(0, function(err, res){
+
+  allShows: function(req,res){
+    tvmaze.showIndex(0, function(err, data){
    if(err){
       console.log(err)
     }
     else {
-      var show = JSON.parse(res)
-         for (var i = 0; i < show.length; i++) {
-             return show;
-        //    console.log(show[i]['name']);
-        //    console.log(show[i]['id']);
-        //    console.log(show[i]['genres']);
-        //    console.log(show[i]['image']);
-        //    console.log(show[i]['schedule']);
-        //    console.log(show[i]['rating']);
-        //    console.log(show[i]['premiered']);
-        //    console.log(show[i]['network']);
-        //    console.log(show[i]['status']);
-        //    console.log(show[i]['summary']);
-         }
+      var show = JSON.parse(data)
+       res.json(show);
+       }
+    })
+  },
+  oneShow: function(req,res){
+    tvmaze.singleShow(req.params.name, {single : true } , function(err, data ){ // Need to pass :name to this function and replace "Lost"
+     if(err){
+        console.log(err)
       }
-  }),
-  showOne: tvmaze.singleShow("Lost", {single : true } , function(err, res){ // Need to pass :name to this function and replace "Lost"
+      else {
+        var show = JSON.parse(data)
+        res.json(show);
+      }
+    })
+  },
+  topShows: function(req,res){
+    tvmaze.showIndex(0, function(err, data){
    if(err){
       console.log(err)
     }
     else {
-      var show = JSON.parse(res)
-        //    console.log(show);
-            return show;
-      }
-  }),
-  topShows: tvmaze.showIndex(0, function(err, res){
-   if(err){
-      console.log(err)
+      var show = JSON.parse(data)
+          res.json(show);
+             // if ( show[i]['rating']['average'] > 9) {
+             //    topShows.push(i);
+         
+         // }
     }
-    else {
-      var show = JSON.parse(res)
-      var topShows = [];
-         for (var i = 0; i < show.length; i++) {
-             if ( show[i]['rating']['average'] > 9) {
-                topShows.push(i);
-            //    console.log(show[i]['name']);
-            //    console.log(show[i]['id']);
-            //    console.log(show[i]['genres']);
-            //    console.log(show[i]['image']);
-            //    console.log(show[i]['schedule']);
-            //    console.log(show[i]['rating']);
-            //    console.log(show[i]['premiered']);
-            //    console.log(show[i]['network']);
-            //    console.log(show[i]['status']);
-            //    console.log(show[i]['summary']);
-           }
-         }
-        //  console.log(topShows, "topShows list");
-         return topShows;
-      }
   })
+}
 }

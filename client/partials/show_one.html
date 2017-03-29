@@ -1,78 +1,66 @@
 
-<link rel="stylesheet" type="text/css" href='../stylesheets/show_one.css'>
-<h1>Welcome {{user.name}}</h1>
-<body>
-        <div class="container">
-            <div class="header">
-                <h1>{{show.name}}</h1>
-            </div>
-        <div class="Left_Column">
-            <div class="profile">
-                <a href="">Show</a>
-                <ul>
-                    <li><a href="">Show Pic</a></li>
-                    <div class="show_pic">
-                      <img src="http://epguides.com/Billions/cast.jpg" class="img-rounded" alt="ProfilePic">
-                      <h1>Show Name</h1>
-                    </div>
-
-                </ul>
-            </div>
-            <div class="Chat Room">
-                <h2>Chat Room</h2>
-                <p>Your Chat Rooms</p>
-                <ul>
-                  <li><a href="#">2 Broke Girls</a></li>
-                  <li><a href="#">Dancing with the Stars</a></li>
-                </ul>
-
-            </div>
-        </div>
-                        <!-- End of Left Column -->
-            <div class="showinfo">
-                <h2>Description</h2>
-                <p>this is where the description of the user/show goes</p>
-                <ul>
-
-                </ul>
-            </div>
-        <div class="Right_Column">
-            <div class="">
-                <h2>User Commands</h2>
-                <ul>
-                    <li>Update Email and Password</li>
-                    <li>Update Chatrooms</li>
-                    <li>Update Notification</li>
-                </ul>
-            </div>
-            <div class="People_to_follow">
-                <h2>Show Followers</h2>
-                <p>Here is where users look at profiles of other users with similar interests</p>
-                <ul>
-                  <h4>Random User 1</h4>
-                  <ul>
-                    <li>Favorite shows</li>
-                      <p>Band of brothers</p>
-                    <li>Chat groups</li>
-                  </ul>
-                  <h4>Random User 2</h4>
-                  <ul>
-                    <li>Favorite shows</li>
-                      <p>Martin</p>
-                    <li>Chat Group</li>
-                  </ul>
-                </ul>
-            </div>
-          </div>
-                            <!-- End of Right Column  -->
-            <div class="footer">
-                <p>AboutUs Support Contact <a href="">Showroom!</a></p>
-            </div>
-        </div>
-
 <div class="nav">
     <a href="#!/dashboard" class="dashboardLink" name="button">Dashboard</a>
     <a href="#" class="alertLink"  name="button">Alert</a>
     <a href="#!/user/{{user._id}}" class="myProfileLink"  name="button">My profile</a>
     <a href="/logout" class="right" name="button">Logout</a>
 </div>
+<div class="container">
+    <div class="Chat Room">
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
+                  <span class="card-title">{{show.name}}</span>
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <p><a href="#!/show/{{show.id}}/chatroom">Chat about {{show.name}}</a></p>
+                </div>
+              </div>
+              <div class="showinfo">
+                  <h2>Description</h2>
+                  {{show.summary}}
+                  <p>Raiting{{show.raiting.average}}</p>
+                  <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
+                  <p>Premiered: {{show.premiered}}</p>
+                 <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
+              </div>
+            </div>
+          </div>
+          
+      <div class="Right_Column">
+          <div class="">
+              <h2>User Commands</h2>
+              <ul>
+                  <li>Update Email and Password</li>
+                  <li>Update Chatrooms</li>
+                  <li>Update Notification</li>
+              </ul>
+          </div>
+          <div class="People_to_follow">
+              <h2>Show Followers</h2>
+              <p>Here is where users look at profiles of other users with similar interests</p>
+              <ul>
+                <h4>Random User 1</h4>
+                <ul>
+                  <li>Favorite shows</li>
+                    <p>Band of brothers</p>
+                  <li>Chat groups</li>
+                </ul>
+                <h4>Random User 2</h4>
+                <ul>
+                  <li>Favorite shows</li>
+                    <p>Martin</p>
+                  <li>Chat Group</li>
+                </ul>
+              </ul>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- Description -->

@@ -1,7 +1,6 @@
 app.controller('dashboardController',['$scope', '$routeParams','UserFactory','ShowFactory', function($scope,$routeParams,UserFactory,ShowFactory){
 	function currentUser(){
 		UserFactory.currentUser(function(data){
-			console.log(data)
 			$scope.user = data;
 		});
 	}
