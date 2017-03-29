@@ -13,28 +13,19 @@
     vertical-align: top;
 }
 .card{
+  width: 30%;
   display: inline-block;
-  width: 40%;
-  height: 50%;
+}
 
-}
-.Left_Column{
-  width: 25%;
-  background-color: grey;
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 15%;
-  text-align: center;
-}
 .showinfo{
-  width: 40%;
+  width: 30%;
   background-color: grey;
   display: inline-block;
   vertical-align: top;
   text-align: center;
 }
 .Right_Column{
-  width: 25%;
+  width: 30%;
   background-color: silver;
   display: inline-block;
   vertical-align: top;

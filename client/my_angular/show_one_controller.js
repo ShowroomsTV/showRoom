@@ -14,6 +14,7 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 		ShowFactory.getShows(function(data){
 			// console.log(data);
 			$scope.shows = data;
+
 		})
 	}
 	getShows();
@@ -21,6 +22,9 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 	function getOneShow(name){
 		ShowFactory.getOneShow(name,function(data){
 			$scope.show = data;
+			var time = $scope.show.schedule.time.split(":")
+			$scope.show.schedule.time = new Date(1988,6,4,time[0],time[1]).toLocaleTimeString();
+			// $scope.show.summary.
 		})
 	}
 	getOneShow($routeParams.name);
