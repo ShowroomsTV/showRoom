@@ -17,8 +17,10 @@ app.factory('UserFactory', ['$http', '$location', function($http,$location){
 			url: '/current',
 			method: "GET"
 		}).then(function(res){
+			console.log(res)
 			callback(res.data)
 		}, function(res){
+			console.log(res)
 			$location.url('/')
 		})
 	}

@@ -8,6 +8,9 @@ module.exports = function(app){
 	app.post('/register', serverController.register);
 	app.get('/logout', serverController.logout);
 	app.get('/current', serverController.current);
+	
+	// app.get('/'shows, serverController.shows);
+
 
 	// app.get('/dashboard', serverController.getQuestions);
 
