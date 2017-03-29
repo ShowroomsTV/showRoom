@@ -1,59 +1,22 @@
-
-<h1>Show All</h1>
-
-  <head>
-      <link rel="stylesheet" type="text/css" href='../stylesheets/show_all.css'>
-      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script> -->
-
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="Left_Column">
-          <h1>Shows</h1>
-          <ul  class='dropdown_content'>
-              <li><a href="#!">All Shows</a></li>
-              <li><a href="#!">Favorites</a></li>
-              <li><a href="#!">Genre</a></li>
-          </ul>
-      </div>
-      <div class="Shows">
-              <div class="grid_item">
-                <img src="http://epguides.com/Billions/cast.jpg" class="img-rounded" alt="Billions" width="304" height="236">
-                <h1>Billions</h1>
-              </div>
-              <div class="grid_item">
-                <img src="http://epguides.com/Billions/cast.jpg" class="img-rounded" alt="Billions" width="304" height="236">
-                <h1>Billions</h1>
-              </div>
-              <div class="grid_item">
-                <img src="http://epguides.com/Billions/cast.jpg" class="img-rounded" alt="Billions" width="304" height="236">
-                <h1>Billions</h1>
-              </div>
-              <div class="grid_item">
-                <img src="http://epguides.com/Billions/cast.jpg" class="img-rounded" alt="Billions" width="304" height="236">
-                <h1>Billions</h1>
-              </div>
-      </div>
-    </div>
-  </body>
-
 <div class="nav">
     <a href="#!/dashboard" class="dashboardLink" name="button">Dashboard</a>
     <a href="#" class="alertLink"  name="button">Alert</a>
     <a href="#!/user/{{user._id}}" class="myProfileLink"  name="button">My profile</a>
     <a href="/logout" class="right" name="button">Logout</a>
 </div>
-<h1>Welcome {{user.name}}</h1>
-<<<<<<< HEAD
-<div dir-paginate= "show in shows  | itemsPerPage: 10">
-	<a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" alt=""></a>
+<div class="wrapper">
+  <div class="Left_Column">
+      <h1>Shows</h1>
+      <ul  class='dropdown_content'>
+          <li><a href="#!">All Shows</a></li>
+          <li><a href="#!">Favorites</a></li>
+          <li><a href="#!">Genre</a></li>
+      </ul>
+  </div>
+  <div class="Shows">
+	    <div class="grid_item" dir-paginate= "show in shows  | itemsPerPage: 10">
+	       <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a>
+	     </div>
+    </div>
+    <dir-pagination-controls></dir-pagination-controls>
 </div>
-<dir-pagination-controls></dir-pagination-controls>
-=======
->>>>>>> 180ba6b89aa46c0a7f21227c43e45880914571cd
