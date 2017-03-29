@@ -5,3 +5,7 @@
     <a href="/logout" class="right" name="button">Logout</a>
 </div>
 <h1>Welcome {{user.name}}</h1>
+<div dir-paginate= "show in shows  | itemsPerPage: 10">
+	<a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" alt=""></a>
+</div>
+<dir-pagination-controls></dir-pagination-controls>

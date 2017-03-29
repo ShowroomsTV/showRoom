@@ -9,4 +9,12 @@ app.controller('showAllController',['$scope', '$routeParams','ShowFactory','User
 	$scope.logout = function(user){
 		UserFactory.logout(user);
 	}
+
+	function getShows(){
+		ShowFactory.getShows(function(data){
+			// console.log(data);
+			$scope.shows = data;
+		})
+	}
+	getShows();
 }])

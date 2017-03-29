@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngMessages']);
+var app = angular.module('app', ['ngRoute', 'ngMessages','angularUtils.directives.dirPagination']);
 /* configuration for angular route */
 app.config(function($routeProvider) {
   $routeProvider
@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
       templateUrl: '/partials/dashboard.html',
       controller: 'dashboardController'
     })
-    .when('/show/:id', {
+    .when('/show/:name', {
       templateUrl: '/partials/show_one.html',
       controller: 'showOneController'
     })

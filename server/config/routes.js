@@ -7,7 +7,8 @@ module.exports = function(app) {
 	app.get('/logout', serverController.logout);
 	app.get('/current', serverController.current);
 	
-	// app.get('/'shows, serverController.shows);
+	app.get('/allShows', serverController.allShows);
+	app.get('/oneShow/:name', serverController.oneShow);
 
 
 }

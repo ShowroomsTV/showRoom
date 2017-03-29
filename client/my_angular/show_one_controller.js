@@ -9,4 +9,19 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 	$scope.logout = function(user){
 		UserFactory.logout(user);
 	}
+
+	function getShows(){
+		ShowFactory.getShows(function(data){
+			// console.log(data);
+			$scope.shows = data;
+		})
+	}
+	getShows();
+
+	function getOneShow(name){
+		ShowFactory.getOneShow(name,function(data){
+			$scope.show = data;
+		})
+	}
+	getOneShow($routeParams.name);
 }])
