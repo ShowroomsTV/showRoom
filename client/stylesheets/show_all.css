@@ -1,14 +1,11 @@
-.Left_Column{
-    width: 970px;
-    margin: 0px;
-    background-color: #700000;
-    padding: 0px;
-}
-.shows{
-  width: 180px;
 
-  border-radius: 10px;
-  padding: 10px;
-  display: table-row;
-  /*vertical-align: top;*/
+
+.wrapper{
+  width: auto;
+}
+.grid_item{
+  display: inline-block;
+}
+.container{
+  display: inline-grid;
 }

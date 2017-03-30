@@ -22,6 +22,7 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 	function getOneShow(name){
 		ShowFactory.getOneShow(name,function(data){
 			$scope.show = data;
+			console.log("one show controller",data);
 			var time = $scope.show.schedule.time.split(":")
 			$scope.show.schedule.time = new Date(1988,6,4,time[0],time[1]).toLocaleTimeString();
 			// $scope.show.summary.

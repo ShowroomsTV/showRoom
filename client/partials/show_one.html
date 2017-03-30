@@ -14,6 +14,7 @@
                   <div class="card-content">
                                           <!-- =====Show Picture======= -->
                         <p/><i class="material-icons">tv</i> <i class="material-icons">favorite</i> Add to Favorites </p>
+                        <p>{{show.network.name}}</p>
                         <p>Rating: {{show.rating.average}}</p>
                         <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
                         <p>Premiered: {{show.premiered}}</p>
@@ -33,7 +34,10 @@
                         <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
                         <p>Premiered: {{show.premiered}}</p>
                         <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
+                        <!-- <div ng-repeat="seasons in show._embedded.episodes | orderBy: seasons.season">
+                          <p ng-if="seasons.season = 1">{{seasons.name}}</p>
 
+                </div> -->
                 </div>
 
     <div class="Right_Column">                                     <!-- ======USER COMMANDS========= -->
@@ -41,7 +45,7 @@
                 <h2>{{user.name}}</h2>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">account_box</i>My favorite shows</div>
+                      <div class="collapsible-header"><i class="material-icons">account_box</i>Show Cast</div>
                       <div class="collapsible-body"><span>Edit Account</span></div>
                       <div class="collapsible-body"><span>My Profile</span></div>
                     </li>
@@ -97,7 +101,7 @@
       window.setTimeout(function() {
         console.log($("#summary").text());
         $("#show_summary").html($.parseHTML($('#summary').text()))
-      }, 1005)
+      }, 1004)
 
     })()
 
