@@ -36,6 +36,6 @@ app.controller('chatRoomController',['$scope', '$routeParams','ShowFactory','Use
     socket.on('chat message', function(msg){
       $('#message_board').append($('<li>').text(msg));
     });
-  });
+  }); 
 })
 }])

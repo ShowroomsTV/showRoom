@@ -10,18 +10,30 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 		UserFactory.logout(user);
 	}
 
+	function getShows(){
+		ShowFactory.getShows(function(data){
+			// console.log(data);
+			$scope.shows = data;
+
+		})
+	}
+	getShows();
+
 	function getOneShow(name){
 		ShowFactory.getOneShow(name,function(data){
-			console.log("getOne",data)
+			// console.log("getOne",data)
 			$scope.show = data;
+			var time = $scope.show.schedule.time.split(":")
+			$scope.show.schedule.time = new Date(1988,6,4,time[0],time[1]).toLocaleTimeString();
+			// $scope.show.summary.
 		})
 	}
 	getOneShow($routeParams.name);
 
-	$scope.addFavorite = function(name){
+	$scope.addFav = function(name){
 		console.log("controller", name)
-		ShowFactory.addFavorite(name);
+		ShowFactory.addFav(name);
 		getOneShow($routeParams.name);
 	}
 }])
-// if ( show[i]['rating']['average'] > 9) {
+

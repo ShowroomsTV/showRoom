@@ -63,23 +63,16 @@ module.exports = {
   addFavorite: function(req,res){
        console.log("user session",req.session.user.id)
        console.log("Name of movie is",req.body)
-      tvmaze.singleShow(req.params.name, {single : true } , function(err, show){
-     console.log(err)
-      var user = req.session.user.id
+    var user= req.session.user._id
+    tvmaze.singleShow('('+ req.params.name+')', {single : true } , function(err, data ){ 
       if(err){
-        res.status(400).send("Show not found")
-           console.log(err)
+        res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
       }
       else {
-        var stringify = JSON.stringify(show)
-        var newShow = JSON.parse(stringify);
-        user.shows.push(newShow);
-        if(err){
-          res.status(400).send("Show not saved")
-        } else{
-          res.sendStatus(200);
-        }
+        var show = JSON.parse(data)
+        user.shows.push(show)
+        res.sendStatus(200);
       }
-    })
+    }) 
   }
 }

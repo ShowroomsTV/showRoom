@@ -1,66 +1,105 @@
+<!--***********Nav Bar*************-->
 <div class="nav">
-    <a href="#!/dashboard" class="dashboardLink" name="button">Dashboard</a>
-    <a href="#" class="alertLink"  name="button">Alert</a>
-    <a href="#!/user/{{user._id}}" class="myProfileLink"  name="button">My profile</a>
-    <a href="/logout" class="right" name="button">Logout</a>
+  <a href="#!/dashboard" class="dashboardLink" name="button">Dashboard</a>
+  <a href="#" class="alertLink"  name="button">Alert</a>
+  <a href="#!/user/{{user._id}}" class="myProfileLink"  name="button">My profile</a>
+  <a href="/logout" class="right" name="button">Logout</a>
 </div>
+  <!-- =====Main Content======= -->
 <div class="container">
-<div class="Left_Column">
-    <div class="profile">
-        <button ng-click="addFavorite(show.name)">Add to Favorites</button>
-        <ul>
-            <li><a href="">Show Pic</a></li>
-            <div class="show_pic">
-              <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
-              <h1>{{show.name}}</h1>
-            </div>
-        </ul>
-    </div>
-    <div class="Chat Room">
-        <h2>Chat Room</h2>
-        <p><a href="#!/show/{{show.id}}/chatroom">Chat about this Show</a></p>
-    </div>
-</div>
-                <!-- End of Left Column -->
-    <div class="showinfo">
-        <h2>Description</h2>
-        {{show.summary}}
-        <p>Raiting{{show.raiting.average}}</p>
+  <div class="Chat_Room">
+  <!-- =====Show Picture======= -->
+    <div class="card">
+      <div class="card-image">
+        <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
+        <!-- <span class="card-title">{{show.name}}</span> -->
+      </div>
+      <div class="card-content">
+        <p><i class="material-icons">tv</i> &nbsp;&nbsp;  <a href="" ><i class="material-icons">favorite</i></a> &nbsp;Add to Favorites </p>
+        <button ng-click="addfav(show.name)">Add</button>
+        <p>Rating: {{show.rating.average}}</p>
         <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
         <p>Premiered: {{show.premiered}}</p>
-       <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
+        <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
+      </div>
+      <div class="card-action">
+        <p><a href="#!/show/{{show.id}}/chatroom">Chat about {{show.name}} <i class="material-icons">chat_bubble_outline</i></a></p>
+      </div>
     </div>
-<div class="Right_Column">
-    <div class="">
-        <h2>User Commands</h2>
-        <ul>
-            <li>Update Email and Password</li>
-            <li>Update Chatrooms</li>
-            <li>Update Notification</li>
-        </ul>
+<!-- =====Show Info===== -->
+    <div class="showinfo">
+      <h2 class="card-title">{{show.name}}</h2>
+      <h3><i class="material-icons">description</i> Description</h3>
+      <span id="summary" style="display:none;">{{show.summary}}</span>
+      <span id="show_summary"></span>
+      <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
+      <p>Premiered: {{show.premiered}}</p>
+      <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
     </div>
-    <div class="People_to_follow">
-        <h2>Show Followers</h2>
-        <p>Here is where users look at profiles of other users with similar interests</p>
-        <ul>
-          <h4>Random User 1</h4>
-          <ul>
-            <li>Favorite shows</li>
-              <p>Band of brothers</p>
-            <li>Chat groups</li>
+<!-- ======USER COMMANDS========= -->
+    <div class="Right_Column">
+      <div class="user_commands">
+          <h2>{{user.name}}</h2>
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header"><i class="material-icons">account_box</i>My favorite shows</div>
+              <div class="collapsible-body"><span>Edit Account</span></div>
+              <div class="collapsible-body"><span>My Profile</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">chat</i>Chat Rooms</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
+              <div class="collapsible-body">
+                <span>
+                  <form class="col s12">
+                    <div class="row">
+                       <label>Turn on Notifications</label>
+                       <div class="switch"><label>Off<input type="checkbox" checked><span class="lever"></span>On</label></div>
+                    </div>
+                 </form>
+                </span>
+              </div>
+            </li>
           </ul>
-          <h4>Random User 2</h4>
-          <ul>
-            <li>Favorite shows</li>
-              <p>Martin</p>
-            <li>Chat Group</li>
-          </ul>
-        </ul>
+      </div>
+  <!-- ========= People to Follow ==========  -->
+      <div class="People_to_follow">
+          <h2>Show Followers</h2>
+              <p>Here is where users look at profiles of other users with similar interests</p>
+              <ul>
+          <h4><i class="material-icons">account_circle</i> Random User 1</h4>
+              <ul>
+                <li>Favorite shows</li>
+                  <p>Band of brothers</p>
+                <li>Chat groups</li>
+              </ul>
+          <h4><i class="material-icons">account_circle</i>Random User 2</h4>
+              <ul>
+                <li>Favorite shows</li>
+                  <p>Martin</p>
+                <li>Chat Group</li>
+              </ul>
+            </ul>
+      </div>
     </div>
   </div>
-                    <!-- End of Right Column  -->
-    <div class="footer">
-        <p>AboutUs Support Contact <a href="">ShowRooms!</a></p>
-    </div>
 </div>
 
+
+
+
+<!-- collapsible icons -->
+<script type="text/javascript">
+    (function(){
+      $('.collapsible').collapsible();
+      window.setTimeout(function() {
+        console.log($("#summary").text());
+        $("#show_summary").html($.parseHTML($('#summary').text()))
+      }, 1005)
+
+    })()
+
+</script>

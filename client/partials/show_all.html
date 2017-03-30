@@ -14,9 +14,10 @@
       </ul>
   </div>
   <div class="Shows">
-	    <div class="grid_item" dir-paginate= "show in shows  | itemsPerPage: 10">
+    <dir-pagination-controls></dir-pagination-controls>
+	    <div class="grid_item" dir-paginate= "show in shows  | itemsPerPage: 5">
 	       <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a>
 	     </div>
+       <dir-pagination-controls></dir-pagination-controls>
     </div>
-    <dir-pagination-controls></dir-pagination-controls>
 </div>

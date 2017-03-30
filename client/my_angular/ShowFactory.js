@@ -23,7 +23,7 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 			console.log(res)
 		})
 	};
-	factory.addFavorite = function(name){
+	factory.addFav = function(name){
 		console.log("factory",name)
 		$http({
 			url:'/show/favorite',
