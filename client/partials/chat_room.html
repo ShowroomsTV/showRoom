@@ -7,18 +7,20 @@
  <div id="container">
   <div id="display"></div>
     <div id="error"></div>
-    <h3>Conversation Board</h3>
+    <h3 id="whitecolor">Conversation Board</h3>
     <div class="white">
-        <ul id="message_board"></ul>
+        <div class="inner">
+            <ul id="message_board"></ul>
+        </div>
     </div>
     <form id="new_message">
+      <!-- <input type="hidden" name="username" value={{user.name}}> -->
       <input type="text" id="message" placeholder="enter your message here">
       <input type="submit" value="Send">
     </form>
-
   </div>
 
-<<!-- body>
+<!-- body>
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>

@@ -129,5 +129,30 @@
 }
 .white{
     background-color: white;
-    width: 60%;
+    width: 100%;
+    height: 40%;
+    border-radius: 20px;
+    border-style: solid;
+}
+#message_board{
+    height: 400px;
+    overflow: auto;
+}
+#whitecolor{
+    color: white;
+    margin-left: 40px;
+}
+#new_message{
+    margin-left: 20px;
+    width: 90%;
+    color: white;
+}
+li{
+    margin-left: 10px;
+}
+.inner{
+    width: 1220px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
