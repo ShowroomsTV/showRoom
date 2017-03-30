@@ -70,8 +70,9 @@ module.exports = {
           if(err){
             res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
           }else{
-            // console.log("user",user);
-            user.shows.push(data);
+            console.log("data",data);
+            // var show = JSON.parse(data)
+            user.shows.push({data});
             user.save(function(err,update_user){
               if(err){
                 res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻");    
