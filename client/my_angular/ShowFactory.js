@@ -22,7 +22,6 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 		}, function(res){
 			console.log(res)
 		})
-<<<<<<< HEAD
 	};
 	factory.addFav = function(name){
 		console.log("factory",name)
