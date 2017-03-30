@@ -40,7 +40,7 @@ module.exports = {
   allShows: function(req,res){
     tvmaze.showIndex(0, function(err, data){
    if(err){
-      console.log(err)
+      res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
     }
     else {
       var show = JSON.parse(data)
@@ -49,50 +49,39 @@ module.exports = {
     })
   },
   oneShow: function(req,res){
-    tvmaze.singleShow(req.params.name, {single : true } , function(err, data ){ // Need to pass :name to this function and replace "Lost"
-     if(err){
-        console.log(err)
+    tvmaze.singleShow('('+ req.params.name+')', {single : true } , function(err, data ){
+      if(err){
+        res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
       }
       else {
+        // var stringify = JSON.stringify(data)
         var show = JSON.parse(data)
         res.json(show);
       }
     })
   },
-  topShows: function(req,res){
-<<<<<<< HEAD
-    tvmaze.showIndex(0, function(err, data){
-   if(err){
-      console.log(err)
-    }
-    else {
-      var show = JSON.parse(data)
-          res.json(show);
-             // if ( show[i]['rating']['average'] > 9) {
-             //    topShows.push(i);
-
-=======
-    // console.log("response",res);
-    // tvmaze.showIndex(0, function(err, data){
-  //  if(err){
-      // console.log(err)
-    // }
-    // else {
-      // var show = JSON.parse(data)
-      // for(var i=0;i<show.length;i++){
-          // if( > 9){
-            // console.log(show.rating.average);
-            // res.json(show);
-            // console.log("Json data",show);
-        // }
-        // }
->>>>>>> ba2dbe0abf00e8bbab891a5be425d90f40413ace
-         // }
-    // }
-  // })
+  addFavorite: function(req,res){
+    tvmaze.singleShow(req.body, {single : true }, function(err, data ){
+      if(err){
+        res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
+      }
+      else {
+        User.findOne({_id: req.session.user._id},function(err,user){
+          if(err){
+            res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
+          }else{
+            // console.log("user",user);
+            user.shows.push(data);
+            user.save(function(err,update_user){
+              if(err){
+                res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻");
+              }else{
+                res.sendStatus(200);
+              }
+            })
+          }
+        })
+      }
+    })
+  }
 }
-}
-<<<<<<< HEAD
-}
-=======
->>>>>>> ba2dbe0abf00e8bbab891a5be425d90f40413ace

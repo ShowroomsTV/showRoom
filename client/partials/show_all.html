@@ -5,17 +5,23 @@
     <a href="/logout" class="right" name="button">Logout</a>
 </div>
 <div class="wrapper">
-      <h1>Showroom</h1>
+    <div class="">
+      <h1 class="title">ShowRooms</h1>
+          <h6 class="subtitle">Never miss a show with your friends</h6>
+    </div>
       <div  class="container">
-          <a class="waves-effect waves-light btn"><i class="material-icons left">view_module</i>All Shows</a>
-          <a class="waves-effect waves-light btn"><i class="material-icons left">grade</i>Favorites</a>
-          <a class="waves-effect waves-light btn"><i class="material-icons left">view_list</i>Genre</a>
-          <dir-pagination-controls></dir-pagination-controls>
+          <a id="allshows" class="waves-effect waves-light btn">All Shows</a>
+          <a id="allshows" class="waves-effect waves-light btn">Favorites</a>
+          <a id="allshows" class="waves-effect waves-light btn">Genre</a>
       </div>
+      <dir-pagination-controls class="controls"></dir-pagination-controls>
     <div class="Shows">
-  	    <div class="grid_item" dir-paginate= "show in shows  | itemsPerPage: 18">
+  	    <div class="grid_item" dir-paginate= "show in shows  | itemsPerPage: 24">
   	       <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a>
   	     </div>
-         <dir-pagination-controls></dir-pagination-controls>
+         <div class="bottomcontrols">
+           <dir-pagination-controls></dir-pagination-controls>
+         </div>
+
     </div>
 </div>

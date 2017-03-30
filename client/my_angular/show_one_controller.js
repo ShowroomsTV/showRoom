@@ -21,6 +21,7 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 
 	function getOneShow(name){
 		ShowFactory.getOneShow(name,function(data){
+			// console.log("getOne",data)
 			$scope.show = data;
 			console.log("one show controller",data);
 			var time = $scope.show.schedule.time.split(":")
@@ -29,4 +30,11 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 		})
 	}
 	getOneShow($routeParams.name);
+
+	$scope.addFav = function(name){
+		console.log("controller", name)
+		ShowFactory.addFav(name);
+		getOneShow($routeParams.name);
+	}
 }])
+

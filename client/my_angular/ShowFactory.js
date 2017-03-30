@@ -22,17 +22,18 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 		}, function(res){
 			console.log(res)
 		})
-	}
-	factory.getShowByRating = function(callback){
-		console.log(callback);
+	};
+	factory.addFav = function(name){
+		console.log("factory",name)
 		$http({
-			url: '/showbyrating',
-			method: "GET"
+			url:'/show/favorite',
+			method: 'POST',
+			data: {movie_name: name}
 		}).then(function(res){
-			console.log(res)
-			callback(res.data)
+			console.log(res);
+			// $location.url('/');
 		}, function(res){
-			console.log(res)
+			console.log(res);
 		})
 	}
 	return factory;
