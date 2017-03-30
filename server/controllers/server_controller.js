@@ -61,19 +61,20 @@ module.exports = {
     })
   },
   addFavorite: function(req,res){
-    console.log(req.body)
-    tvmaze.singleShow(req.body, {single : true }, function(err, data ){ 
+    // console.log(req.body)
+    tvmaze.singleShow(req.body.movie_name, {single : true }, function(err, data ){ 
       if(err){
         res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
       }
       else {
-        console.log("**********",data,'*************')
+        var show = JSON.parse(data)
+        console.log("**********",show,'*************')
         User.findOne({_id: req.session.user._id},function(err,user){
           if(err){
             res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
           }else{
             // console.log("data",data);
-            var show = JSON.parse(data)
+            
             user.shows.push({show});
             user.save(function(err,update_user){
               if(err){
