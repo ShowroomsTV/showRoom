@@ -49,7 +49,7 @@ module.exports = {
     })
   },
   oneShow: function(req,res){
-    tvmaze.singleShow('('+ req.params.name+')', {single : true } , function(err, data ){ 
+    tvmaze.singleShow('('+ req.params.name+')', {single : true } , function(err, data ){
       if(err){
         res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
       }
@@ -77,10 +77,10 @@ module.exports = {
             user.shows.push({show});
             user.save(function(err,update_user){
               if(err){
-                res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻");    
+                res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻");
               }else{
                 res.sendStatus(200);
-              }  
+              }
             })
           }
         })

@@ -36,5 +36,5 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 			console.log(res);
 		})
 	};
-	return factory;
+
 }])
