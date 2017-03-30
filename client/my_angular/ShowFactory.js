@@ -36,5 +36,17 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 			console.log(res);
 		})
 	};
+	factory.activateNotification = function(name){
+		console.log(name + " factory");
+		$http({
+			url: "/show/twilio",
+			method: "POST",
+			data: {show_name: name}
+		}).then(function(res){
+			console.log(res);
+		}, function(res){
+			console.log(res);
+		})
+	};
 	return factory;
 }])

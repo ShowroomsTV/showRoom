@@ -11,4 +11,6 @@ module.exports = function(app){
 	app.get('/oneShow/:name', serverController.oneShow);
 
 	app.post('/show/favorite', serverController.addFavorite);
+
+	app.post("/show/twilio", serverController.activateNotification);
 }
