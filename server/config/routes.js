@@ -12,5 +12,9 @@ module.exports = function(app){
 
 	app.post('/show/favorite', serverController.addFavorite);
 
+
 	app.get('/user/:id', serverController.getUser);
+
+	app.post("/show/twilio", serverController.activateNotification);
+
 }
