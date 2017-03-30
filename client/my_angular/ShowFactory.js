@@ -28,7 +28,7 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 		$http({
 			url:'/show/favorite',
 			method: 'POST',
-			data: {movie_name: name}
+			data: {show_name: name}
 		}).then(function(res){
 			console.log(res);
 			// $location.url('/');
