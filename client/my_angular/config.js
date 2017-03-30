@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngMessages','angularUtils.directives.dirPagination']);
+var app = angular.module('app', ['ngRoute', 'ngMessages','angularUtils.directives.dirPagination','angular-loading-bar']);
 /* configuration for angular route */
 app.config(function($routeProvider) {
   $routeProvider
