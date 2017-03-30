@@ -9,4 +9,11 @@ app.controller('dashboardController',['$scope', '$routeParams','UserFactory','Sh
 	$scope.logout = function(user){
 		UserFactory.logout(user);
 	}
+	function getShows(){
+		ShowFactory.getShows(function(data){
+				$scope.shows = data;
+		})
+	}
+	getShows();
+
 }])

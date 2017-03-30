@@ -15,8 +15,7 @@
         <!-- <span class="card-title">{{show.name}}</span> -->
       </div>
       <div class="card-content">
-        <p><i class="material-icons">tv</i> &nbsp;&nbsp;  <a href="" ><i class="material-icons">favorite</i></a> &nbsp;Add to Favorites </p>
-        <button ng-click="addfav(show.name)">Add</button>
+        <p><i class="material-icons">tv</i> &nbsp;&nbsp;  <a href="" ng-click="addFav(show.name)"><i class="material-icons">favorite</i></a> &nbsp;Add to Favorites </p>
         <p>Rating: {{show.rating.average}}</p>
         <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
         <p>Premiered: {{show.premiered}}</p>

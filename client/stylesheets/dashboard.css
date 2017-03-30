@@ -20,20 +20,37 @@
 }
 
 #container{
-  width: 950px;
+  width: 800px;
   background-color: beigh;
   margin: 0px auto;
   padding-left: 15px;
 }
 
-#user_shows{
-  width: 20px;
-  height: 50px;
+#left_content{
+  display: inline-block;
+  width: 264px;
+  height: 727px;
   border: black solid 1px;
+  float: left;
+}
+#top_content{
+  display: inline-block;
+  margin-left: 80px;
+  height: 500px;
+  width: 500px;
+}
+#genre{
+  height: 200px;
+  width:250px;
+  border: black solid 1px;
+  margin-left: 567px;
 }
  .carousel-inner > .item > img,
  .carousel-inner > .item > a > img {-
   width: 50%;
   margin: auto;
   }
-
+#myCarousel.carousel.slide {
+    height: 675px;
+    width: 632px
+}
