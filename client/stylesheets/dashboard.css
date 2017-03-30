@@ -17,29 +17,30 @@
 
 #container_dashboard{
   width: 800px;
-  background-color: beigh;
   margin: 0px auto;
   padding-left: 15px;
+  display: inline-block;
 }
 
 #left_content{
+  background-color: white;
   display: inline-block;
   width: 264px;
   height: 727px;
   border: black solid 1px;
-  float: left;
 }
 #top_content{
   display: inline-block;
   margin-left: 80px;
-  height: 500px;
-  width: 500px;
+  height: 715px;
+  width: 646px;
+  background-color: darkgrey;
 }
 #genre{
-  height: 200px;
-  width:250px;
-  border: black solid 1px;
-  margin-left: 567px;
+  height: 500px;
+  width:600px;
+  margin-left: 800px;
+  background-color: black;
 }
  .carousel-inner > .item > img,
  .carousel-inner > .item > a > img {-
@@ -49,4 +50,16 @@
 #myCarousel.carousel.slide {
     height: 675px;
     width: 632px
+}
+.carousel-inner{
+  width: 71%;
+}
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
 }

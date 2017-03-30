@@ -1,4 +1,5 @@
 app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'UserFactory',function($scope,$routeParams,ShowFactory,UserFactory){
+
 	function currentUser(){
 		UserFactory.currentUser(function(data){
 			$scope.user = data;
@@ -35,6 +36,11 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 		console.log("controller", name)
 		ShowFactory.addFav(name);
 		getOneShow($routeParams.name);
+	}
+
+	$scope.activateNotification = function(name){
+		ShowFactory.activateNotification(name);
+		console.log(name+" show one controller");
 	}
 }])
 
