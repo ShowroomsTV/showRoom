@@ -5,7 +5,7 @@
     <a href="/logout" class="right" name="button">Logout</a>
 </div>
 <div class="wrapper">
-  <input type="text" name="searchShow" ng-model="filter_name">
+  <input type="text" id="search" ng-model="filter_name">
     <div class="">
       <h1 class="title">ShowRooms</h1>
           <h6 class="subtitle">Never miss a show with your friends</h6>
@@ -17,7 +17,7 @@
       </div>
       <dir-pagination-controls class="controls"></dir-pagination-controls>
     <div class="Shows">
-  	    <div class="grid_item" dir-paginate= "show in shows  | itemsPerPage: 24 | filter:filter_name">
+  	    <div class="grid_item" dir-paginate= "show in shows | filter:filter_name | itemsPerPage: 24">
   	       <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a>
   	     </div>
          <div class="bottomcontrols">
