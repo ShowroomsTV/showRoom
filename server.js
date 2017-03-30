@@ -32,26 +32,11 @@ var server= app.listen(6789, function(){
 	console.log("Server running")
 })
 var io = require('socket.io').listen(server);
-var users = [];
-
 
 io.on("connection", function(socket){
 	 console.log('a user connected');
     socket.on("chat message", function(data){
-      // if(is_user(data.user) === true) {
-    //     socket.emit("existing_user", {error: "This user already exits"})
-    //   // } else {
-    //     // users.push(data.user);
-    //     // socket.emit("load_messages", {})
-    //   }
-    // })
-
-    // socket.on("new_message", function(data){
-      // messages.push({name: data.user, message: data.message})
-      io.emit("chat message", data)
+      io.emit("chat message", {name:data.name, message:data.message})
     })
   })
 
-  app.get("/", function(request, response){
-    response.render("index")
-  })

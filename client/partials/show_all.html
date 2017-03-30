@@ -5,19 +5,23 @@
     <a href="/logout" class="right" name="button">Logout</a>
 </div>
 <div class="wrapper">
-  <div class="Left_Column">
-      <h1>Shows</h1>
-      <ul  class='dropdown_content'>
-          <li><a href="#!">All Shows</a></li>
-          <li><a href="#!">Favorites</a></li>
-          <li><a href="#!">Genre</a></li>
-      </ul>
-  </div>
-  <div class="Shows">
-    <dir-pagination-controls></dir-pagination-controls>
-	    <div class="grid_item" dir-paginate= "show in shows  | itemsPerPage: 5">
-	       <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a>
-	     </div>
-       <dir-pagination-controls></dir-pagination-controls>
+    <div class="">
+      <h1 class="title">ShowRooms</h1>
+          <h6 class="subtitle">Never miss a show with your friends</h6>
+    </div>
+      <div  class="container">
+          <a id="allshows" class="waves-effect waves-light btn">All Shows</a>
+          <a id="allshows" class="waves-effect waves-light btn">Favorites</a>
+          <a id="allshows" class="waves-effect waves-light btn">Genre</a>
+      </div>
+      <dir-pagination-controls class="controls"></dir-pagination-controls>
+    <div class="Shows">
+  	    <div class="grid_item" dir-paginate= "show in shows  | itemsPerPage: 24">
+  	       <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a>
+  	     </div>
+         <div class="bottomcontrols">
+           <dir-pagination-controls></dir-pagination-controls>
+         </div>
+
     </div>
 </div>
