@@ -1,23 +1,28 @@
 <div class="nav">
-    <a href="#!/" class="left" name="button">Home</a>
-    <a href="#!/login" class="right" name="button">Login</a>
-    <a href="#!/register" class="midright" name="button">Register</a>
+    <a href="#!/" class="left" name="button"><img class="logo" src="/images/IMG_0046.PNG"></a>
+    <a href="#!/register" id="midright" name="button">Register</a>
+    <a href="#!/login" id="right" name="button">Login</a>
 </div>
-<div class="form">
-    <form name="loginForm">
-        <label for=""> Email: </label>
-        <input type="email" ng-model="loginUser.email" name="email" required>
-        <label for="">Password: </label>
-        <input type="password" ng-model="loginUser.password" name="password" required minlength="8">
-          <input type="submit" ng-click="login(loginUser)" value="Login">
-    </form>
-    </form>
-</div>
-<div class="errors" ng-messages="loginForm.email.$error">
-	<p ng-message="required">Email is required.</p>
-	<p ng-message="email">Email must be valid.</p>
-</div>
-<div class="errors" ng-messages="loginForm.password.$error">
-	<p ng-message="required">Password is required.</p>
-	<p ng-message="minlength">Password mmust have at least 8 characters.</p>
+<div class="background">
+    <div class="form">
+        <div class="oneone">
+
+        </div>
+        <form name="loginForm">
+            <label for=""> Email: </label>
+            <input type="email" ng-model="loginUser.email" name="email" required>
+            <label for="">Password: </label>
+            <input type="password" ng-model="loginUser.password" name="password" required minlength="8">
+              <input type="submit" ng-click="login(loginUser)" value="Login">
+        </form>
+        </form>
+    </div>
+    <div class="errors" ng-messages="loginForm.email.$error">
+    	<p ng-message="required">Email is required.</p>
+    	<p ng-message="email">Email must be valid.</p>
+    </div>
+    <div class="errors" ng-messages="loginForm.password.$error">
+    	<p ng-message="required">Password is required.</p>
+    	<p ng-message="minlength">Password mmust have at least 8 characters.</p>
+    </div>
 </div>

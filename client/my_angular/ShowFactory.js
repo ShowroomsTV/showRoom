@@ -35,6 +35,10 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 		}, function(res){
 			console.log(res);
 		})
+<<<<<<< HEAD
 	}
+=======
+	};
+>>>>>>> 852c1e01c765385c453679de384de18b9bb9810a
 	return factory;
 }])

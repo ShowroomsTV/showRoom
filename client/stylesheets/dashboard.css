@@ -14,12 +14,8 @@
     display: inline-block;
 }
 /******** END OF TOP NAV BAR*********/
-*{
-  margin: 0px;
-  padding: 0px;
-}
 
-#container{
+#container_dashboard{
   width: 800px;
   background-color: beigh;
   margin: 0px auto;
@@ -28,14 +24,14 @@
 
 #left_content{
   display: inline-block;
-  width: 200px;
-  height: 520px;
+  width: 264px;
+  height: 727px;
   border: black solid 1px;
+  float: left;
 }
 #top_content{
   display: inline-block;
   margin-left: 80px;
-  border: black solid;
   height: 500px;
   width: 500px;
 }
@@ -50,3 +46,7 @@
   width: 50%;
   margin: auto;
   }
+#myCarousel.carousel.slide {
+    height: 675px;
+    width: 632px
+}
