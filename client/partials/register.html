@@ -1,38 +1,40 @@
 <div class="nav">
-    <a href="#!/" class="left" name="button">Home</a>
-    <a href="#!/login" class="right" name="button">Login</a>
-    <a href="#!/register" class="midright" name="button">Register</a>
+    <a href="#!/" class="left" name="button"><img src="/images/IMG_0046.PNG"></a>
+    <a href="#!/register" id="midright" name="button">Register</a>
+    <a href="#!/login" id="right" name="button">Login</a>
 </div>
-<div class="form">
-    <form name="registerForm">
-    	<label for="">Username: </label>
-        <input type="text" ng-model="newUser.name" name="name" required minlength="2">
-        <label for=""> Email: </label>
-        <input type="email" ng-model="newUser.email" name="email" required>
-        <label for="">Phone Number: </label>
-        <input type="tel" ng-model="newUser.phone" name="phone" required minlength="10">
-        <label for="">Password: </label>
-        <input type="password" ng-model="newUser.password" name="password" required minlength="8">
-        <label for="">Password Confirmation: </label>
-        <input type="password" ng-model="newUser.pass_conf" name="pass_conf" required minlength="8">
-        <input type="submit" ng-click="register(newUser)" value="Register">
-    </form>
+<div class="background">
+    <div class="form">
+        <form name="registerForm">
+        	<label for="">Username: </label>
+            <input type="text" ng-model="newUser.name" name="name" required minlength="2">
+            <label for=""> Email: </label>
+            <input type="email" ng-model="newUser.email" name="email" required>
+            <label for="">Phone Number: </label>
+            <input type="tel" ng-model="newUser.phone" name="phone" required minlength="10">
+            <label for="">Password: </label>
+            <input type="password" ng-model="newUser.password" name="password" required minlength="8">
+            <label for="">Password Confirmation: </label>
+            <input type="password" ng-model="newUser.pass_conf" name="pass_conf" required minlength="8">
+            <input type="submit" ng-click="register(newUser)" value="Register">
+        </form>
+    </div>
+    <div class="errors" ng-messages="registerForm.name.$error">
+    	<p ng-message="required">Username is required.</p>
+    	<p ng-message="minlength">Username must have at least 2 characters.</p>
+
+    </div>
+    <div class="errors" ng-messages="registerForm.email.$error">
+    	<p ng-message="required">Email is required.</p>
+    	<p ng-message="email">Email must be valid.</p>
+    </div>
+    <div class="errors" ng-messages="registerForm.phone.$error">
+    	<p ng-message="required">Phone is required.</p>
+    	<p ng-message="phone">Phone must be valid.</p>
+    </div>
+    <div class="errors" ng-messages="registerForm.password.$error">
+    	<p ng-message="required">Password is required.</p>
+    	<p ng-message="minlength">Password mmust have at least 8 characters.</p>
+    </div>
+    <p class="errors" ng-if="newUser.password != newUser.pass_conf">Passwords do not match.</p>
 </div>
-<div class="errors" ng-messages="registerForm.name.$error">
-	<p ng-message="required">Username is required.</p>
-	<p ng-message="minlength">Username must have at least 2 characters.</p>
-	
-</div>
-<div class="errors" ng-messages="registerForm.email.$error">
-	<p ng-message="required">Email is required.</p>
-	<p ng-message="email">Email must be valid.</p>
-</div>
-<div class="errors" ng-messages="registerForm.phone.$error">
-	<p ng-message="required">Phone is required.</p>
-	<p ng-message="phone">Phone must be valid.</p>
-</div>
-<div class="errors" ng-messages="registerForm.password.$error">
-	<p ng-message="required">Password is required.</p>
-	<p ng-message="minlength">Password mmust have at least 8 characters.</p>
-</div>
-<p class="errors" ng-if="newUser.password != newUser.pass_conf">Passwords do not match.</p>
