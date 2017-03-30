@@ -79,3 +79,55 @@
     text-align: center;
     margin-top: 35px;
 }
+#middlealert{
+    margin-left: 940px;
+    color: white;
+}
+#midrighter{
+    margin-left: 20px;
+    color: white;
+}
+#righter{
+    margin-left: 20px;
+    margin-top: 55px;
+    color: white;
+}
+.yellow{
+    display: inline-block;
+    background-color: yellow;
+    width: 30%;
+    height: 550px;
+    margin-left: 6%;
+    margin-right: 2%;
+    border-bottom: 5px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 10px;
+    border-top: 0px;
+    border-left: 0px;
+    padding: 5px;
+    vertical-align: top;
+}
+.blue{
+    display: inline-block;
+    background-color: yellow;
+    width: 53%;
+    height: 550px;
+    border-bottom: 5px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 10px;
+    border-top: 0px;
+    border-left: 0px;
+    padding: 5px;
+    vertical-align: top;
+}
+.space{
+    height: 30px;
+    width: 100%;
+    visibility: hidden;
+}
+.white{
+    background-color: white;
+    width: 60%;
+}

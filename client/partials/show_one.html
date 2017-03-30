@@ -27,7 +27,6 @@
     </div>
 <!-- =====Show Info===== -->
     <div class="showinfo">
-      <h2 class="card-title">{{show.name}}</h2>
       <h3><i class="material-icons">description</i> Description</h3>
       <span id="summary" style="display:none;">{{show.summary}}</span>
       <span id="show_summary"></span>
@@ -38,10 +37,10 @@
 <!-- ======USER COMMANDS========= -->
     <div class="Right_Column">
       <div class="user_commands">
-          <h2>{{user.name}}</h2>
+          <h2>{{show.name}}</h2>
           <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header"><i class="material-icons">account_box</i>My favorite shows</div>
+              <div class="collapsible-header"><i class="material-icons">thumb_up</i>My favorite shows</div>
               <div class="collapsible-body"><span>Edit Account</span></div>
               <div class="collapsible-body"><span>My Profile</span></div>
             </li>
@@ -83,9 +82,9 @@
               </ul>
             </ul>
       </div>
-    </div>
-  </div>
-</div>
+    </div> <!-- ========= end of user commands ==========  -->
+  </div><!-- ========= end of chat room ==========  -->
+</div>  <!-- ========= end of main content ==========  -->
 
 
 
@@ -97,8 +96,6 @@
       window.setTimeout(function() {
         console.log($("#summary").text());
         $("#show_summary").html($.parseHTML($('#summary').text()))
-      }, 1005)
+      }, 1004)
 
     })()
-
-</script>
