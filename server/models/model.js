@@ -7,7 +7,7 @@ var UserSchema = new mongoose.Schema({
 	email:{type:String, required: true, unique:true},
 	phone:{type:Number, required:true},
 	password:{type:String, required:true},
-	shows:[]
+	shows:[{}]
 },{timestamps:true});
 // register the schema as a model
 mongoose.model('User', UserSchema);

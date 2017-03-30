@@ -68,14 +68,13 @@ module.exports = {
       }
       else {
         var show = JSON.parse(data)
-        console.log("**********",show,'*************')
-        User.findOne({_id: req.session.user._id},function(err,user){
+        // console.log("**********",show,'*************')
+        User.findOne({_id: req.params.id},function(err,user){
           if(err){
             res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
           }else{
             // console.log("data",data);
-            
-            user.shows.push({show});
+            user.shows.push(show);
             user.save(function(err,update_user){
               if(err){
                 res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻");
@@ -87,6 +86,16 @@ module.exports = {
         })
       }
     })
-  }
+  },
+  getUser: function(req,res){
+    User.findOne({_id: req.session.user._id},function(err,user){
+      console.log("get User",user)
+      if(err){
+        res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
+      }else{
+        res.json(user);
+      }
+    })
+  },
 }
 
