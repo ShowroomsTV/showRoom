@@ -7,7 +7,7 @@ app.controller('chatRoomController',['$scope', '$routeParams','ShowFactory','Use
 	currentUser();
   $(document).ready(function() {
       var socket = io();
-      
+
       $('#new_message').submit(function(e){
         e.preventDefault();
         socket.emit('chat message', {message: $('#message').val(), name: $('#name').val()});
@@ -15,7 +15,7 @@ app.controller('chatRoomController',['$scope', '$routeParams','ShowFactory','Use
         return false;
       });
       socket.on('chat message', function(data){
-        var msg = "<p>"+ data.name + "says:" + data.message+".</p>";
+        var msg = "<p>"+ data.name + ": " + data.message+".</p>";
         $('#message_board').append(msg);
       });
     });
