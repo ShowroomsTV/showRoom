@@ -60,18 +60,22 @@ module.exports = {
     })
   },
   topShows: function(req,res){
-    tvmaze.showIndex(0, function(err, data){
-   if(err){
-      console.log(err)
-    }
-    else {
-      var show = JSON.parse(data)
-          res.json(show);
-             // if ( show[i]['rating']['average'] > 9) {
-             //    topShows.push(i);
-         
+    // console.log("response",res);
+    // tvmaze.showIndex(0, function(err, data){
+  //  if(err){
+      // console.log(err)
+    // }
+    // else {
+      // var show = JSON.parse(data)
+      // for(var i=0;i<show.length;i++){
+          // if( > 9){
+            // console.log(show.rating.average);
+            // res.json(show);
+            // console.log("Json data",show);
+        // }
+        // }
          // }
-    }
-  })
+    // }
+  // })
 }
 }

@@ -23,5 +23,17 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 			console.log(res)
 		})
 	}
+	factory.getShowByRating = function(callback){
+		console.log(callback);
+		$http({
+			url: '/showbyrating',
+			method: "GET"
+		}).then(function(res){
+			console.log(res)
+			callback(res.data)
+		}, function(res){
+			console.log(res)
+		})
+	}
 	return factory;
 }])
