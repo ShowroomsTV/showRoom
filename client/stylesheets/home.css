@@ -5,13 +5,14 @@
 
 #container{
   width: 950px;
+  width: 1000px;
   background-color: beigh;
   margin: 0px auto;
   padding-left: 15px;
 }
 #main_content{
-  width: 900px;
-  height: 800px;
+  width: 800px;
+  height: 600px;
   border: black solid 1px;
 }
 /*carousel*/
@@ -21,8 +22,14 @@
 
       margin: auto;
   }
-
 .carousel-caption {
   height: 900px;
   width: 800px;
+}
+#myCarousel{
+  height: 300px;
+}
+#carousel{
+  width: 200px;
+  height: 200px;
 }

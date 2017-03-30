@@ -60,6 +60,7 @@ module.exports = {
     })
   },
   topShows: function(req,res){
+<<<<<<< HEAD
     tvmaze.showIndex(0, function(err, data){
    if(err){
       console.log(err)
@@ -70,8 +71,28 @@ module.exports = {
              // if ( show[i]['rating']['average'] > 9) {
              //    topShows.push(i);
 
+=======
+    // console.log("response",res);
+    // tvmaze.showIndex(0, function(err, data){
+  //  if(err){
+      // console.log(err)
+    // }
+    // else {
+      // var show = JSON.parse(data)
+      // for(var i=0;i<show.length;i++){
+          // if( > 9){
+            // console.log(show.rating.average);
+            // res.json(show);
+            // console.log("Json data",show);
+        // }
+        // }
+>>>>>>> ba2dbe0abf00e8bbab891a5be425d90f40413ace
          // }
-    }
-  })
+    // }
+  // })
 }
 }
+<<<<<<< HEAD
+}
+=======
+>>>>>>> ba2dbe0abf00e8bbab891a5be425d90f40413ace
