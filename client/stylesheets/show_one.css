@@ -15,23 +15,45 @@
 .card{
   width: 30%;
   display: inline-block;
+
 }
 
 .showinfo{
   width: 30%;
-  background-color: grey;
+  background-color: #F4E3B2 ;
   display: inline-block;
   vertical-align: top;
   text-align: center;
+  border-style: solid;
+  border-color: #EC7357;
 }
 .Right_Column{
   width: 30%;
-  background-color: silver;
+  background-color: #EC7357;
   display: inline-block;
   vertical-align: top;
   text-align: center;
+  border-style: solid;
+  border-color: #CC2936;
+  padding-top: 10px;
 }
 .footer{
   text-align: center;
   vertical-align: bottom;
+}
+.ShowroomHeader{
+  color: white;
+  padding-top: 30px;
+}
+.show-content{
+  background-color: #FCD0A1;
+  border: #EC7357;
+}
+.showratings{
+  border-color: #CC2936  ;
+  border-style:hidden;
+}
+.card-action{
+  color: black;
+
 }
