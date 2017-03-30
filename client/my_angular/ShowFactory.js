@@ -28,17 +28,21 @@ app.factory('ShowFactory', ['$http', '$location', function($http,$location){
 		$http({
 			url:'/show/favorite',
 			method: 'POST',
-			data: {movie_name: name}
+			data: {show_name: name}
 		}).then(function(res){
 			console.log(res);
 			// $location.url('/');
 		}, function(res){
 			console.log(res);
 		})
-<<<<<<< HEAD
+
 	}
-=======
+
 	};
->>>>>>> 852c1e01c765385c453679de384de18b9bb9810a
+
 	return factory;
+
+	};
+
+
 }])
