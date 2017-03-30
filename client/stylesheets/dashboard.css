@@ -14,12 +14,8 @@
     display: inline-block;
 }
 /******** END OF TOP NAV BAR*********/
-*{
-  margin: 0px;
-  padding: 0px;
-}
 
-#container{
+#container_dashboard{
   width: 800px;
   background-color: beigh;
   margin: 0px auto;
