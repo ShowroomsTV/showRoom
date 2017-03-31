@@ -15,8 +15,8 @@ app.controller('chatRoomController',['$scope', '$routeParams','ShowFactory','Use
         return false;
       });
       socket.on('chat message', function(data){
-        var msg = "<p>"+ data.name + "says:" + data.message+".</p>";
+        var msg = "<p>"+ data.name + ": " + data.message+".</p>";
         $('#message_board').append(msg);
       });
-    }); 
+    });
 }])
