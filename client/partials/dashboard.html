@@ -23,11 +23,28 @@
 
 <!-- DIV DASHBOARD SHIT* *************************************** -->
 <div id="container_dashboard">
+  <h3>Welcome, {{user.name}}!</h3>
+
   <!-- MIDDLE CONTENTS***************************************************** -->
   <div id="middle_content">
-    <h3>Welcome, {{user.name}}!</h3>
-    <h1>Top Shows</h1>
+    <!-- MATERIALIZE CAROUSEL -->
+
+    <div class="carousel">
+      <a class="carousel-item" href=""><img src="http://img.kbhgames.com/2016/10/Real-Horror-Stories.jpg"></a>
+      <a class="carousel-item" href=""><img src="http://rs575.pbsrc.com/albums/ss191/basketofcandles/television/mash.jpg~c200"></a>
+      <a class="carousel-item" href=""><img src="http://cdn.newsserve.net/i/20160803/3231-Suits-Gets-Season-Renewal-From-USA-Network.jpg"></a>
+      <a class="carousel-item" href=""><img src="http://cdn-images.deezer.com/images/cover/e95c56161aec0e2da72183f11c2dc0dc/200x200-000000-80-0-0.jpg"></a>
+      <a class="carousel-item" href=""><img src="https://qph.ec.quoracdn.net/main-thumb-t-192217-200-abwrrdtvhnnaidpkxmoucrplsfooaxzh.jpeg"></a>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $('.carousel').carousel({dist:0});
+      window.setInterval(function(){$('.carousel').carousel('next')},1500)
+   });
+    </script>
+
     <div class="scroll">
+      <h1>Top Shows</h1>
     <div ng-repeat="show in shows" class="img_id">
       <div class="" ng-if="show.rating.average > 9 | limitTo:240">
         <img src="{{show.image.original}}" height="400px" width="400px"/>
