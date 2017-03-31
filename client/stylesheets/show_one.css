@@ -59,3 +59,15 @@
   color: black;
 
 }
+.middletext{
+    position: absolute;
+    top: -10px;
+}
+.aligndown{
+    position: absolute;
+    top: 60px;
+    left: 83%;
+}
+.Shows{
+    margin-left: 7%;
+}
