@@ -8,7 +8,7 @@ app.controller('showUserController',['$scope', '$routeParams','UserFactory','Sho
 	function getUser(id){
 		UserFactory.getUser(id,function(data){
 			$scope.user = data;
-			console.log(data)
+			// console.log(data)
 		});
 	}
 	getUser($routeParams.id);

@@ -1,16 +1,26 @@
-<!--***********Nav Bar*************-->
-<div class="nav">
-  <a href="#!/dashboard" class="dashboardLink" name="button">Dashboard</a>
-  <a href="#" class="alertLink"  name="button">Alert</a>
-  <a href="#!/user/{{user._id}}" class="myProfileLink"  name="button">My profile</a>
-  <a href="/logout" class="right" name="button">Logout</a>
-</div>
+<!-- *********NAV BAR********** -->
+<nav class="nav-extended" style="background-color: #4d0000;">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+        <li><a href="#!/logout">Logout</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+        <li><a href="#!/logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#!/show" style="font-size: 18pt; color: white;">All shows</a></li>
+        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">Favorites</a></li>
+      </ul>
+    </div>
+</nav>
   <!-- =====Main Content======= -->
 <div class="container">
-  <div class="ShowroomHeader">
-    <h6><img class="logo" src="/images/IMG_0046.PNG">Never miss a show with your friends</h6>
-  </div>
-
   <div class="Chat_Room">
   <!-- =====Show Picture======= -->
     <div class="card">
@@ -44,12 +54,23 @@
           <h2>{{show.name}}</h2>
           <ul class="collapsible" data-collapsible="accordion">
             <li> <!-- ======COLLAPSABLE LIST========= -->
-              <div class="collapsible-header"><p> &nbsp;&nbsp;  <a href="" ng-click="addFav(show.name)"><i class="material-icons">favorite</i></a> &nbsp;Add to Favorites </p>
-              <div class="collapsible-body"><span>Edit Account</span></div>
-              <div class="collapsible-body"><span>My Profile</span></div>
+              <div class="collapsible-header" >
+<!--**** Day testing add to favorites hearts ******** -->
+              <!-- 
+              <p ng-if="{{user_show.name}} =! {{show.name}}"  ng-show=""> -->
+                <a href="" ng-click="addFav(show.name)"><i class="material-icons">favorite_border</i></a> 
+     <!--       <i id="liked" class="material-icons" ng-class="{'favorite_border': addFav(show.name).liked, 'favorite': !addFav(show.name).liked}" ng-click="addFav(show.name).liked=!addFav(show.name).liked">favorite</i> -->
+<!-- </p>  -->
+<!-- <i id="like" ng-class="{'icon ion-ios7-heart': some_model.liked, 'icon ion-ios7-heart-outline': !some_model.liked}" ng-click="some_model.liked=!some_model.liked"></i> -->
+           <!--   <p ng-if=" user.shows.indexOf(show) < {{show.name}} ">
+                <a href="" ng-click="addFav(show.name)"><i id="added" class="material-icons">favorite</i> </a>&nbsp;Added to Favorites
+                </p> -->
+            </div>
+ <!--**** End of day testing add to favorites hea rts ******** -->             
+        
             </li>
             <li>
-              <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
+              <!-- <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
               <div class="collapsible-body">
                       <p>Here is where users look at profiles of other users with similar interests</p>
                       <ul>
@@ -66,7 +87,7 @@
                         <li>Chat Group</li>
                       </ul>
                     </ul>
-              </div>
+              </div> -->
             </li>
             <li>
               <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
@@ -83,12 +104,9 @@
               </div>
             </li>
           </ul>
-      </div>
-
-
-
-    </div> <!-- ========= end of user commands ==========  -->
-  </div><!-- ========= end of chat room ==========  -->
+      </div><!-- ========= end of user commands ==========  -->
+    </div> <!-- ========= end of chat room ==========  -->
+  </div>
 </div>  <!-- ========= end of main content ==========  -->
 
 
