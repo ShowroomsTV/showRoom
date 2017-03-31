@@ -39,6 +39,7 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 	}
 
 	$scope.activateNotification = function(name){
+		console.log("activateNotification triggered", new Date().getTime());
 		ShowFactory.activateNotification(name);
 		console.log(name+" show one controller");
 	}
