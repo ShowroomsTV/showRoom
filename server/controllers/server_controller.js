@@ -69,12 +69,12 @@ module.exports = {
       }
       else {
         var show = JSON.parse(data)
-        console.log("**********",show,'*************')
+        // console.log("**********",show,'*************')
         User.findOne({_id: req.session.user._id},function(err,user){
           if(err){
             res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
           }else{
-            console.log("user****",user);
+            // console.log("user****",user);
             user.shows.push(show);
             user.save(function(err,update_user){
               if(err){
@@ -89,8 +89,18 @@ module.exports = {
     })
   },
   getUser: function(req,res){
-    User.findOne({_id: req.session.user._id},function(err,user){
-      console.log("get User",user)
+    User.findOne({_id: req.params.id},function(err,user){
+      // console.log("get User",user)
+      if(err){
+        res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
+      }else{
+        res.json(user);
+      }
+    })
+  },
+    findByFav: function(req,res){
+    User.findOne({name: req.params.name},function(err,user){
+      // console.log("get User",user)
       if(err){
         res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
       }else{

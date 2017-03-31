@@ -44,11 +44,23 @@
           <h2>{{show.name}}</h2>
           <ul class="collapsible" data-collapsible="accordion">
             <li> <!-- ======COLLAPSABLE LIST========= -->
-              <div class="collapsible-header"><p> &nbsp;&nbsp;  <a href="" ng-click="addFav(show.name)"><i class="material-icons">favorite</i></a> &nbsp;Add to Favorites </p>
+              <div class="collapsible-header">
+<!--**** Day testing add to favorites hurts ******** -->
+              <div>
+              <!-- <p ng-if="{{show.name}} user.shows.indexOf(show) > -1" > -->
+                <a href="" ng-click="addFav(show.name)"><i id="add" class="material-icons" >favorite_border</i>
+                </a> &nbsp;Add to Favorites
+              </p>
+              <p  ng-if="user.shows.indexOf(show) <-1">
+                <i id="added" class="material-icons">favorite</i>&nbsp;Added to Favorites</p>
+              </div>
+ <!--**** End ofday testing add to favorites hurts ******** -->             
+              
               <div class="collapsible-body"><span>Edit Account</span></div>
               <div class="collapsible-body"><span>My Profile</span></div>
             </li>
             <li>
+<!--**** day testing display users ******** -->            
               <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
               <div class="collapsible-body">
                       <p>Here is where users look at profiles of other users with similar interests</p>
