@@ -34,6 +34,10 @@ app.config(function($routeProvider) {
       templateUrl: '/partials/chat_room.html',
       controller: 'chatRoomController'
     })
+    .when("/show/user/:id", {
+      templateUrl: "/partials/favorites.html",
+      controller: "showUserController"
+    })
     .otherwise({
       redirectTo: '/'
     });
