@@ -99,7 +99,7 @@ module.exports = {
     })
   },
     findByFav: function(req,res){
-    User.findOne({name: req.params.name},function(err,user){
+    User.shows.find({name: req.params.name},function(err,user){
       // console.log("get User",user)
       if(err){
         res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
