@@ -16,50 +16,65 @@
 /******** END OF TOP NAV BAR*********/
 
 #container_dashboard{
-  width: 800px;
-  margin: 0px auto;
-  padding-left: 15px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 5px;
+
+}
+#middle_content{
   display: inline-block;
+  height: 800px;
+  width: 100%;
+  background-color: black;
+  padding-top: 100px;
+}
+#middle_content > h3{
+  text-align: center;
+  color: #FAEBD7;
+}
+#middle_content > h1{
+  color: #FAEBD7;
 }
 
-#left_content{
-  background-color: white;
-  display: inline-block;
-  width: 264px;
-  height: 727px;
-  border: black solid 1px;
+.mySlides{
+  height: 50%;
+  width: 40%;
+  margin-left: 200px;
+  vertical-align: top;
 }
-#top_content{
-  display: inline-block;
-  margin-left: 80px;
-  height: 715px;
-  width: 646px;
-  background-color: darkgrey;
+#l_content{
+  height: 400px;
+  width: 400px;
+  background-color: transparent;
 }
-#genre{
+img.mySlides{
+  vertical-align: top;
+}
+.img_id{
+  display: inline-block;
+  vertical-align: top;
+}
+.scroll{
   height: 500px;
-  width:600px;
-  margin-left: 800px;
-  background-color: black;
+  width: 100%;
+  overflow: scroll;
+  white-space: nowrap;
+  overflow-y: hidden;
 }
- .carousel-inner > .item > img,
- .carousel-inner > .item > a > img {-
-  width: 50%;
-  margin: auto;
-  }
-#myCarousel.carousel.slide {
-    height: 675px;
-    width: 632px
+.scroll::-webkit-scrollbar {
+   width: 12px;
 }
-.carousel-inner{
-  width: 71%;
+
+.scroll::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.2);
+   border-radius: 10px;
 }
-#myProgress {
-    width: 100%;
-    background-color: grey;
+.scroll::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.2);
 }
-#myBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
+.scroll::-webkit-scrollbar-corner{
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.5);
 }
