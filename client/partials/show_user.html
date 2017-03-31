@@ -1,9 +1,25 @@
-<div class="nav">
-    <a href="#!/show" class="left" name="button"><img class="logo" src="/images/IMG_0046.PNG"></a>
-    <a href="#" id="middlealert" name="button">Alert</a>
-    <a href="#!/user/{{user._id}}" id="midrighter" name="button">My profile</a>
-    <a href="/logout" id="righter" name="button">Logout</a>
-</div>
+<!-- *********NAV BAR********** -->
+<nav class="nav-extended" style="background-color: #4d0000;">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+        <li><a href="#!/logout">Logout</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+        <li><a href="#!/logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#!/show" style="font-size: 18pt; color: white;">All shows</a></li>
+        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">Favorites</a></li>
+      </ul>
+    </div>
+</nav>
+<!-- *********NAV BAR********* -->
 <div class="space">
     
 </div>
