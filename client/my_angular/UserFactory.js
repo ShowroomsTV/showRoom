@@ -46,5 +46,16 @@ app.factory('UserFactory', ['$http', '$location', function($http,$location){
 			console.log(res)
 		})
 	}
+	factory.getUser = function(id,callback){
+		$http({
+			url: '/user/'+id,
+			method: "GET"
+		}).then(function(res){
+			console.log(res)
+			callback(res.data)
+		}, function(res){
+			console.log(res)
+		})
+	}
 	return factory;
 }])

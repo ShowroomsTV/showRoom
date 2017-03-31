@@ -1,5 +1,3 @@
-
-
 .wrapper{
   width: auto;
 }
@@ -14,8 +12,6 @@
   border-style:inset;
   border-color: #FCD0A1;
   border-width: 1px;
-
-
 }
 
 .title{
@@ -24,9 +20,6 @@
   margin: 0%;
   margin-left: 40%;
   padding-top: 2.5%;
-
-
-
 }
 .subtitle{
   color: white;
@@ -47,4 +40,9 @@
   border-width:5px;
   border-style:outset;
   border-color: #EC7357;
+}
+.search_bar{
+  color: white;
+  padding-left: 10px;
+  font-size: 15px;
 }

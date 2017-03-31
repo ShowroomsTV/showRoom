@@ -1,10 +1,24 @@
-<!--***********Nav Bar*************-->
-<div class="nav">
-  <a href="#!/dashboard" class="dashboardLink" name="button">Dashboard</a>
-  <a href="#" class="alertLink"  name="button">Alert</a>
-  <a href="#!/user/{{user._id}}" class="myProfileLink"  name="button">My profile</a>
-  <a href="/logout" class="right" name="button">Logout</a>
-</div>
+<!-- *********NAV BAR********** -->
+<nav class="nav-extended" style="background-color: #4d0000;">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+        <li><a href="#!/logout">Logout</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+        <li><a href="#!/logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#!/show" style="font-size: 18pt; color: white;">All shows</a></li>
+        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">Favorites</a></li>
+      </ul>
+    </div>
+</nav>
   <!-- =====Main Content======= -->
 <div class="container">
   <div class="Chat_Room">
@@ -14,39 +28,66 @@
         <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
         <!-- <span class="card-title">{{show.name}}</span> -->
       </div>
-      <div class="card-content">
-        <p><i class="material-icons">tv</i> &nbsp;&nbsp;  <a href="" ng-click="addFav(show.name)"><i class="material-icons">favorite</i></a> &nbsp;Add to Favorites </p>
-        <p>Rating: {{show.rating.average}}</p>
-        <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
-        <p>Premiered: {{show.premiered}}</p>
-        <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
-      </div>
       <div class="card-action">
         <p><a href="#!/show/{{show.id}}/chatroom">Chat about {{show.name}} <i class="material-icons">chat_bubble_outline</i></a></p>
       </div>
     </div>
-<!-- =====Show Info===== -->
+<!-- =====Show Description===== -->
     <div class="showinfo">
-      <h3><i class="material-icons">description</i> Description</h3>
+      <h3>About the Show</h3>
+      <div class="show-content"> <!-- =====Show Index===== -->
+        <ul class="showratings">
+          <li><p><i class="material-icons">tv</i></li>
+          <li><p>Rating: {{show.rating.average}}</p></li>
+          <li><p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p></li>
+          <li><p>Premiered: {{show.premiered}}</p></li>
+          <li><p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p></li>
+        </ul>
+      </div>
       <span id="summary" style="display:none;">{{show.summary}}</span>
       <span id="show_summary"></span>
-      <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
-      <p>Premiered: {{show.premiered}}</p>
-      <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
     </div>
-<!-- ======USER COMMANDS========= -->
+
+<!-- ======SHOW COMMANDS FOR USER========= -->
     <div class="Right_Column">
       <div class="user_commands">
           <h2>{{show.name}}</h2>
           <ul class="collapsible" data-collapsible="accordion">
-            <li>
-              <div class="collapsible-header"><i class="material-icons">thumb_up</i>My favorite shows</div>
-              <div class="collapsible-body"><span>Edit Account</span></div>
-              <div class="collapsible-body"><span>My Profile</span></div>
+            <li> <!-- ======COLLAPSABLE LIST========= -->
+              <div class="collapsible-header" >
+<!--**** Day testing add to favorites hearts ******** -->
+              <!-- 
+              <p ng-if="{{user_show.name}} =! {{show.name}}"  ng-show=""> -->
+                <a href="" ng-click="addFav(show.name)"><i class="material-icons">favorite_border</i></a> 
+     <!--       <i id="liked" class="material-icons" ng-class="{'favorite_border': addFav(show.name).liked, 'favorite': !addFav(show.name).liked}" ng-click="addFav(show.name).liked=!addFav(show.name).liked">favorite</i> -->
+<!-- </p>  -->
+<!-- <i id="like" ng-class="{'icon ion-ios7-heart': some_model.liked, 'icon ion-ios7-heart-outline': !some_model.liked}" ng-click="some_model.liked=!some_model.liked"></i> -->
+           <!--   <p ng-if=" user.shows.indexOf(show) < {{show.name}} ">
+                <a href="" ng-click="addFav(show.name)"><i id="added" class="material-icons">favorite</i> </a>&nbsp;Added to Favorites
+                </p> -->
+            </div>
+ <!--**** End of day testing add to favorites hea rts ******** -->             
+        
             </li>
             <li>
-              <div class="collapsible-header"><i class="material-icons">chat</i>Chat Rooms</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+              <!-- <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
+              <div class="collapsible-body">
+                      <p>Here is where users look at profiles of other users with similar interests</p>
+                      <ul>
+                  <h4><i class="material-icons">account_circle</i> Random User 1</h4>
+                      <ul>
+                        <li>Favorite shows</li>
+                          <p>Band of brothers</p>
+                        <li>Chat groups</li>
+                      </ul>
+                  <h4><i class="material-icons">account_circle</i>Random User 2</h4>
+                      <ul>
+                        <li>Favorite shows</li>
+                          <p>Martin</p>
+                        <li>Chat Group</li>
+                      </ul>
+                    </ul>
+              </div> -->
             </li>
             <li>
               <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
@@ -55,35 +96,17 @@
                   <form class="col s12">
                     <div class="row">
                        <label>Turn on Notifications</label>
-                       <div class="switch"><label>Off<input type="checkbox" checked><span class="lever"></span>On</label></div>
+                       <div class="switch"><label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label></div>
+                      <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
                     </div>
                  </form>
                 </span>
               </div>
             </li>
           </ul>
-      </div>
-  <!-- ========= People to Follow ==========  -->
-      <div class="People_to_follow">
-          <h2>Show Followers</h2>
-              <p>Here is where users look at profiles of other users with similar interests</p>
-              <ul>
-          <h4><i class="material-icons">account_circle</i> Random User 1</h4>
-              <ul>
-                <li>Favorite shows</li>
-                  <p>Band of brothers</p>
-                <li>Chat groups</li>
-              </ul>
-          <h4><i class="material-icons">account_circle</i>Random User 2</h4>
-              <ul>
-                <li>Favorite shows</li>
-                  <p>Martin</p>
-                <li>Chat Group</li>
-              </ul>
-            </ul>
-      </div>
-    </div> <!-- ========= end of user commands ==========  -->
-  </div><!-- ========= end of chat room ==========  -->
+      </div><!-- ========= end of user commands ==========  -->
+    </div> <!-- ========= end of chat room ==========  -->
+  </div>
 </div>  <!-- ========= end of main content ==========  -->
 
 

@@ -1,13 +1,29 @@
-<div class="nav">
-    <a href="#!/" class="left" name="button"><img class="logo" src="/images/IMG_0046.PNG"></a>
-    <a href="#!/register" id="midright" name="button">Register</a>
-    <a href="#!/login" id="right" name="button">Login</a>
-</div>
+<!-- *********NAV BAR********** -->
+<nav class="nav-extended" style="background-color: #4d0000; height: 97px;">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#!/login">Login</a></li>
+        <li><a href="#!/register">Register</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#!/login">Login</a></li>
+        <li><a href="#!/register">Register</a></li>
+      </ul>
+    </div>
+</nav>
+<!-- **********END NAV********** -->
+
 <title>Home</title>
 <div id="home_container">
+
     <img src="/images/SocialTV1.jpg" id="photo">
-    <h2 id="name">ShowRooms</h2>
+    <div >
+  		<h2 id="name" class="shake-slow shake-constant shake-constant--hover">ShowRooms</h2>
+	</div>
     <h4 id="info">Never miss a show with your friends</h4>
     <h4 id="info2"><span class="glyphicon glyphicon-phone"></span> Get text notifications on when your favorite shows start! </h4>
     <h4 id="info3"><span class="glyphicon glyphicon-comment"></span> Live chat with other fans in show chat rooms! </h4>
 </div>
+

@@ -16,50 +16,69 @@
 /******** END OF TOP NAV BAR*********/
 
 #container_dashboard{
-  width: 800px;
-  margin: 0px auto;
-  padding-left: 15px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 5px;
+}
+#container_dashboard > h3{
+  color: #FAEBD7;
+  text-align: center;
+}
+#middle_content{
   display: inline-block;
+  height: 1000px;
+  width: 100%;
+  background-color: black;
+  padding-top: 50px;
+}
+#middle_content > h1{
+  color: #FAEBD7;
+}
+.carousel > h2{
+  text-align: center;
+}
+.mySlides{
+  height: 50%;
+  width: 40%;
+  margin-left: 200px;
+  vertical-align: top;
+}
+#l_content{
+  height: 400px;
+  width: 400px;
+  background-color: transparent;
+}
+img.mySlides{
+  vertical-align: top;
+}
+.img_id{
+  display: inline-block;
+  vertical-align: top;
+}
+.scroll{
+  height: 500px;
+  width: 100%;
+  overflow: scroll;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+.scroll > h1{
+  color: #FAEBD7;
+}
+.scroll::-webkit-scrollbar {
+   width: 12px;
 }
 
-#left_content{
-  background-color: white;
-  display: inline-block;
-  width: 264px;
-  height: 727px;
-  border: black solid 1px;
+.scroll::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.2);
+   border-radius: 10px;
 }
-#top_content{
-  display: inline-block;
-  margin-left: 80px;
-  height: 715px;
-  width: 646px;
-  background-color: darkgrey;
+.scroll::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.2);
 }
-#genre{
-  height: 500px;
-  width:600px;
-  margin-left: 800px;
-  background-color: black;
-}
- .carousel-inner > .item > img,
- .carousel-inner > .item > a > img {-
-  width: 50%;
-  margin: auto;
-  }
-#myCarousel.carousel.slide {
-    height: 675px;
-    width: 632px
-}
-.carousel-inner{
-  width: 71%;
-}
-#myProgress {
-    width: 100%;
-    background-color: grey;
-}
-#myBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
+.scroll::-webkit-scrollbar-corner{
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.5);
 }
