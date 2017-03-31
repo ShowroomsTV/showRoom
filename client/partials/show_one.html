@@ -1,0 +1,125 @@
+<!-- *********NAV BAR********** -->
+<nav class="nav-extended" style="background-color: #4d0000;">
+    <div class="nav-wrapper">
+      <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+         <div class="aligndown">
+            <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+            <li><a href="#!/logout">Logout</a></li>
+        </div>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="">My Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#!/show" style="font-size: 18pt; color: white;">All shows</a></li>
+        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">Favorites</a></li>
+      </ul>
+    </div>
+</nav>
+  <!-- =====Main Content======= -->
+  <div class="moverleft">
+    <div class="container">
+      <div class="Chat_Room">
+      <!-- =====Show Picture======= -->
+        <div class="card">
+          <div class="card-image">
+            <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
+            <!-- <span class="card-title">{{show.name}}</span> -->
+          </div>
+          <div class="card-action">
+            <p><a href="#!/show/{{show.id}}/chatroom">Chat about {{show.name}} <i class="material-icons">chat_bubble_outline</i></a></p>
+          </div>
+        </div>
+    <!-- =====Show Description===== -->
+        <div class="showinfo">
+          <h3>About the Show</h3>
+          <div class="show-content"> <!-- =====Show Index===== -->
+            <ul class="showratings">
+              <li><p><i class="material-icons">tv</i></li>
+              <li><p>Rating: {{show.rating.average}}</p></li>
+              <li><p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p></li>
+              <li><p>Premiered: {{show.premiered}}</p></li>
+              <li><p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p></li>
+            </ul>
+          </div>
+          <span id="summary" style="display:none;">{{show.summary}}</span>
+          <span id="show_summary"></span>
+        </div>
+<!-- ======SHOW COMMANDS FOR USER========= -->
+    <div class="Right_Column">
+      <div class="user_commands">
+          <h2>{{show.name}}</h2>
+          <ul class="collapsible" data-collapsible="accordion">
+            <li> <!-- ======COLLAPSABLE LIST========= -->
+              <div class="collapsible-header" >
+<!--**** Day testing add to favorites hearts ******** -->
+               <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
+
+                <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
+                <!-- </p> -->
+              </div>
+ <!--**** End of day testing add to favorites hea rts ******** -->
+
+            </li>
+
+            <li>
+              <!-- <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
+              <div class="collapsible-body">
+                      <p>Here is where users look at profiles of other users with similar interests</p>
+                      <ul>
+                  <h4><i class="material-icons">account_circle</i> Random User 1</h4>
+                      <ul>
+                        <li>Favorite shows</li>
+                          <p>Band of brothers</p>
+                        <li>Chat groups</li>
+                      </ul>
+                  <h4><i class="material-icons">account_circle</i>Random User 2</h4>
+                      <ul>
+                        <li>Favorite shows</li>
+                          <p>Martin</p>
+                        <li>Chat Group</li>
+                      </ul>
+                    </ul>
+              </div> -->
+            </li>
+
+            <li>
+              <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
+              <div class="collapsible-body">
+                <span>
+                  <form class="col s12">
+                    <div class="row">
+                       <label>Turn on Notifications</label>
+                       <div class="switch"><label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label></div>
+                      <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
+                    </div>
+                 </form>
+                </span>
+              </div>
+            </li>
+          </ul>
+      </div><!-- ========= end of user commands ==========  -->
+      </div>
+    </div> <!-- ========= end of chat room ==========  -->
+
+    </div>
+
+</div>  <!-- ========= end of main content ==========  -->
+
+
+<!-- collapsible icons -->
+<script type="text/javascript">
+    (function(){
+      $('.collapsible').collapsible();
+      window.setTimeout(function() {
+        console.log($("#summary").text());
+        $("#show_summary").html($.parseHTML($('#summary').text()))
+      }, 1004)
+
+    })()

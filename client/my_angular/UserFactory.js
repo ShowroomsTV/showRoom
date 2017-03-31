@@ -1,6 +1,7 @@
 app.factory('UserFactory', ['$http', '$location', function($http,$location){
 	var factory = {};
 	factory.register = function(user){
+		console.log("factory",user);
 		$http({
 			url: '/register',
 			method: "POST",
@@ -16,8 +17,10 @@ app.factory('UserFactory', ['$http', '$location', function($http,$location){
 			url: '/current',
 			method: "GET"
 		}).then(function(res){
+			console.log(res)
 			callback(res.data)
 		}, function(res){
+			console.log(res)
 			$location.url('/')
 		})
 	}
@@ -43,4 +46,16 @@ app.factory('UserFactory', ['$http', '$location', function($http,$location){
 			console.log(res)
 		})
 	}
-}
+	factory.getUser = function(id,callback){
+		$http({
+			url: '/user/'+id,
+			method: "GET"
+		}).then(function(res){
+			console.log(res)
+			callback(res.data)
+		}, function(res){
+			console.log(res)
+		})
+	}
+	return factory;
+}])

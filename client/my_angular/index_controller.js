@@ -1,13 +1,9 @@
-
 app.controller('indexController',['$scope', '$routeParams','UserFactory', function($scope,$routeParams,UserFactory){
 	$scope.register = function(user){
-		TopicFactory.register(user);
+		console.log("controller",user);
+		UserFactory.register(user);
 	}
 	$scope.login = function(user){
-		TopicFactory.login(user);
-	}
-	
-	$scope.logout = function(user){
-		TopicFactory.logout(user);
+		UserFactory.login(user);
 	}
 }])

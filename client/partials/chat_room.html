@@ -1,0 +1,29 @@
+<div class="nav">
+    <a href="#!/dashboard" class="left" name="button"><img class="logo" src="/images/IMG_0046.PNG"></a>
+    <a href="#" id="middlealert" name="button">Alert</a>
+    <a href="#!/user/{{user._id}}" id="midrighter" name="button">My profile</a>
+    <a href="/logout" id="righter" name="button">Logout</a>
+</div>
+ <div id="container">
+  <div id="display"></div>
+    <div id="error"></div>
+    <h3 id="whitecolor">Conversation Board</h3>
+    <div class="white">
+        <div class="inner">
+            <ul id="message_board"></ul>
+        </div>
+    </div>
+    <form id="new_message">
+      <!-- <input type="hidden" name="username" value={{user.name}}> -->
+      <input type="text" id="message" placeholder="enter your message here">
+      <input type="hidden" id="name" value="{{user.name}}" ">
+      <input type="submit" value="Send">
+    </form>
+  </div>
+
+<!-- body>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+  </body> -->

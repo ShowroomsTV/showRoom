@@ -1,24 +1,28 @@
-var app = angular.module('app', ['ngRoute', 'ngMessages']);
+var app = angular.module('app', ['ngRoute', 'ngMessages','angularUtils.directives.dirPagination','angular-loading-bar']);
 /* configuration for angular route */
 app.config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '/partials/login.html',
-      controller: 'indexController'
+      templateUrl: '/partials/home.html',
+      controller: 'showAllController'
     })
     .when('/register', {
       templateUrl: '/partials/register.html',
       controller: 'indexController'
     })
-     .when('/dashboard', {
+    .when('/login', {
+      templateUrl: '/partials/login.html',
+      controller: 'indexController'
+    })
+    .when('/dashboard', {
       templateUrl: '/partials/dashboard.html',
       controller: 'dashboardController'
     })
-      .when('/show/:id', {
+    .when('/show/:name', {
       templateUrl: '/partials/show_one.html',
       controller: 'showOneController'
     })
-       .when('/show', {
+    .when('/show', {
       templateUrl: '/partials/show_all.html',
       controller: 'showAllController'
     })
@@ -29,6 +33,10 @@ app.config(function($routeProvider) {
     .when('/show/:id/chatroom', {
       templateUrl: '/partials/chat_room.html',
       controller: 'chatRoomController'
+    })
+    .when("/show/user/:id", {
+      templateUrl: "/partials/favorites.html",
+      controller: "showUserController"
     })
     .otherwise({
       redirectTo: '/'

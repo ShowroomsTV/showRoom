@@ -1,0 +1,98 @@
+<nav class="nav-extended" style="background-color: #4d0000;">
+    <div class="nav-wrapper">
+      <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+         <div class="aligndown">
+            <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+            <li><a href="#!/logout">Logout</a></li>
+        </div>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="">My Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#!/show" style="font-size: 18pt; color: white;">All shows</a></li>
+        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">Favorites</a></li>
+      </ul>
+    </div>
+</nav>
+<div class="homepage-banner">
+  <div class="animation-container">
+    <div class="mask"></div>
+    <video autoplay loop class="fillScreen" poster="URL_PATH_TO_JPEG">
+      <source src="/images/coming-soon/zti2fc1z79.mp4" type="video/mp4" />
+      <source src="URL_PATH_TO_WEBM" type="video/webm" />Please upgrade your browser, it does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+
+scaleAnimationContainer();
+
+initBannerAnimationSize('.animation-container .animation img');
+initBannerAnimationSize('.animation-container .mask');
+initBannerAnimationSize('.animation-container video');
+
+$(window).on('resize', function() {
+    scaleAnimationContainer();
+    scaleBannerAnimationSize('.animation-container .animation img');
+    scaleBannerAnimationSize('.animation-container .mask');
+    scaleBannerAnimationSize('.animation-container video');
+});
+
+});
+
+function scaleAnimationContainer() {
+
+var height = $(window).height() + 5;
+var unitHeight = parseInt(height) + 'px';
+$('.homepage-banner').css('height',unitHeight);
+
+}
+
+function initBannerAnimationSize(element){
+
+$(element).each(function(){
+    $(this).data('height', $(this).height());
+    $(this).data('width', $(this).width());
+});
+
+scaleBannerAnimationSize(element);
+
+}
+
+function scaleBannerAnimationSize(element){
+
+var windowWidth = $(window).width(),
+windowHeight = $(window).height() + 5,
+animationWidth,
+animationHeight;
+
+console.log(windowHeight);
+
+$(element).each(function(){
+    var animationAspectRatio = $(this).data('height')/$(this).data('width');
+
+    $(this).width(windowWidth);
+
+    if(windowWidth < 1000){
+        animationHeight = windowHeight;
+        animationWidth = animationHeight / animationAspectRatio;
+        $(this).css({'margin-top' : 0, 'margin-left' : -(animationWidth - windowWidth) / 2 + 'px'});
+
+        $(this).width(animationWidth).height(animationHeight);
+    }
+
+    $('.homepage-banner .animation-container video').addClass('fadeIn animated');
+
+});
+}
+
+</script>
