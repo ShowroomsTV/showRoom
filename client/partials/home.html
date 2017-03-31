@@ -1,11 +1,13 @@
 <!-- *********NAV BAR********** -->
-<nav class="nav-extended" style="background-color: #4d0000; height: 97px;">
+<nav class="nav-extended" style="background-color: #4d0000; height: 83px;">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 0px;"></a></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#!/login">Login</a></li>
-        <li><a href="#!/register">Register</a></li>
+        <div class="fixingspacing">
+            <li><a href="#!/login">Login</a></li>
+            <li><a href="#!/register">Register</a></li>
+        </div>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="#!/login">Login</a></li>
@@ -17,13 +19,13 @@
 
 <title>Home</title>
 <div id="home_container">
-
     <img src="/images/SocialTV1.jpg" id="photo">
-    <div >
-  		<h2 id="name" class="shake-slow shake-constant shake-constant--hover">ShowRooms</h2>
-	</div>
-    <h4 id="info">Never miss a show with your friends</h4>
-    <h4 id="info2"><span class="glyphicon glyphicon-phone"></span> Get text notifications on when your favorite shows start! </h4>
-    <h4 id="info3"><span class="glyphicon glyphicon-comment"></span> Live chat with other fans in show chat rooms! </h4>
+    <div class="hometext">
+        <div >
+      		<h2 id="name" class="shake-slow shake-constant shake-freeze">ShowRooms</h2>
+    	</div>
+        <h4 id="info">Never miss a show with your friends</h4>
+        <h4 id="info2"><span class="glyphicon glyphicon-phone"></span> Get text notifications on when your favorite shows start! </h4>
+        <h4 id="info3"><span class="glyphicon glyphicon-comment"></span> Live chat with other fans in show chat rooms! </h4>
+    </div>
 </div>
-

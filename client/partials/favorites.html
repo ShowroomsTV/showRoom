@@ -22,12 +22,16 @@
 <!-- **********END NAV********* -->
 <div class="wrapper">
   <input type="text" id="search" ng-model="filter_name" placeholder="Search by title or genre..." style="color: white;padding-left: 10px;">
+
     <div class="">
       <h1 class="title">ShowRooms</h1>
           <h6 class="subtitle">Never miss a show with your friends</h6>
     </div>
     <h3>Your Favorite shows</h3>
       <!-- <dir-pagination-controls class="controls"></dir-pagination-controls> -->
+
+      <dir-pagination-controls class="controls"></dir-pagination-controls>
+
     <div class="Shows">
   	    <div class="grid_item" dir-paginate= "show in user.shows | filter:filter_name | itemsPerPage: 21">
   	       <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a>

@@ -30,6 +30,7 @@
             <input type="submit" ng-click="register(newUser)" value="Register">
         </form>
     </div>
+    <div class="allerrors">
     <div class="errors" ng-messages="registerForm.name.$error">
     	<p ng-message="required">Username is required.</p>
     	<p ng-message="minlength">Username must have at least 2 characters.</p>
@@ -48,4 +49,5 @@
     	<p ng-message="minlength">Password mmust have at least 8 characters.</p>
     </div>
     <p class="errors" ng-if="newUser.password != newUser.pass_conf">Passwords do not match.</p>
+    </div>
 </div>
