@@ -55,9 +55,29 @@ module.exports = {
         res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
       }
       else {
+        User.findOne({_id: req.session.user._id}, function(err, currentUser){
+          var liked = false;
+          if(err) {
+            console.log(err);
+          } else {
+            // console.log("in the else currentuser", currentUser)
+            for(var i = 0; i < currentUser.shows.length; i++) {
+              if(currentUser.shows[i].name == req.params.name) {
+                liked = true;
+              }
+            }
+
+            var show = JSON.parse(data)
+            show["liked"] = liked
+            res.json(show)
+          }
+        })
         // var stringify = JSON.stringify(data)
-        var show = JSON.parse(data)
-        res.json(show);
+        // var show = JSON.parse(data)
+
+        // console.log(req.params);
+        // // console.log(show);
+        // res.json(show);
       }
     })
   },
@@ -88,6 +108,41 @@ module.exports = {
       }
     })
   },
+    removeFav: function(req,res){
+    // console.log(req.body)
+    tvmaze.singleShow(req.body.movie_name, {single : true }, function(err, data ){ 
+      if(err){
+        res.status(400).send("Show not found (╯°□°)╯︵ ┻━┻")
+      }
+      else {
+        var show = JSON.parse(data)
+        // console.log("**********",show,'*************')
+        User.findOne({_id: req.session.user._id},function(err,user){
+          if(err){
+            res.status(400).send("User not found (╯°□°)╯︵ ┻━┻")
+          }else{
+            // console.log("user****",user);
+            // var show_indexes =[]
+            for(var i = 0; i < user.shows.length; i++){
+              if(user.shows[i].name == show.name){
+                user.shows[i] = user.shows[user.shows.length - 1]
+                user.shows.pop();
+              }
+            }
+            // user.update({$pull:{shows: {$elemMatch:{name:show.name}}}}, { multi: true })
+            user.save(function(err,update_user){
+              if(err){
+                res.status(400).send("Show not removed (╯°□°)╯︵ ┻━┻");
+              }else{
+                res.sendStatus(200);
+              }
+            })
+          }
+        })
+      }
+    })
+  },
+
   getUser: function(req,res){
     User.findOne({_id: req.params.id},function(err,user){
       // console.log("get User",user)

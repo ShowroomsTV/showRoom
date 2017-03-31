@@ -35,8 +35,13 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 
 	$scope.addFav = function(name){
 		// console.log("controller", name)
-		ShowFactory.addFav(name);
-		getOneShow($routeParams.name);
+		ShowFactory.addFav(name, getOneShow, $routeParams.name);
+		// getOneShow($routeParams.name);
+	}
+		$scope.removeFav = function(name){
+		// console.log("controller", name)
+		ShowFactory.removeFav(name, getOneShow, $routeParams.name);
+		// getOneShow($routeParams.name);
 	}
 
 	$scope.activateNotification = function(name){

@@ -4,12 +4,12 @@
       <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
-        <li><a href="#!/logout">Logout</a></li>
+        <li><a href="">My Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
-        <li><a href="#!/logout">Logout</a></li>
+        <li><a href="">My Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
     <div class="nav-content">
@@ -56,19 +56,15 @@
             <li> <!-- ======COLLAPSABLE LIST========= -->
               <div class="collapsible-header" >
 <!--**** Day testing add to favorites hearts ******** -->
-              <!-- 
-              <p ng-if="{{user_show.name}} =! {{show.name}}"  ng-show=""> -->
-                <a href="" ng-click="addFav(show.name)"><i class="material-icons">favorite_border</i></a> 
-     <!--       <i id="liked" class="material-icons" ng-class="{'favorite_border': addFav(show.name).liked, 'favorite': !addFav(show.name).liked}" ng-click="addFav(show.name).liked=!addFav(show.name).liked">favorite</i> -->
-<!-- </p>  -->
-<!-- <i id="like" ng-class="{'icon ion-ios7-heart': some_model.liked, 'icon ion-ios7-heart-outline': !some_model.liked}" ng-click="some_model.liked=!some_model.liked"></i> -->
-           <!--   <p ng-if=" user.shows.indexOf(show) < {{show.name}} ">
-                <a href="" ng-click="addFav(show.name)"><i id="added" class="material-icons">favorite</i> </a>&nbsp;Added to Favorites
-                </p> -->
-            </div>
+               <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
+
+                <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
+                <!-- </p> -->
+              </div>
  <!--**** End of day testing add to favorites hea rts ******** -->             
         
             </li>
+
             <li>
               <!-- <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
               <div class="collapsible-body">
@@ -89,6 +85,7 @@
                     </ul>
               </div> -->
             </li>
+
             <li>
               <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
               <div class="collapsible-body">
