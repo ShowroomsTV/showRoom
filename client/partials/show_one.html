@@ -4,13 +4,15 @@
       <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+
          <div class="aligndown">
+            <li><a href="#!/user/{{user._id}}">My Profile</a></li>
             <li><a href="#!/logout">Logout</a></li>
         </div>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
-        <li><a href="#!/logout">Logout</a></li>
+        <li><a href="">My Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
     <div class="nav-content">
@@ -48,6 +50,7 @@
           </div>
           <span id="summary" style="display:none;">{{show.summary}}</span>
           <span id="show_summary"></span>
+<<<<<<< HEAD
 
 <!-- ======SHOW COMMANDS FOR USER========= -->
     <div class="Right_Column">
@@ -128,6 +131,69 @@ $('input').dateDropper();
 </script>
 </body>
 </html>
+=======
+        </div>
+<!-- ======SHOW COMMANDS FOR USER========= -->
+    <div class="Right_Column">
+      <div class="user_commands">
+          <h2>{{show.name}}</h2>
+          <ul class="collapsible" data-collapsible="accordion">
+            <li> <!-- ======COLLAPSABLE LIST========= -->
+              <div class="collapsible-header" >
+<!--**** Day testing add to favorites hearts ******** -->
+               <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
+
+                <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
+                <!-- </p> -->
+              </div>
+ <!--**** End of day testing add to favorites hea rts ******** -->
+
+            </li>
+
+            <li>
+              <!-- <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
+              <div class="collapsible-body">
+                      <p>Here is where users look at profiles of other users with similar interests</p>
+                      <ul>
+                  <h4><i class="material-icons">account_circle</i> Random User 1</h4>
+                      <ul>
+                        <li>Favorite shows</li>
+                          <p>Band of brothers</p>
+                        <li>Chat groups</li>
+                      </ul>
+                  <h4><i class="material-icons">account_circle</i>Random User 2</h4>
+                      <ul>
+                        <li>Favorite shows</li>
+                          <p>Martin</p>
+                        <li>Chat Group</li>
+                      </ul>
+                    </ul>
+              </div> -->
+            </li>
+
+            <li>
+              <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
+              <div class="collapsible-body">
+                <span>
+                  <form class="col s12">
+                    <div class="row">
+                       <label>Turn on Notifications</label>
+                       <div class="switch"><label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label></div>
+                      <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
+                    </div>
+                 </form>
+                </span>
+              </div>
+            </li>
+          </ul>
+      </div><!-- ========= end of user commands ==========  -->
+      </div>
+    </div> <!-- ========= end of chat room ==========  -->
+
+    </div>
+
+</div>  <!-- ========= end of main content ==========  -->
+
 
 
 <!-- collapsible icons -->

@@ -1,33 +1,40 @@
 <!-- *********NAV BAR********** -->
-<nav class="nav-extended" style="background-color: #4d0000;">
+<nav class="nav-extended" style="background-color: #4d0000; height: 100px;">
     <div class="nav-wrapper">
       <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#!/logout">Logout</a></li>
+        <li><a class="myProfile" href="#!/user/{{user._id}}">My Profile</a></li>
+        <li><a class="myProfile" href="#!/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
+<<<<<<< HEAD
+        <li><a class="myProfile" href="#!/user/{{user._id}}">My Profile</a></li>
+        <li><a class="myProfile"  href="/logout">Logout</a></li>
+=======
         <li><a href="#!/user/{{user._id}}"> My Favorties</a></li>
         <li><a href="#!/logout">Logout</a></li>
+>>>>>>> e71fd99d312a5a600df4aeb8427ee6b51f96dc09
       </ul>
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="#!/show" style="font-size: 18pt; color: white;">All shows</a></li>
-        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">Favorites</a></li>
+        <li class="tab"><a class="active" href="#!/show" style="font-size: 16pt; color: white;">All shows</a></li>
+        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 16pt; color: white;">Favorites</a></li>
       </ul>
     </div>
 </nav>
+
 <!-- *********NAV BAR********** -->
 
 <!-- DIV DASHBOARD SHIT* *************************************** -->
 <div id="container_dashboard">
-  <h3>Welcome, {{user.name}}!</h3>
+ 
 
   <!-- MIDDLE CONTENTS***************************************************** -->
   <div id="middle_content">
     <!-- MATERIALIZE CAROUSEL -->
-
+     <h5 class="welcome_user">Welcome, {{user.name}}!</h5>
     <div class="carousel">
       <a class="carousel-item" href=""><img src="http://img.kbhgames.com/2016/10/Real-Horror-Stories.jpg"></a>
       <a class="carousel-item" href=""><img src="http://rs575.pbsrc.com/albums/ss191/basketofcandles/television/mash.jpg~c200"></a>

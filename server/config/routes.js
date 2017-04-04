@@ -10,6 +10,7 @@ module.exports = function(app){
 	app.get('/allShows', serverController.allShows);
 	app.get('/oneShow/:name', serverController.oneShow);
 
+	app.post('/show/favorite/remove', serverController.removeFav);
 	app.post('/show/favorite', serverController.addFavorite);
 
 
