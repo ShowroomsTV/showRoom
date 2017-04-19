@@ -1,16 +1,16 @@
 <!-- *********NAV BAR********** -->
 <nav class="nav-extended" style="background-color: #4d0000;">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="">My Profile</a></li>
+        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li style="font-size: 18pt;"><a href="">My Profile</a></li>
+   <!--    <ul class="side-nav" id="mobile-demo">
+        <li style="font-size: 18pt;"><a href="#!/user/{{user._id}}">My Profile</a></li>
         <li><a style="font-size: 18pt;" href="/logout">Logout</a></li>
-      </ul>
+      </ul> -->
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
@@ -23,10 +23,6 @@
 <div class="wrapper">
   <input type="text" id="search" ng-model="filter_name" placeholder="Search by title or genre..." style="color: white;padding-left: 10px;">
 
-    <div class="">
-      <h1 class="title">ShowRooms</h1>
-          <h6 class="subtitle">Never miss a show with your friends</h6>
-    </div>
     <h3>Your Favorite shows</h3>
       <!-- <dir-pagination-controls class="controls"></dir-pagination-controls> -->
 

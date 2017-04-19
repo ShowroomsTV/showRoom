@@ -6,23 +6,30 @@ var twilio = require("twilio")("ACd35c7f94b47c85c402062d4aa60d27dc","ad1281c7ff0
 
 module.exports = {
   register: function(req,res){
-    var user = new User(req.body);
-    user.save(function(err,data){
-      if(err){
-        res.status(400).send("User did not save (╯°□°)╯︵ ┻━┻")
-      }else{
-        req.session.user = data;
-        res.status(200).send('ヾ(⌐■_■)ノ♪');
-      }
-    })
+    var salt = bcrypt.genSaltSync(10);
+    if(req.body.password == req.body.pass_conf){
+      var hash = bcrypt.hashSync(req.body.password, salt);
+      var user = new User({name: req.body.name, email:req.body.email,phone:req.body.phone, password: hash});
+      user.save(function(err,data){
+        if(err){
+          res.status(400).send("User did not save (╯°□°)╯︵ ┻━┻")
+        }else{
+          req.session.user = data;
+          res.status(200).send('ヾ(⌐■_■)ノ♪');
+        }
+      })
+    }
   },
   login: function(req,res){
-    User.findOne({email:req.body.email}, function(err,data){
-      if(data == null){
+    User.findOne({email:req.body.email}, function(err,user){
+      if(err){
+        // console.log(err);
         res.status(400).send("User not found (╯°□°)╯︵ ┻━┻");
       }else{
-        req.session.user = data;
+        if(bcrypt.compareSync(req.body.password, user.password)){
+        req.session.user = user;
         res.sendStatus(200);
+        }
       }
     })
   },

@@ -1,17 +1,17 @@
 <!-- *********NAV BAR********** -->
 <nav class="nav-extended" style="background-color: #4d0000;">
     <div class="nav-wrapper">
-      <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a></a>
+      <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
-        <li><a href="/logout">Logout</a></li>
+         <div class="aligndown">
+            <li><a href="#!/user/{{user._id}}">My Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </div>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-
         <li><a href="#!/user/{{user._id}}">My Profile</a></li>
         <li><a href="/logout">Logout</a></li>
-
       </ul>
     </div>
     <div class="nav-content">
@@ -63,8 +63,8 @@
                 <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
                 <!-- </p> -->
               </div>
- <!--**** End of day testing add to favorites hea rts ******** -->             
-        
+ <!--**** End of day testing add to favorites hea rts ******** -->
+
             </li>
 
             <li>
@@ -106,11 +106,11 @@
       </div><!-- ========= end of user commands ==========  -->
       </div>
     </div> <!-- ========= end of chat room ==========  -->
-    
+
     </div>
 
 </div>  <!-- ========= end of main content ==========  -->
-              
+
 
 <!-- collapsible icons -->
 <script type="text/javascript">
