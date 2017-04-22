@@ -30,7 +30,7 @@ app.config(function($routeProvider) {
       templateUrl: '/partials/show_user.html',
       controller: 'showUserController'
     })
-    .when('/show/:id/chatroom', {
+    .when('/show/:name/chatroom', {
       templateUrl: '/partials/chat_room.html',
       controller: 'chatRoomController'
     })

@@ -1,0 +1,26 @@
+.navBar{
+	background-color: #c60d0d;
+	height: 82px;
+	padding-top: 8px;
+}
+.logo{
+	width: 100px;
+	height: 80px;
+	margin-top: 0.2px;
+}
+.right{
+	margin-top: 15px;
+	margin-right: 10px;
+}
+.right a{
+	font-size: 20px;
+	text-decoration: none;
+}
+.left{
+	margin-top: 15px;
+
+}
+.left a{
+	font-size: 20px;
+	text-decoration: none;
+}

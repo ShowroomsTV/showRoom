@@ -16,7 +16,20 @@ app.controller('chatRoomController',['$scope', '$routeParams','ShowFactory','Use
       });
       socket.on('chat message', function(data){
         var msg = "<p>"+ data.name + ": " + data.message+".</p>";
-        $('#message_board').append(msg);
+        $('#text_box').append(msg);
       });
     });
+
+    function getOneShow(name){
+      console.log(name)
+    ShowFactory.getOneShow(name,function(data){
+      console.log("getOne",data)
+      $scope.show = data;
+      // console.log("one show controller",data);
+      var time = $scope.show.schedule.time.split(":")
+      $scope.show.schedule.time = new Date(1988,6,4,time[0],time[1]).toLocaleTimeString();
+      // $scope.show.summary.
+    })
+  }
+  getOneShow($routeParams.name);
 }])

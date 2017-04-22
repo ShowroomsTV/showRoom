@@ -1,0 +1,47 @@
+.background{
+    background-color: white;
+    width:50%;
+    margin-left: 25%;
+    height: 450px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #888888;
+    margin-top: 100px;
+    border-radius: 30px;
+}
+#background_register{
+    height: 670px;
+}
+.submit{
+    color: black;
+    width: 30%;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #d63535;
+}
+.all_errors{
+    position: absolute;
+    top: 330px;
+    left: 55%;
+    
+}
+.all_errors p{
+    margin-bottom: 80px;
+}
+.form{
+    color: black;
+    font-size: 20px;
+    width: 50%;
+    margin-left: 20%;
+    margin-top: 4%;
+}
+label{
+    font-size: 20px;
+}
+.title{
+    color: #888888;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
