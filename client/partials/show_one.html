@@ -43,6 +43,11 @@
     </div>
     <span id="summary" style="display:none;">{{show.summary}}</span>
     <span id="show_summary"></span>
+    <div id="episodes" ng-repeat="episode in show._embedded.episodes">
+      <p>Season {{episode.season}}</p>
+      <p>Episode {{episode.number}} / {{episode.name}}</p>
+      <!-- <p>Summary: {{episode.summary}}</p> -->
+    </div>
   </div>
 <!-- ======SHOW COMMANDS FOR USER========= -->
   <div class="right_column">
@@ -68,10 +73,6 @@
                   <label>Turn on Notifications</label>
                   <div class="switch">
                     <label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label>
-                  </div>
-                  <div id="episodes" ng-repeat="episode in show._embedded.episodes">
-                    <p ng-if="episode.season == episode.season">{{episode.season}}</p>
-                    <p>/{{episode.name}}/{{episode.number}}/<!-- {{episode.summary}} --></p>
                   </div>
                   <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
                 </div>
