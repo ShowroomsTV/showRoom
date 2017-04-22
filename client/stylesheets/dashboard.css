@@ -4,24 +4,10 @@
   padding: 0px;
   border: 5px;
 }
-/*.mySlides{
-  height: 50%;
-  width: 40%;
-  margin-left: 200px;
-  vertical-align: top;
-}
-#l_content{
-  height: 400px;
-  width: 400px;
-  background-color: transparent;
-}
-img.mySlides{
-  vertical-align: top;
-}
 .img_id{
   display: inline-block;
   vertical-align: top;
-}*/
+}
 .scroll{
   height: 500px;
   width: 100%;
