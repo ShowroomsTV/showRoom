@@ -123,3 +123,9 @@
 .animation-container video.fillScreen {
     width: 100%;
 }
+.Chat_Room{
+    display: inline-block;
+}
+.label{
+  text-emphasis-color: black;
+}

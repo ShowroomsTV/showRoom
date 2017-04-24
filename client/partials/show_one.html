@@ -49,88 +49,6 @@
           </div>
           <span id="summary" style="display:none;">{{show.summary}}</span>
           <span id="show_summary"></span>
-<<<<<<< HEAD
-
-<!-- ======SHOW COMMANDS FOR USER========= -->
-    <div class="Right_Column">
-      <div class="user_commands">
-          <h2>{{show.name}}</h2>
-          <ul class="collapsible" data-collapsible="accordion">
-            <li> <!-- ======COLLAPSABLE LIST========= -->
-              <div class="collapsible-header" >
-<!--**** Day testing add to favorites hearts ******** -->
-              <!--
-              <p ng-if="{{user_show.name}} =! {{show.name}}"  ng-show=""> -->
-                <a href="" ng-click="addFav(show.name)"><i class="material-icons">favorite_border</i></a>
-     <!--       <i id="liked" class="material-icons" ng-class="{'favorite_border': addFav(show.name).liked, 'favorite': !addFav(show.name).liked}" ng-click="addFav(show.name).liked=!addFav(show.name).liked">favorite</i> -->
-<!-- </p>  -->
-<!-- <i id="like" ng-class="{'icon ion-ios7-heart': some_model.liked, 'icon ion-ios7-heart-outline': !some_model.liked}" ng-click="some_model.liked=!some_model.liked"></i> -->
-           <!--   <p ng-if=" user.shows.indexOf(show) < {{show.name}} ">
-                <a href="" ng-click="addFav(show.name)"><i id="added" class="material-icons">favorite</i> </a>&nbsp;Added to Favorites
-                </p> -->
-            </div>
- <!--**** End of day testing add to favorites hea rts ******** -->
-
-            </li>
-            <li>
-              <!-- <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
-              <div class="collapsible-body">
-                      <p>Here is where users look at profiles of other users with similar interests</p>
-                      <ul>
-                  <h4><i class="material-icons">account_circle</i> Random User 1</h4>
-                      <ul>
-                        <li>Favorite shows</li>
-                          <p>Band of brothers</p>
-                        <li>Chat groups</li>
-                      </ul>
-                  <h4><i class="material-icons">account_circle</i>Random User 2</h4>
-                      <ul>
-                        <li>Favorite shows</li>
-                          <p>Martin</p>
-                        <li>Chat Group</li>
-                      </ul>
-                    </ul>
-              </div> -->
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
-              <div class="collapsible-body">
-                <span>
-                  <form class="col s12">
-                    <div class="row">
-                       <label class="turn_on">Turn on Notifications</label>
-                       <div class="switch"><label class="off_on">Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label></div>
-                      <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
-                    </div>
-                 </form>
-                </span>
-              </div>
-            </li>
-          </ul>
-      </div><!-- ========= end of user commands ==========  -->
-    </div> <!-- ========= end of chat room ==========  -->
-  </div>
-</div>  <!-- ========= end of main content ==========  -->
-<!doctype html>
-<html>
-<head>
-<!-- custom css -->
-<link href="datedropper.css" rel="stylesheet" type="text/css" />
-<!-- jQuery lib -->
-<script src="jquery.min.js"></script>
-<!-- dateDropper lib -->
-<script src="datedropper.js"></script>
-</head>
-<body>
-<!-- tag element -->
-<input type="text" />
-<!-- init dateDropper -->
-<script>
-$('input').dateDropper();
-</script>
-</body>
-</html>
-=======
         </div>
 <!-- ======SHOW COMMANDS FOR USER========= -->
     <div class="Right_Column">
@@ -140,43 +58,19 @@ $('input').dateDropper();
             <li> <!-- ======COLLAPSABLE LIST========= -->
               <div class="collapsible-header" >
 <!--**** Day testing add to favorites hearts ******** -->
-               <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
-
+               Add to Favorites<i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
                 <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
                 <!-- </p> -->
               </div>
  <!--**** End of day testing add to favorites hea rts ******** -->
-
             </li>
-
-            <li>
-              <!-- <div class="collapsible-header"><i class="material-icons">thumb_up</i>{{show.name}} Followers</div>
-              <div class="collapsible-body">
-                      <p>Here is where users look at profiles of other users with similar interests</p>
-                      <ul>
-                  <h4><i class="material-icons">account_circle</i> Random User 1</h4>
-                      <ul>
-                        <li>Favorite shows</li>
-                          <p>Band of brothers</p>
-                        <li>Chat groups</li>
-                      </ul>
-                  <h4><i class="material-icons">account_circle</i>Random User 2</h4>
-                      <ul>
-                        <li>Favorite shows</li>
-                          <p>Martin</p>
-                        <li>Chat Group</li>
-                      </ul>
-                    </ul>
-              </div> -->
-            </li>
-
             <li>
               <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
               <div class="collapsible-body">
                 <span>
                   <form class="col s12">
                     <div class="row">
-                       <label>Turn on Notifications</label>
+                       <label class="notify">Turn on Notifications</label>
                        <div class="switch"><label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label></div>
                       <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
                     </div>
@@ -188,13 +82,8 @@ $('input').dateDropper();
       </div><!-- ========= end of user commands ==========  -->
       </div>
     </div> <!-- ========= end of chat room ==========  -->
-
     </div>
-
 </div>  <!-- ========= end of main content ==========  -->
-
-
-
 <!-- collapsible icons -->
 <script type="text/javascript">
     (function(){
@@ -203,5 +92,4 @@ $('input').dateDropper();
         console.log($("#summary").text());
         $("#show_summary").html($.parseHTML($('#summary').text()))
       }, 1004)
-
     })()
