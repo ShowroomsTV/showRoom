@@ -1,0 +1,35 @@
+.navBar{
+	background-color: #4d0000;
+	height: 87px;
+	padding-top: 8px;
+}
+.logo{
+	width: 100px;
+	height: 80px;
+	margin-top: 0.2px;
+}
+.right{
+	margin-top: 15px;
+	margin-right: 10px;
+}
+.right a{
+	font-size: 20px;
+	text-decoration: none;
+}
+.left{
+margin-top: 15px;
+
+}
+.left a{
+	font-size: 20px;
+	text-decoration: none;
+}
+#active{
+	background-color: #631212;
+}
+#listNavBar a:hover{
+	background-color: #631212;
+}
+#listNavBar1 a:hover{
+	background-color: #631212;
+}

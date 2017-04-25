@@ -1,58 +1,17 @@
-/******** TOP NAV BAR*********/
-.myProfile{
-     margin-right: 2%;
-}
-.dashboardLink{
-    margin-right: 2%;
-    margin-top: 13px;
-    display: inline-block;
-}
-.alertLink{
-    margin-right: 2%;
-    margin-left: 67%;
-    margin-top: 13px;
-    display: inline-block;
-}
-/******** END OF TOP NAV BAR*********/
-
 #container_dashboard{
   width: 100%;
   margin: 0px;
   padding: 0px;
   border: 5px;
 }
-#container_dashboard > h3{
-  color: #FAEBD7;
-  text-align: center;
+.welcome_user{
+  font-size: 3rem;
+  margin-left: 5%;
+  color: white;
+  text-shadow: 2px 3px #c60d0d;
+  margin-bottom: 20px;
 }
-#middle_content{
-  display: inline-block;
-  height: 1000px;
-  width: 100%;
-  background-color: black;
-  padding-top: 50px;
-}
-#middle_content > h1{
-  color: #FAEBD7;
-}
-.carousel > h2{
-  text-align: center;
-}
-.mySlides{
-  height: 50%;
-  width: 40%;
-  margin-left: 200px;
-  vertical-align: top;
-}
-#l_content{
-  height: 400px;
-  width: 400px;
-  background-color: transparent;
-}
-img.mySlides{
-  vertical-align: top;
-}
-.img_id{
+/*.img_id{
   display: inline-block;
   vertical-align: top;
 }
@@ -81,4 +40,15 @@ img.mySlides{
 .scroll::-webkit-scrollbar-corner{
    border-radius: 10px;
    -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.5);
+}*/
+
+/*.layers{
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.image{
+  display: inline-block;
+}*/
+.carousel-demo{
+  text-align: center
 }

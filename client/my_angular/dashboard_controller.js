@@ -11,7 +11,14 @@ app.controller('dashboardController',['$scope', '$routeParams','UserFactory','Sh
 	}
 	function getShows(){
 		ShowFactory.getShows(function(data){
-				$scope.shows = data;
+				$scope.shows = [];
+				for(var i = 0;i <data.length; i++){
+					if(data[i].rating.average > 9){
+						$scope.shows.push(data[i]);
+						console.log(data[i])
+					}
+				}
+
 		})
 	}
 	getShows();

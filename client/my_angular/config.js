@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngMessages','angularUtils.directives.dirPagination','angular-loading-bar']);
+var app = angular.module('app', ['angular-carousel', 'angular.filter','ngRoute', 'ngMessages','angularUtils.directives.dirPagination','angular-loading-bar']);
 /* configuration for angular route */
 app.config(function($routeProvider) {
   $routeProvider
@@ -30,7 +30,7 @@ app.config(function($routeProvider) {
       templateUrl: '/partials/show_user.html',
       controller: 'showUserController'
     })
-    .when('/show/:id/chatroom', {
+    .when('/show/:name/chatroom', {
       templateUrl: '/partials/chat_room.html',
       controller: 'chatRoomController'
     })
