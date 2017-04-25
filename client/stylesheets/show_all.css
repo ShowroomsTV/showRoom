@@ -37,9 +37,9 @@
   padding-top: 2%;
 }
 .img-rounded{
-  border-width:5px;
+  border-width: 1px;
   border-style:outset;
-  border-color: #EC7357;
+  border-color: red;
 }
 .search_bar{
   color: white;

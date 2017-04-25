@@ -15,7 +15,7 @@
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
         <li class="tab"><a href="#!/show" style="font-size: 18pt; color: white;">All shows</a></li>
-        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">Favorites</a></li>
+        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">My Shows</a></li>
       </ul>
     </div>
 </nav>
@@ -39,6 +39,7 @@
         <ul class="showratings">
           <li><p><i class="material-icons">tv</i></li>
           <li><p>Rating: {{show.rating.average}}</p></li>
+          <li>{{show}}</li>
           <li><p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p></li>
           <li><p>Premiered: {{show.premiered}}</p></li>
           <li><p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p></li>
@@ -51,7 +52,7 @@
 <!-- ======SHOW COMMANDS FOR USER========= -->
     <div class="Right_Column">
       <div class="user_commands">
-          <h2>{{show.name}}</h2>
+          <h2>{{show.name}}</h2> 
           <ul class="collapsible" data-collapsible="accordion">
             <li> <!-- ======COLLAPSABLE LIST========= -->
               <div class="collapsible-header" >

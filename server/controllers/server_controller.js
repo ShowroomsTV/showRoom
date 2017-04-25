@@ -30,7 +30,7 @@ module.exports = {
     if(req.session.user){
       res.json(req.session.user);
     }else{
-      res.status(401).send('not user in session ¯\_(ツ)_/¯');
+      res.status(401).send('user not in session ¯\_(ツ)_/¯');
     }
   },
   logout: function(req,res){
