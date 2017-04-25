@@ -4,7 +4,14 @@
   padding: 0px;
   border: 5px;
 }
-.img_id{
+.welcome_user{
+  font-size: 3rem;
+  margin-left: 5%;
+  color: white;
+  text-shadow: 2px 3px #c60d0d;
+  margin-bottom: 20px;
+}
+/*.img_id{
   display: inline-block;
   vertical-align: top;
 }
@@ -33,8 +40,15 @@
 .scroll::-webkit-scrollbar-corner{
    border-radius: 10px;
    -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.5);
+}*/
+
+/*.layers{
+  margin-right: 0px;
+  margin-left: 0px;
 }
-.welcome_user{
-margin-left: 10%;
-color: red;
+.image{
+  display: inline-block;
+}*/
+.carousel-demo{
+  text-align: center
 }

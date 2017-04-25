@@ -3,11 +3,11 @@
   <div class="nav-wrapper">
     <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
+    <ul class="right hide-on-med-and-down" id="listNavBar">
       <li><a href="#!/user/{{user._id}}"><i class="large material-icons">perm_identity</i></a></li>
       <li><a href="/logout"><!-- <i class="large material-icons">power_settings_new</i> -->Logout</a></li>
     </ul>
-     <ul class="left hide-on-med-and-down">
+     <ul class="left hide-on-med-and-down"  id="listNavBar1">
       <li><a href="#!/show">All shows</a></li>
       <li><a class="active" href="#!/show/user/{{user._id}}">Favorites</a></li>
     </ul>
@@ -43,17 +43,13 @@
     </div>
     <span id="summary" style="display:none;">{{show.summary}}</span>
     <span id="show_summary"></span>
-    <div id="episodes" ng-repeat="episode in show._embedded.episodes">
-      <p>Season {{episode.season}}</p>
-      <p>Episode {{episode.number}} / {{episode.name}}</p>
-      <!-- <p>Summary: {{episode.summary}}</p> -->
-    </div>
   </div>
 <!-- ======SHOW COMMANDS FOR USER========= -->
   <div class="right_column">
     <div class="user_commands">
       <h2>{{show.name}}</h2>
       <ul class="collapsible" data-collapsible="accordion">
+
 <!--**** add/remove to favorites hearts ******** -->
         <li>
           <div class="collapsible-header" >
@@ -62,6 +58,7 @@
           </div>
         </li>
 <!--**** End of add/remove to favorites hearts ******** -->
+<!--**** Beginning of text notifications ******** -->
         <li>
           <div class="collapsible-header">
             <i class="material-icons">smartphone</i><span>Text Notification</span>
@@ -74,18 +71,38 @@
                   <div class="switch">
                     <label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label>
                   </div>
-                  <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
                 </div>
              </form>
             </span>
+          </div>
+        </li>
+<!-- **** End of text notifications ********  -->
+<!--**** Beginning of Seasons and episodes ******** -->
+        <li ng-repeat="(key,value) in show._embedded.episodes | groupBy: 'season' ">
+          <div class="collapsible-header"><p><i class="material-icons">library_books</i>Season {{key}}</p></div>
+          <div class="collapsible-body" >
+            <div class="container">
+            <!-- <div class="col s12 m12"> -->
+              <!-- <div class="row"> -->
+                <ul class="collapsible" data-collapsible="accordion">
+                  <li ng-repeat="episode in value">
+                    <div class="collapsible-header">
+                     <p>Episode {{episode.number}} / {{episode.name}}</p>
+                    </div>
+                    <div class="collapsible-body">
+                      <p>Summary: {{episode.summary}}</p>
+                    </div>
+                  </li>
+                </ul>
+              <!-- </div> -->
+            <!-- </div> -->
+              </div>
           </div>
         </li>
       </ul>
     </div><!-- ========= end of user commands ==========  -->
   </div> <!-- ========= end of Right_Column ==========  -->
 </div><!-- ========= end of container ==========  -->
-
-
 
 <script>
   $( document ).ready(function(){

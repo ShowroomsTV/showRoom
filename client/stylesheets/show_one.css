@@ -38,7 +38,11 @@
   border-color: #CC2936  ;
   border-style:hidden;
 }
-
-#episodes{
-  background-color: white;
+.collapsible .collapsible-header {
+  margin: 0;
+  padding: 0;
+}
+.collapsible .collapsible-body {
+  margin: 0;
+  padding: 0;
 }

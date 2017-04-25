@@ -71,3 +71,9 @@ li{
     border-radius: 10px;
     background-color: #d63535;
 }
+.chip{
+  background-color: ;
+  color: black;
+  font-weight: bolder;
+  border-radius: 10px;
+}
