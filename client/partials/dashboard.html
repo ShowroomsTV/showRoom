@@ -4,6 +4,7 @@
     <a href="" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down" id="listNavBar">
+      <li><p>Welcome, {{user.name}}!</p></li>
       <li><a href="#!/user/{{user._id}}"><i class="large material-icons">perm_identity</i></a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
@@ -23,13 +24,13 @@
 
 <!-- DIV DASHBOARD SHIT* *************************************** -->
 <div id="container_dashboard">
-  <div id="middle_content">
-    <h5 class="welcome_user">Welcome, {{user.name}}!</h5>
+  <h5 class="top10">TOP 10</h5>
+  <div id="carousel_container">
     <div class="carousel-demo">
       <ul rn-carousel  rn-carousel-transition="hexagon"  rn-carousel-auto-slide  rn-carousel-buffered rn-carousel-duration="500" class="carousel3">
         <li  ng-repeat="show in shows">
-        <div>
-          <a href="#!/show/{{show.name}}"><img ng-src="{{show.image.original}}" height="500px" width="500px"/></a>
+          <div class="img_box">
+            <a href="#!/show/{{show.name}}"><img ng-src="{{show.image.medium}}" id="img_box" /></a>
           </div>
         </li>
       </ul> 

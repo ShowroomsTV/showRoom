@@ -6,6 +6,8 @@
   border-top: 2px;
   border-top-color: black;
   border-top-style: solid;
+      text-align: center;
+
 }
 #main_content{
   width: 100%;
@@ -18,9 +20,7 @@
     margin-top: 0px;
 }
 .hometext{
-    position: absolute;
-    top: 40%;
-    left: 20%;
+    margin-top: 15%;
     text-align: center;
 }
 #name{

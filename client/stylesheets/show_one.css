@@ -2,6 +2,7 @@
     width: 100%;
     padding: 10px;
     height: 100%;
+    max-width: 100%;
 }
 .card{
   width: 30%;
@@ -45,4 +46,13 @@
 .collapsible .collapsible-body {
   margin: 0;
   padding: 0;
+}
+
+
+#season_box{
+  width: 65%;
+  height: 100%;
+  background-color: grey;
+  display: inline-block;
+  vertical-align: top;
 }

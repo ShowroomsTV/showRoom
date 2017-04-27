@@ -1,54 +1,25 @@
 #container_dashboard{
+  text-align: center;
   width: 100%;
-  margin: 0px;
+  height: 100%;
+  margin: 0 auto;
   padding: 0px;
   border: 5px;
 }
-.welcome_user{
+.top10{
   font-size: 3rem;
-  margin-left: 5%;
   color: white;
   text-shadow: 2px 3px #c60d0d;
   margin-bottom: 20px;
 }
-/*.img_id{
-  display: inline-block;
-  vertical-align: top;
-}
-.scroll{
-  height: 500px;
-  width: 100%;
-  overflow: scroll;
-  white-space: nowrap;
-  overflow-y: hidden;
-}
-.scroll > h1{
-  color: #FAEBD7;
-}
-.scroll::-webkit-scrollbar {
-   width: 12px;
-}
-
-.scroll::-webkit-scrollbar-track {
-   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.2);
-   border-radius: 10px;
-}
-.scroll::-webkit-scrollbar-thumb {
-   border-radius: 10px;
-   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.2);
-}
-.scroll::-webkit-scrollbar-corner{
-   border-radius: 10px;
-   -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.5);
-}*/
-
-/*.layers{
-  margin-right: 0px;
-  margin-left: 0px;
-}
-.image{
-  display: inline-block;
-}*/
 .carousel-demo{
-  text-align: center
+  height: 500px;
+  width: 500px;
+  margin-left: 35%; 
+}
+
+/*img box*/
+img#img_box{
+  width: 100%;
+  height: 100%;
 }
