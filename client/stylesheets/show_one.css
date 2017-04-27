@@ -3,21 +3,12 @@
     padding: 10px;
     height: 100%;
 }
-.profile{
-    width: 250px;
-    background-color: silver;
-    border-radius: 10px;
-    padding: 10px;
-    display: inline-block;
-    vertical-align: top;
-}
 .card{
   width: 30%;
   display: inline-block;
   margin: 0;
 
 }
-
 .showinfo{
   width: 30%;
   background-color: #F4E3B2 ;
@@ -28,7 +19,7 @@
   border-color: #EC7357;
   border-width: 5px;
 }
-.Right_Column{
+.right_column{
   width: 30%;
   background-color: #EC7357;
   display: inline-block;
@@ -39,14 +30,6 @@
   padding-top: 10px;
   border-width: 5px;
 }
-.footer{
-  text-align: center;
-  vertical-align: bottom;
-}
-.ShowroomHeader{
-  color: white;
-  padding-top: 30px;
-}
 .show-content{
   background-color: #FCD0A1;
   border: #EC7357;
@@ -55,9 +38,8 @@
   border-color: #CC2936  ;
   border-style:hidden;
 }
-.card-action{
-  color: black;
 
+<<<<<<< HEAD
 }
 
 .turn_on{
@@ -129,3 +111,8 @@
 .label{
   text-emphasis-color: black;
 }
+=======
+#episodes{
+  background-color: white;
+}
+>>>>>>> c1cac958a30629802cdf40b22bfce7c3e7e3b618

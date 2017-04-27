@@ -1,44 +1,8 @@
-/******** TOP NAV BAR*********/
-.myProfile{
-   font-size: 15pt;
-
-}
-
-.alertLink{
-    margin-right: 2%;
-    margin-left: 67%;
-    margin-top: 13px;
-    display: inline-block;
-}
-/******** END OF TOP NAV BAR*********/
-
 #container_dashboard{
   width: 100%;
   margin: 0px;
   padding: 0px;
   border: 5px;
-}
-#container_dashboard > h3{
-  color: #FAEBD7;
-  text-align: center;
-}
-.carousel > h2{
-  text-align: center;
-}
-
-.mySlides{
-  height: 50%;
-  width: 40%;
-  margin-left: 200px;
-  vertical-align: top;
-}
-#l_content{
-  height: 400px;
-  width: 400px;
-  background-color: transparent;
-}
-img.mySlides{
-  vertical-align: top;
 }
 .img_id{
   display: inline-block;
@@ -70,6 +34,7 @@ img.mySlides{
    border-radius: 10px;
    -webkit-box-shadow: inset 0 0 6px rgba(192,192,192,0.5);
 }
-/*.welcome_user{
-margin-left: 80%;
-}*/
+.welcome_user{
+margin-left: 10%;
+color: red;
+}

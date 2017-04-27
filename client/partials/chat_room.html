@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="nav">
     <a href="#!/dashboard" class="left" name="button"><img class="logo" src="/images/IMG_0046.PNG"></a>
     <a href="#" id="middlealert" name="button">Alert</a>
@@ -16,18 +17,47 @@
         <div class="inner">
             <ul id="message_board"></ul>
         </div>
+=======
+<!-- *********NAV BAR********** -->
+<nav class="navBar">
+  <div class="nav-wrapper">
+    <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#!/user/{{user._id}}"><i class="large material-icons">perm_identity</i></a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+     <ul class="left hide-on-med-and-down">
+      <li><a href="#!/show">All shows</a></li>
+      <li><a class="active" href="#!/show/user/{{user._id}}">Favorites</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="#!/show">All shows</a>
+      <li><a href="#!/show/user/{{user._id}}">Favorites</a></li>
+      <li><a href="#!/user/{{user._id}}">Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- ********* End of NAV BAR **********-->
+<h3 id="whitecolor">Conversation Board</h3>
+<div id="chat_room_container">
+  <div id="chat_room_content">
+    <div class="message_board">
+      <ul id="text_box"></ul>
+>>>>>>> c1cac958a30629802cdf40b22bfce7c3e7e3b618
     </div>
     <form id="new_message">
-      <!-- <input type="hidden" name="username" value={{user.name}}> -->
       <input type="text" id="message" placeholder="enter your message here">
-      <input type="hidden" id="name" value="{{user.name}}" ">
-      <input type="submit" value="Send">
+      <input type="hidden" id="name" value="{{user.name}}">
+      <input id="submit" type="submit" value="Send">
     </form>
   </div>
+  <a href="#!/show/{{show.name}}"><img id="chat_room_image" src="{{show.image.medium}}"  class="img-rounded" alt=""></a>
+</div>
 
-<!-- body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
-  </body> -->
+<script>
+  $( document ).ready(function(){
+     $(".button-collapse").sideNav();
+  })
+</script>

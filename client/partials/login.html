@@ -1,39 +1,42 @@
-<!-- **********NAV BAR********* -->
-<nav class="nav-extended" style="background-color: #4d0000; height: 97px;">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#!/login">Login</a></li>
-        <li><a href="#!/register">Register</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="#!/login">Login</a></li>
-        <li><a href="#!/register">Register</a></li>
-      </ul>
-    </div>
+<!-- *********NAV BAR********** -->
+<nav class="navBar">
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li  class="active"><a href="#!/login">Login</a></li>
+      <li><a href="#!/register">Sign up</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="#!/login">Login</a></li>
+      <li><a href="#!/register">Sign up</a></li>
+    </ul>
+  </div>
 </nav>
-<!-- **********NAV BAR*********** -->
-<div class="background">
-    <div class="form">
-        <div class="oneone">
+<!-- **********END NAV********** -->
 
-        </div>
-        <form name="loginForm">
-            <label for=""> Email: </label>
-            <input type="email" ng-model="loginUser.email" name="email" required>
-            <label for="">Password: </label>
-            <input type="password" ng-model="loginUser.password" name="password" required minlength="8">
-              <input type="submit" ng-click="login(loginUser)" value="Login">
-        </form>
-        </form>
-    </div>
+<div class="background">
+  <h4 class="title">Login</h4>
+  <form name="loginForm" class="form">
+      <label for=""> Email: </label>
+      <input type="email" ng-model="loginUser.email" name="email" required>
+      <label for="">Password: </label>
+      <input type="password" ng-model="loginUser.password" name="password" required minlength="8">
+      <input class="submit" type="submit" ng-click="login(loginUser)" value="Login">
+  </form>
+  <div class="all_errors">
     <div class="errors" ng-messages="loginForm.email.$error">
-    	<p ng-message="required">Email is required.</p>
+    	<p  ng-message="required">Email is required.</p>
     	<p ng-message="email">Email must be valid.</p>
     </div>
     <div class="errors" ng-messages="loginForm.password.$error">
     	<p ng-message="required">Password is required.</p>
     	<p ng-message="minlength">Password must have at least 8 characters.</p>
     </div>
+  </div>
 </div>
+<script>
+  $( document ).ready(function(){
+     $(".button-collapse").sideNav();
+  })
+</script>

@@ -1,52 +1,85 @@
 <!-- *********NAV BAR********** -->
-<nav class="nav-extended" style="background-color: #4d0000;">
-    <div class="nav-wrapper">
-      <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG" style="width: 150px; height: 90px; margin-top: 10px;"></a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-         <div class="aligndown">
-            <li><a href="#!/user/{{user._id}}">My Profile</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </div>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="#!/user/{{user._id}}">My Profile</a></li>
-        <li><a href="/logout">Logout</a></li>
-      </ul>
-    </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="#!/show" style="font-size: 18pt; color: white;">All shows</a></li>
-        <li class="tab"><a class="active" href="#!/show/user/{{user._id}}" style="font-size: 18pt; color: white;">Favorites</a></li>
-      </ul>
-    </div>
+<nav class="navBar">
+  <div class="nav-wrapper">
+    <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#!/user/{{user._id}}"><i class="large material-icons">perm_identity</i></a></li>
+      <li><a href="/logout"><!-- <i class="large material-icons">power_settings_new</i> -->Logout</a></li>
+    </ul>
+     <ul class="left hide-on-med-and-down">
+      <li><a href="#!/show">All shows</a></li>
+      <li><a class="active" href="#!/show/user/{{user._id}}">Favorites</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="#!/show">All shows</a></li>
+      <li><a href="#!/show/user/{{user._id}}">Favorites</a></li>
+      <li><a href="#!/user/{{user._id}}">Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
 </nav>
-  <!-- =====Main Content======= -->
-  <div class="moverleft">
-    <div class="container">
-      <div class="Chat_Room">
-      <!-- =====Show Picture======= -->
-        <div class="card">
-          <div class="card-image">
-            <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
-            <!-- <span class="card-title">{{show.name}}</span> -->
+<!-- ********* End of NAV BAR **********-->
+<div class="container"><!-- =====Main Content======= -->
+  <div class="card"><!-- =====Show Picture======= -->
+    <div class="card-image">
+      <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
+    </div>
+    <div class="card-action">
+      <p><a href="#!/show/{{show.name}}/chatroom">Chat about {{show.name}} <i class="material-icons">chat_bubble_outline</i></a></p>
+    </div>
+  </div>
+<!-- =====Show Description===== -->
+  <div class="showinfo">
+    <h3>About the Show</h3>
+    <div class="show-content"> <!-- =====Show Index===== -->
+      <ul class="showratings">
+        <li><p><i class="material-icons">tv</i></li>
+        <li><p>Rating: {{show.rating.average}}</p></li>
+        <li><p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p></li>
+        <li><p>Premiered: {{show.premiered}}</p></li>
+        <li><p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p></li>
+      </ul>
+    </div>
+    <span id="summary" style="display:none;">{{show.summary}}</span>
+    <span id="show_summary"></span>
+    <div id="episodes" ng-repeat="episode in show._embedded.episodes">
+      <p>Season {{episode.season}}</p>
+      <p>Episode {{episode.number}} / {{episode.name}}</p>
+      <!-- <p>Summary: {{episode.summary}}</p> -->
+    </div>
+  </div>
+<!-- ======SHOW COMMANDS FOR USER========= -->
+  <div class="right_column">
+    <div class="user_commands">
+      <h2>{{show.name}}</h2>
+      <ul class="collapsible" data-collapsible="accordion">
+<!--**** add/remove to favorites hearts ******** -->
+        <li>
+          <div class="collapsible-header" >
+            <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
+            <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
           </div>
-          <div class="card-action">
-            <p><a href="#!/show/{{show.id}}/chatroom">Chat about {{show.name}} <i class="material-icons">chat_bubble_outline</i></a></p>
+        </li>
+<!--**** End of add/remove to favorites hearts ******** -->
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">smartphone</i><span>Text Notification</span>
           </div>
-        </div>
-    <!-- =====Show Description===== -->
-        <div class="showinfo">
-          <h3>About the Show</h3>
-          <div class="show-content"> <!-- =====Show Index===== -->
-            <ul class="showratings">
-              <li><p><i class="material-icons">tv</i></li>
-              <li><p>Rating: {{show.rating.average}}</p></li>
-              <li><p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p></li>
-              <li><p>Premiered: {{show.premiered}}</p></li>
-              <li><p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p></li>
-            </ul>
+          <div class="collapsible-body">
+            <span>
+              <form class="col s12">
+                <div class="row">
+                  <label>Turn on Notifications</label>
+                  <div class="switch">
+                    <label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label>
+                  </div>
+                  <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
+                </div>
+             </form>
+            </span>
           </div>
+<<<<<<< HEAD
           <span id="summary" style="display:none;">{{show.summary}}</span>
           <span id="show_summary"></span>
         </div>
@@ -93,3 +126,29 @@
         $("#show_summary").html($.parseHTML($('#summary').text()))
       }, 1004)
     })()
+=======
+        </li>
+      </ul>
+    </div><!-- ========= end of user commands ==========  -->
+  </div> <!-- ========= end of Right_Column ==========  -->
+</div><!-- ========= end of container ==========  -->
+
+
+
+<script>
+  $( document ).ready(function(){
+  // ******NAVBAR******
+    $(".button-collapse").sideNav();
+
+  // ******collapsible icons********  
+    $('.collapsible').collapsible();
+
+  // *******display summary text without p tags from API********
+    window.setTimeout(function() {
+      console.log($("#summary").text());
+      $("#show_summary").html($.parseHTML($('#summary').text()))
+    }, 1004)
+
+  })
+</script>
+>>>>>>> c1cac958a30629802cdf40b22bfce7c3e7e3b618
