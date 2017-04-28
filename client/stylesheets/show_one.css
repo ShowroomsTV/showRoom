@@ -48,11 +48,44 @@
   padding: 0;
 }
 
-
-#season_box{
+.show_info{
+  color:white;
+  font-size: 1.1rem;
+}
+.season_box{
   width: 65%;
   height: 100%;
-  background-color: grey;
+  /*background-color: grey;*/
   display: inline-block;
   vertical-align: top;
+}
+.season_box md-content {
+  background-color: transparent !important; 
+  /*padding: 10px; */
+}
+.season_box md-content .md-padding {
+  background-color: transparent !important; 
+  padding: 10px; 
+}
+.season_box md-content md-tabs {
+  background: #f6f6f6;
+  border: 1px solid #e1e1e1; 
+}
+.season_box md-content md-tabs {
+  background: #f6f6f6;
+  border: 1px solid #e1e1e1; 
+}
+.season_box md-content md-tabs md-tabs-wrapper {
+  background: white; 
+}
+.season_box md-content p{
+  padding: 5px;
+  font-size: 1.1rem;
+  
+}
+.toggler {
+  cursor: pointer;
+}
+.toggler a:hover{
+  visibility: visible 
 }
