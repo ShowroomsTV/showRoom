@@ -3,13 +3,14 @@
   <div class="nav-wrapper">
     <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
+    <ul class="right hide-on-med-and-down" id="listNavBar">
+      <li><p>Welcome, {{user.name}}!</p></li>
       <li><a href="#!/user/{{user._id}}"><i class="large material-icons">perm_identity</i></a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
-    <ul class="left hide-on-med-and-down">
-      <li class="active"><a href="#!/show">All shows</a></li>
-      <li><a class="active" href="#!/show/user/{{user._id}}">Favorites</a></li>
+    <ul class="left hide-on-med-and-down" id="listNavBar1">
+      <li id="active" class="active"><a href="#!/show">All shows</a></li>
+      <li><a href="#!/show/user/{{user._id}}">Favorites</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="#!/show">All shows</a></li>
@@ -22,7 +23,7 @@
 <!-- ********* End of NAV BAR **********-->
 <div class="wrapper">
   <div id="search_bar">
-    <i class="small material-icons">search</i>
+    <i class="small material-icons" >search</i>
     <input type="text" class="search" ng-model="filter_name" placeholder="Search by title or genre...">
   </div>
   <dir-pagination-controls class="controls"></dir-pagination-controls>

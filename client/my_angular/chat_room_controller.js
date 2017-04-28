@@ -5,6 +5,7 @@ app.controller('chatRoomController',['$scope', '$routeParams','ShowFactory','Use
 		});
 	}
 	currentUser();
+  
   $(document).ready(function() {
       var socket = io();
 

@@ -3,11 +3,12 @@
   <div class="nav-wrapper">
     <a href="" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
+    <ul class="right hide-on-med-and-down" id="listNavBar">
+      <li><p>Welcome, {{user.name}}!</p></li>
       <li><a href="#!/user/{{user._id}}"><i class="large material-icons">perm_identity</i></a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
-     <ul class="left hide-on-med-and-down">
+     <ul class="left hide-on-med-and-down"  id="listNavBar1">
       <li><a href="#!/show">All shows</a></li>
       <li><a class="active" href="#!/show/user/{{user._id}}">Favorites</a></li>
     </ul>
@@ -23,6 +24,7 @@
 
 <!-- DIV DASHBOARD SHIT* *************************************** -->
 <div id="container_dashboard">
+<<<<<<< HEAD
 
 
   <!-- MIDDLE CONTENTS***************************************************** -->
@@ -43,6 +45,18 @@
         <a href="#!/show/{{show.name}}"><img src="{{show.image.original}}" height="400px" width="400px"/></a>
       </div>
     </div>
+=======
+  <h5 class="top10">TOP 10</h5>
+  <div id="carousel_container">
+    <div class="carousel-demo">
+      <ul rn-carousel  rn-carousel-transition="hexagon"  rn-carousel-auto-slide  rn-carousel-buffered rn-carousel-duration="500" class="carousel3">
+        <li  ng-repeat="show in shows">
+          <div class="img_box">
+            <a href="#!/show/{{show.name}}"><img ng-src="{{show.image.medium}}" id="img_box" /></a>
+          </div>
+        </li>
+      </ul> 
+>>>>>>> 344817deba03688a5977ace9ab09f5ddc43e974c
     </div>
   </div>
 </div>
@@ -50,8 +64,6 @@
   $(document).ready(function(){
     // ***********NAVBAR*****************
     $(".button-collapse").sideNav();
-    //***********Carousel***************
-    $('.carousel').carousel({dist:0});
-    window.setInterval(function(){$('.carousel').carousel('next')},1500)
+
   });
 </script>

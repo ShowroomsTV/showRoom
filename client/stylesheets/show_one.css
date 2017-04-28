@@ -2,6 +2,7 @@
     width: 100%;
     padding: 10px;
     height: 100%;
+    max-width: 100%;
 }
 .card{
   width: 30%;
@@ -38,7 +39,16 @@
   border-color: #CC2936  ;
   border-style:hidden;
 }
+.collapsible .collapsible-header {
+  margin: 0;
+  padding: 0;
+}
+.collapsible .collapsible-body {
+  margin: 0;
+  padding: 0;
+}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 
@@ -116,3 +126,13 @@
   background-color: white;
 }
 >>>>>>> c1cac958a30629802cdf40b22bfce7c3e7e3b618
+=======
+
+#season_box{
+  width: 65%;
+  height: 100%;
+  background-color: grey;
+  display: inline-block;
+  vertical-align: top;
+}
+>>>>>>> 344817deba03688a5977ace9ab09f5ddc43e974c

@@ -3,13 +3,13 @@
   <div class="nav-wrapper">
     <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
+    <ul class="right hide-on-med-and-down" id="listNavBar">
       <li><a href="#!/user/{{user._id}}"><i class="large material-icons">perm_identity</i></a></li>
-      <li><a href="/logout"><!-- <i class="large material-icons">power_settings_new</i> -->Logout</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
-     <ul class="left hide-on-med-and-down">
+     <ul class="left hide-on-med-and-down"  id="listNavBar1">
       <li><a href="#!/show">All shows</a></li>
-      <li><a class="active" href="#!/show/user/{{user._id}}">Favorites</a></li>
+      <li><a href="#!/show/user/{{user._id}}">Favorites</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="#!/show">All shows</a></li>
@@ -30,9 +30,9 @@
     </div>
   </div>
 <!-- =====Show Description===== -->
-  <div class="showinfo">
+ <!--  <div class="showinfo">
     <h3>About the Show</h3>
-    <div class="show-content"> <!-- =====Show Index===== -->
+    <div class="show-content"> 
       <ul class="showratings">
         <li><p><i class="material-icons">tv</i></li>
         <li><p>Rating: {{show.rating.average}}</p></li>
@@ -43,26 +43,23 @@
     </div>
     <span id="summary" style="display:none;">{{show.summary}}</span>
     <span id="show_summary"></span>
-    <div id="episodes" ng-repeat="episode in show._embedded.episodes">
-      <p>Season {{episode.season}}</p>
-      <p>Episode {{episode.number}} / {{episode.name}}</p>
-      <!-- <p>Summary: {{episode.summary}}</p> -->
-    </div>
-  </div>
+  </div> -->
 <!-- ======SHOW COMMANDS FOR USER========= -->
-  <div class="right_column">
+  <!-- <div class="right_column">
     <div class="user_commands">
       <h2>{{show.name}}</h2>
       <ul class="collapsible" data-collapsible="accordion">
+ -->
 <!--**** add/remove to favorites hearts ******** -->
-        <li>
+       <!--  <li>
           <div class="collapsible-header" >
             <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
             <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
           </div>
-        </li>
+        </li> -->
 <!--**** End of add/remove to favorites hearts ******** -->
-        <li>
+<!--**** Beginning of text notifications ******** -->
+        <!-- <li>
           <div class="collapsible-header">
             <i class="material-icons">smartphone</i><span>Text Notification</span>
           </div>
@@ -74,11 +71,11 @@
                   <div class="switch">
                     <label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label>
                   </div>
-                  <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
                 </div>
              </form>
             </span>
           </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
           <span id="summary" style="display:none;">{{show.summary}}</span>
           <span id="show_summary"></span>
@@ -127,13 +124,63 @@
       }, 1004)
     })()
 =======
+=======
+        </li> -->
+<!-- **** End of text notifications ********  -->
+<!--**** Beginning of Seasons and episodes ******** -->
+<!--         <li ng-repeat="(key,value) in show._embedded.episodes | groupBy: 'season' ">
+          <div class="collapsible-header"><p><i class="material-icons">library_books</i>Season {{key}}</p></div>
+          <div class="collapsible-body" >
+            <div class="container">
+              <ul class="collapsible" data-collapsible="accordion">
+                <li ng-repeat="episode in value">
+                  <div class="collapsible-header">
+                   <p>Episode {{episode.number}} / {{episode.name}}</p>
+                  </div>
+                  <div class="collapsible-body">
+                    <p>Summary: {{episode.summary}}</p>
+                  </div>
+                </li>
+              </ul>
+              </div>
+          </div>
+>>>>>>> 344817deba03688a5977ace9ab09f5ddc43e974c
         </li>
-      </ul>
-    </div><!-- ========= end of user commands ==========  -->
-  </div> <!-- ========= end of Right_Column ==========  -->
+      </ul> -->
+    <!-- </div> -->
+    <!-- ========= end of user commands ==========  -->
+  <!-- </div> -->
+   <!-- ========= end of Right_Column ==========  -->
+
+  <div id="season_box">
+<!--     <nav>
+      <div class="nav-wrapper">
+        <p class="brand-logo">Seasons</p>
+        <ul id="nav-mobile" class="right hide-on-med-and-down" ng-repeat="(key,value) in show._embedded.episodes | groupBy: 'season' ">
+          <li><a href="sass.html">{{key}}</a></li>
+        </ul>
+      </div>
+    </nav> -->
+
+      <dir-pagination-controls class="controls"></dir-pagination-controls>
+  <div class="shows">
+    <div class="grid_item" dir-paginate= "(key,value) in show._embedded.episodes | filter:season | itemsPerPage: 21 | groupBy: 'season'">
+    <ul class="collapsible" data-collapsible="accordion">
+      <li ng-repeat="episode in value ">
+   
+         <p>Episode {{episode.number}} / {{episode.name}}</p>
+     
+      </li>
+    </ul>
+        </div>
+
+     <!--  <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a> -->
+    </div>
+  </div>
+  </div>
+
+
 </div><!-- ========= end of container ==========  -->
-
-
 
 <script>
   $( document ).ready(function(){

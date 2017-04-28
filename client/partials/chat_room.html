@@ -23,11 +23,12 @@
   <div class="nav-wrapper">
     <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
+    <ul class="right hide-on-med-and-down" id="listNavBar">
+      <li><p>Welcome, {{user.name}}!</p></li>
       <li><a href="#!/user/{{user._id}}"><i class="large material-icons">perm_identity</i></a></li>
       <li><a href="/logout">Logout</a></li>
-    </ul>
-     <ul class="left hide-on-med-and-down">
+    </ul> 
+     <ul class="left hide-on-med-and-down"  id="listNavBar1">
       <li><a href="#!/show">All shows</a></li>
       <li><a class="active" href="#!/show/user/{{user._id}}">Favorites</a></li>
     </ul>
@@ -40,20 +41,30 @@
   </div>
 </nav>
 <!-- ********* End of NAV BAR **********-->
+<<<<<<< HEAD
 <h3 id="whitecolor">Conversation Board</h3>
 <div id="chat_room_container">
   <div id="chat_room_content">
     <div class="message_board">
       <ul id="text_box"></ul>
 >>>>>>> c1cac958a30629802cdf40b22bfce7c3e7e3b618
+=======
+<div id="chat_room_wrapper">
+  <h3 id="whitecolor">Conversation Board</h3>
+  <div id="chat_room_container">
+    <div id="chat_room_content">
+      <div class="message_board">
+        <ul id="text_box"></ul>
+      </div>
+      <form id="new_message">
+        <input type="text" id="message" placeholder="enter your message here">
+        <input type="hidden" id="name" value="{{user.name}}">
+        <input id="submit" type="submit" value="Send">
+      </form>
+>>>>>>> 344817deba03688a5977ace9ab09f5ddc43e974c
     </div>
-    <form id="new_message">
-      <input type="text" id="message" placeholder="enter your message here">
-      <input type="hidden" id="name" value="{{user.name}}">
-      <input id="submit" type="submit" value="Send">
-    </form>
+    <a href="#!/show/{{show.name}}"><img id="chat_room_image" src="{{show.image.medium}}"  class="img-rounded" alt=""></a>
   </div>
-  <a href="#!/show/{{show.name}}"><img id="chat_room_image" src="{{show.image.medium}}"  class="img-rounded" alt=""></a>
 </div>
 
 <script>
@@ -61,3 +72,7 @@
      $(".button-collapse").sideNav();
   })
 </script>
+  <div class="chip" id="chipTag">
+        <img src="/images/LiveMessengerblue.png" alt="Contact Person">
+        {{user.name}}
+       </div>
