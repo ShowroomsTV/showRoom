@@ -1,4 +1,4 @@
-var app = angular.module('app', ['angular-carousel', 'angular.filter','ngRoute', 'ngMessages','angularUtils.directives.dirPagination','angular-loading-bar']);
+var app = angular.module('app', ['ngMaterial','angular-carousel', 'angular.filter','ngRoute', 'ngMessages','angularUtils.directives.dirPagination','angular-loading-bar']);
 /* configuration for angular route */
 app.config(function($routeProvider) {
   $routeProvider

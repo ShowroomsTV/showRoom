@@ -23,11 +23,11 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 
 	function getOneShow(name){
 		ShowFactory.getOneShow(name,function(data){
-			console.log("getOne",data._embedded.episodes)
+			console.log("getOne",data)
 			$scope.show = data;
 			$scope.seasons = [];
 			for( var i = 0; i<data._embedded.episodes.length; i++){
-					console.log(data._embedded.episodes[i])
+					// console.log(data._embedded.episodes[i])
 
 				if(data._embedded.episodes[i].season == data._embedded.episodes.season){
 					$scope.seasons.push(data._embedded.episodes[i]);
@@ -53,7 +53,26 @@ app.controller('showOneController',['$scope', '$routeParams','ShowFactory', 'Use
 		ShowFactory.activateNotification(name);
 		// console.log(name+" show one controller");
 	}
-
 }])
+.directive('collapseToggler', function(){
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attrs) {
+            elem.on('click', function() {
+        $(this).siblings('.collapse').toggleClass('in');
+          });
+    }
+  };
+})
+// a way to create an array of arrays of seasons with each episodes in each season array
+// var seasons = [null];
 
+// for(var i = 0; i < arr.length; i++){
+// 	if(arr[i].number == 1){
+// 		seasions[arr[i].season] = []
+// 	}
+// 	seasons[arr[i].season].push(arr[i]); 
+// }
+
+// seasons = [null, [S1E1, S1E2, object], [S2E1, S2E2, obejct, object], ]
 

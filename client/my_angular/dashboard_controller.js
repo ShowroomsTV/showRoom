@@ -12,7 +12,7 @@
 	function getShows(){
 		ShowFactory.getShows(function(data){
 			$scope.shows = [];
-			for(var i = 0;i <data.length; i++){
+			for(var i = 0; i <data.length; i++){
 				if(data[i].rating.average > 9){
 					$scope.shows.push(data[i]);
 					// console.log(data[i])

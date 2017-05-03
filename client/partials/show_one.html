@@ -21,6 +21,15 @@
 </nav>
 <!-- ********* End of NAV BAR **********-->
 <div class="container"><!-- =====Main Content======= -->
+  <div class="show_info">
+    <h4>{{show.name}} |
+      <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons" label="Like">favorite_border</i>
+      <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons" label="Unlike">favorite</i>
+    </h4>
+
+    <span id="summary" style="display:none;">{{show.summary}}</span>
+    <span id="show_summary"></span>
+  </div>
   <div class="card"><!-- =====Show Picture======= -->
     <div class="card-image">
       <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
@@ -32,7 +41,7 @@
 <!-- =====Show Description===== -->
  <!--  <div class="showinfo">
     <h3>About the Show</h3>
-    <div class="show-content"> 
+    <div class="show-content">
       <ul class="showratings">
         <li><p><i class="material-icons">tv</i></li>
         <li><p>Rating: {{show.rating.average}}</p></li>
@@ -144,7 +153,6 @@
               </ul>
               </div>
           </div>
->>>>>>> 344817deba03688a5977ace9ab09f5ddc43e974c
         </li>
       </ul> -->
     <!-- </div> -->
@@ -152,33 +160,36 @@
   <!-- </div> -->
    <!-- ========= end of Right_Column ==========  -->
 
-  <div id="season_box">
-<!--     <nav>
-      <div class="nav-wrapper">
-        <p class="brand-logo">Seasons</p>
-        <ul id="nav-mobile" class="right hide-on-med-and-down" ng-repeat="(key,value) in show._embedded.episodes | groupBy: 'season' ">
-          <li><a href="sass.html">{{key}}</a></li>
-        </ul>
-      </div>
-    </nav> -->
+  <div class="season_box">
+    <div ng-cloak>
+      <md-content>
+        <md-tabs md-dynamic-height md-border-bottom class="border_botton">
+          <md-tab ng-repeat="(key,value) in show._embedded.episodes | groupBy: 'season' " label="Season {{key}}">
+            <md-content class="md-padding">
+              <div ng-repeat='episode in value'>
+                <div collapse-toggler class="toggler">
+                  <p ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false">{{episode.number}}  {{episode.name}} &nbsp; <span ng-show="hoverEdit"><i class="fa fa-chevron-down"></i></span></p>
+                </div>
+                <div class="collapse">
 
-      <dir-pagination-controls class="controls"></dir-pagination-controls>
-  <div class="shows">
-    <div class="grid_item" dir-paginate= "(key,value) in show._embedded.episodes | filter:season | itemsPerPage: 21 | groupBy: 'season'">
-    <ul class="collapsible" data-collapsible="accordion">
-      <li ng-repeat="episode in value ">
-   
-         <p>Episode {{episode.number}} / {{episode.name}}</p>
-     
-      </li>
-    </ul>
-        </div>
 
-     <!--  <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a> -->
+<!--
+                  <li ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false">{{task.name}}</li>
+    <span ng-show="hoverEdit"><a>Edit</a></span> -->
+
+                  <!-- <span id="summary" style="display:none;">Summary: {{episode.summary}}</span>
+                  <span id="show_summary"></span> -->
+                  <p>Airdate:{{episode.airdate}}</p>
+                  <p>Summary: {{episode.summary}}</p>
+                </div>
+              </div>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+      </md-content>
     </div>
   </div>
-  </div>
-
+</div>
 
 </div><!-- ========= end of container ==========  -->
 
@@ -187,7 +198,7 @@
   // ******NAVBAR******
     $(".button-collapse").sideNav();
 
-  // ******collapsible icons********  
+  // ******collapsible icons********
     $('.collapsible').collapsible();
 
   // *******display summary text without p tags from API********
@@ -195,7 +206,8 @@
       console.log($("#summary").text());
       $("#show_summary").html($.parseHTML($('#summary').text()))
     }, 1004)
+   // ******Tabs********
+    $('ul.tabs').tabs();
 
   })
 </script>
->>>>>>> c1cac958a30629802cdf40b22bfce7c3e7e3b618
