@@ -118,19 +118,14 @@
             <md-content class="md-padding">
               <div ng-repeat='episode in value'>
                 <div collapse-toggler class="toggler">
-                  <p ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false">{{episode.number}}  {{episode.name}} &nbsp; <span ng-show="hoverEdit"><i class="fa fa-chevron-down"></i></span></p>
+                  <p ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false">{{episode.number}}  {{episode.name}} &nbsp; <span ng-show="hoverEdit"><i class="fa fa-chevron-down"></i></span>
+                  </p>
                 </div>
                 <div class="collapse">
-
-                
-<!-- 
-                  <li ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false">{{task.name}}</li>
-    <span ng-show="hoverEdit"><a>Edit</a></span> -->
-
-                  <!-- <span id="summary" style="display:none;">Summary: {{episode.summary}}</span>
-                  <span id="show_summary"></span> -->
                   <p>Airdate:{{episode.airdate}}</p>
-                  <p>Summary: {{episode.summary}}</p>
+                 <!--  <span class="episode_summary" style="display:none;">{{episode.summary}}</span>
+                  <span class="show_episode_summary"></span> -->
+                  <p>{{episode.summary}}</p>
                 </div>
               </div>
             </md-content>
@@ -155,6 +150,11 @@
     window.setTimeout(function() {
       console.log($("#summary").text());
       $("#show_summary").html($.parseHTML($('#summary').text()))
+    }, 1004)
+
+    window.setTimeout(function() {
+      console.log($(".episode_summary").text());
+      $(".show_episode_summary").html($.parseHTML($('.episode_summary').text()))
     }, 1004)
    // ******Tabs********  
     $('ul.tabs').tabs();
