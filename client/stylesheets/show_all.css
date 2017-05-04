@@ -16,13 +16,11 @@
 .img-rounded{
   border-width:1px;
   border-style:outset;
-  border-color: #631212;
 }
 .search[type=text]{
   color: white; 
   padding-left: 20px;
   font-size: 1.8rem;
-  text-shadow: 2px 3px #631212;
 }
 .search::placeholder {
   color: white !important;
@@ -38,6 +36,7 @@
   position: absolute;
   top: 105px;
   left: 15px;
-  text-shadow: 2px 3px #631212;
 }
-
+.wrapper{
+  height: 100%
+}

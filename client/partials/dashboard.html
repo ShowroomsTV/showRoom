@@ -25,27 +25,6 @@
 <!-- DIV DASHBOARD SHIT* *************************************** -->
 <div id="container_dashboard">
 
-
-
-  <!-- MIDDLE CONTENTS***************************************************** -->
-  <div id="middle_content">
-    <!-- MATERIALIZE CAROUSEL -->
-     <h5 class="welcome_user">Welcome, {{user.name}}!</h5>
-    <div class="carousel">
-      <a class="carousel-item" href=""><img src="http://img.kbhgames.com/2016/10/Real-Horror-Stories.jpg"></a>
-      <a class="carousel-item" href=""><img src="http://rs575.pbsrc.com/albums/ss191/basketofcandles/television/mash.jpg~c200"></a>
-      <a class="carousel-item" href=""><img src="http://cdn.newsserve.net/i/20160803/3231-Suits-Gets-Season-Renewal-From-USA-Network.jpg"></a>
-      <a class="carousel-item" href=""><img src="http://cdn-images.deezer.com/images/cover/e95c56161aec0e2da72183f11c2dc0dc/200x200-000000-80-0-0.jpg"></a>
-      <a class="carousel-item" href=""><img src="https://qph.ec.quoracdn.net/main-thumb-t-192217-200-abwrrdtvhnnaidpkxmoucrplsfooaxzh.jpeg"></a>
-    </div>
-    <div class="scroll">
-      <h1>Top Shows</h1>
-    <div ng-repeat="show in shows" class="img_id">
-      <div class="" ng-if="show.rating.average > 9 | limitTo:240">
-        <a href="#!/show/{{show.name}}"><img src="{{show.image.original}}" height="400px" width="400px"/></a>
-      </div>
-    </div>
-
   <h5 class="top10">TOP 10</h5>
   <div id="carousel_container">
     <div class="carousel-demo">

@@ -1,179 +1,91 @@
 .container{
-    width: 100%;
-    padding: 10px;
-    height: 100%;
-    max-width: 100%;
+   width: 100%;
+   padding: 10px;
+   height: 100%;
+   max-width: 100%;
 }
 .card{
-  width: 30%;
-  display: inline-block;
-  margin: 0;
+ width: 30%;
+ display: inline-block;
+ margin: 0;
 
 }
 .showinfo{
-  width: 30%;
-  background-color: #F4E3B2 ;
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  border-style: solid;
-  border-color: #EC7357;
-  border-width: 5px;
+ width: 30%;
+ background-color: #F4E3B2 ;
+ display: inline-block;
+ vertical-align: top;
+ text-align: center;
+ border-style: solid;
+ border-color: #EC7357 ;
+ border-width: 5px;
 }
 .right_column{
-  width: 30%;
-  background-color: #EC7357;
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  border-style: solid;
-  border-color: #CC2936;
-  padding-top: 10px;
-  border-width: 5px;
+ width: 30%;
+ background-color: #EC7357 ;
+ display: inline-block;
+ vertical-align: top;
+ text-align: center;
+ border-style: solid;
+ border-color: #CC2936 ;
+ padding-top: 10px;
+ border-width: 5px;
 }
 .show-content{
-  background-color: #FCD0A1;
-  border: #EC7357;
+ background-color: #FCD0A1 ;
+ border: #EC7357 ;
 }
 .showratings{
-  border-color: #CC2936  ;
-  border-style:hidden;
+ border-color: #CC2936  ;
+ border-style:hidden;
 }
 .collapsible .collapsible-header {
-  margin: 0;
-  padding: 0;
+ margin: 0;
+ padding: 0;
 }
 .collapsible .collapsible-body {
-  margin: 0;
-  padding: 0;
+ margin: 0;
+ padding: 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-
-.turn_on{
-  color: black;
-}
-.off_on{
-  color: black;
-}
-.collapsible-body{
-  color: #FCD0A1;
-
-.middletext{
-    position: absolute;
-    top: -10px;
-}
-.aligndown{
-    position: absolute;
-    top: 60px;
-    left: 83%;
-}
-.Shows{
-    margin-left: 7%;
-
-}
-.homepage-banner {
-    border-right: none;
-    border-left: none;
-    position: relative;
-}
-.no-video .animation-container video,
-.touch .animation-container video {
-    display: none;
-}
-.no-video .animation-container .animation,
-.touch .animation-container .animation {
-    display: block !important;
-}
-.animation-container {
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
-}
-.animation-container .animation img {
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-}
-.animation-container .mask {
-    z-index: 100;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    width: 100%;
-}
-.animation-container video {
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-}
-.animation-container video.fillScreen {
-    width: 100%;
-}
-.Chat_Room{
-    display: inline-block;
-}
-.label{
-  text-emphasis-color: black;
-}
-=======
-#episodes{
-  background-color: white;
-}
->>>>>>> c1cac958a30629802cdf40b22bfce7c3e7e3b618
-=======
-
-#season_box{
-=======
 .show_info{
-  color:white;
-  font-size: 1.1rem;
+ color:white;
+ font-size: 1.1rem;
 }
 .season_box{
->>>>>>> dacf69221bfca815871c417a0bb9a5aa76c7d24b
-  width: 65%;
-  height: 100%;
-  /*background-color: grey;*/
-  display: inline-block;
-  vertical-align: top;
+ width: 65%;
+ height: 100%;
+ /*background-color: grey;*/
+ display: inline-block;
+ vertical-align: top;
 }
-<<<<<<< HEAD
->>>>>>> 344817deba03688a5977ace9ab09f5ddc43e974c
-=======
 .season_box md-content {
-  background-color: transparent !important; 
-  /*padding: 10px; */
+ background-color: transparent !important;
+ /*padding: 10px; */
 }
 .season_box md-content .md-padding {
-  background-color: transparent !important; 
-  padding: 10px; 
+ background-color: transparent !important;
+ padding: 10px;
 }
 .season_box md-content md-tabs {
-  background: #f6f6f6;
-  border: 1px solid #e1e1e1; 
+ background: #f6f6f6 ;
+ border: 1px solid #e1e1e1 ;
 }
 .season_box md-content md-tabs {
-  background: #f6f6f6;
-  border: 1px solid #e1e1e1; 
+ background: #f6f6f6 ;
+ border: 1px solid #e1e1e1 ;
 }
 .season_box md-content md-tabs md-tabs-wrapper {
-  background: white; 
+ background: white;
 }
 .season_box md-content p{
-  padding: 5px;
-  font-size: 1.1rem;
-  
+ padding: 5px;
+ font-size: 1.1rem;
+
 }
 .toggler {
-  cursor: pointer;
+ cursor: pointer;
 }
 .toggler a:hover{
-  visibility: visible 
+ visibility: visible
 }
->>>>>>> dacf69221bfca815871c417a0bb9a5aa76c7d24b

@@ -28,7 +28,7 @@
   </div>
   <dir-pagination-controls class="controls"></dir-pagination-controls>
   <div class="shows">
-    <div class="grid_item" dir-paginate= "show in shows | filter:filter_name | itemsPerPage: 21">
+    <div class="grid_item" dir-paginate= "show in shows | filter:filter_name | orderBy:'-rating.average' | itemsPerPage: 21 ">
       <a href="#!/show/{{show.name}}"><img src="{{show.image.medium}}" class="img-rounded" alt="{{show.name}}"></a>
     </div>
   </div>

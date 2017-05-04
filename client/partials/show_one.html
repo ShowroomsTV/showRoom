@@ -1,4 +1,4 @@
-<!-- *********NAV BAR********** -->
+```<!-- *********NAV BAR********** -->
 <nav class="navBar">
   <div class="nav-wrapper">
     <a href="#!/dashboard" class="brand-logo center"><img class="logo" src="/images/IMG_0046.PNG"></a>
@@ -26,7 +26,6 @@
       <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons" label="Like">favorite_border</i>
       <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons" label="Unlike">favorite</i>
     </h4>
-
     <span id="summary" style="display:none;">{{show.summary}}</span>
     <span id="show_summary"></span>
   </div>
@@ -84,56 +83,6 @@
              </form>
             </span>
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <span id="summary" style="display:none;">{{show.summary}}</span>
-          <span id="show_summary"></span>
-        </div>
-<!-- ======SHOW COMMANDS FOR USER========= -->
-    <div class="Right_Column">
-      <div class="user_commands">
-          <h2>{{show.name}}</h2>
-          <ul class="collapsible" data-collapsible="accordion">
-            <li> <!-- ======COLLAPSABLE LIST========= -->
-              <div class="collapsible-header" >
-<!--**** Day testing add to favorites hearts ******** -->
-               Add to Favorites<i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
-                <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
-                <!-- </p> -->
-              </div>
- <!--**** End of day testing add to favorites hea rts ******** -->
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">smartphone</i>Text Notifications</div>
-              <div class="collapsible-body">
-                <span>
-                  <form class="col s12">
-                    <div class="row">
-                       <label class="notify">Turn on Notifications</label>
-                       <div class="switch"><label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label></div>
-                      <!-- <button ng-click="activateNotification(show.name)">HELLO</button> -->
-                    </div>
-                 </form>
-                </span>
-              </div>
-            </li>
-          </ul>
-      </div><!-- ========= end of user commands ==========  -->
-      </div>
-    </div> <!-- ========= end of chat room ==========  -->
-    </div>
-</div>  <!-- ========= end of main content ==========  -->
-<!-- collapsible icons -->
-<script type="text/javascript">
-    (function(){
-      $('.collapsible').collapsible();
-      window.setTimeout(function() {
-        console.log($("#summary").text());
-        $("#show_summary").html($.parseHTML($('#summary').text()))
-      }, 1004)
-    })()
-=======
-=======
         </li> -->
 <!-- **** End of text notifications ********  -->
 <!--**** Beginning of Seasons and episodes ******** -->
@@ -159,7 +108,6 @@
     <!-- ========= end of user commands ==========  -->
   <!-- </div> -->
    <!-- ========= end of Right_Column ==========  -->
-
   <div class="season_box">
     <div ng-cloak>
       <md-content>
@@ -168,19 +116,14 @@
             <md-content class="md-padding">
               <div ng-repeat='episode in value'>
                 <div collapse-toggler class="toggler">
-                  <p ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false">{{episode.number}}  {{episode.name}} &nbsp; <span ng-show="hoverEdit"><i class="fa fa-chevron-down"></i></span></p>
+                  <p ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false">{{episode.number}}  {{episode.name}} &nbsp; <span ng-show="hoverEdit"><i class="fa fa-chevron-down"></i></span>
+                  </p>
                 </div>
                 <div class="collapse">
-
-
-<!--
-                  <li ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false">{{task.name}}</li>
-    <span ng-show="hoverEdit"><a>Edit</a></span> -->
-
-                  <!-- <span id="summary" style="display:none;">Summary: {{episode.summary}}</span>
-                  <span id="show_summary"></span> -->
                   <p>Airdate:{{episode.airdate}}</p>
-                  <p>Summary: {{episode.summary}}</p>
+                 <!--  <span class="episode_summary" style="display:none;">{{episode.summary}}</span>
+                  <span class="show_episode_summary"></span> -->
+                  <p>{{episode.summary}}</p>
                 </div>
               </div>
             </md-content>
@@ -190,24 +133,24 @@
     </div>
   </div>
 </div>
-
 </div><!-- ========= end of container ==========  -->
-
 <script>
   $( document ).ready(function(){
   // ******NAVBAR******
     $(".button-collapse").sideNav();
-
   // ******collapsible icons********
     $('.collapsible').collapsible();
-
-  // *******display summary text without p tags from API********
+ /// *******display summary text without p tags from API********
     window.setTimeout(function() {
       console.log($("#summary").text());
       $("#show_summary").html($.parseHTML($('#summary').text()))
     }, 1004)
+    // window.setTimeout(function() {
+    //   console.log($(".episode_summary").text());
+    //   $(".show_episode_summary").html($.parseHTML($('.episode_summary').text()))
+    // }, 1004)
    // ******Tabs********
     $('ul.tabs').tabs();
-
   })
 </script>
+```

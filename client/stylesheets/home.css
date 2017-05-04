@@ -33,7 +33,6 @@
     color: white;
     font-size: 55px;
     text-shadow: 2px 3px #c60d0d;
-
 }
 #info2{
     font-size: 23px;
@@ -42,8 +41,7 @@
     width: 300px;
     text-align: center;
     display: inline-block;
-            text-shadow: 2px 2px #c60d0d;
-
+    text-shadow: 2px 2px #c60d0d;
 }
 #info3{
     font-size: 23px;
@@ -115,6 +113,10 @@ li{
 }
 =======
     text-shadow: 2px 2px #c60d0d;
+<<<<<<< HEAD
 
 }
 >>>>>>> c1cac958a30629802cdf40b22bfce7c3e7e3b618
+=======
+}
+>>>>>>> 895cfa819404631b00d760a638a44b5b754ffa6f
