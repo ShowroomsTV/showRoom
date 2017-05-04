@@ -26,7 +26,6 @@
     <i class="small material-icons">search</i>
     <input type="text" class="search" ng-model="filter_name" placeholder="Search by title or genre...">
   </div>
-  <h3>Your Favorite shows</h3>
   <dir-pagination-controls class="controls"></dir-pagination-controls>
   <div class="shows">
     <div class="grid_item" dir-paginate= "show in user.shows | filter:filter_name | itemsPerPage: 21">

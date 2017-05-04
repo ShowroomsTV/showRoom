@@ -1,10 +1,5 @@
 #container_dashboard{
   text-align: center;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0px;
-  border: 5px;
 }
 .top10{
   font-size: 3rem;
@@ -13,13 +8,11 @@
   margin-bottom: 20px;
 }
 .carousel-demo{
-  height: 500px;
+  height:400px;
   width: 500px;
   margin-left: 35%; 
 }
-
-/*img box*/
 img#img_box{
   width: 100%;
-  height: 100%;
+  height: 60%;
 }

@@ -3,68 +3,51 @@
     padding: 10px;
     height: 100%;
     max-width: 100%;
+    margin-left: 20px;
+}
+.show_info{
+  width: 95%;
+  color:white;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 .card{
   width: 30%;
+  height: 100%;
   display: inline-block;
   margin: 0;
-
 }
-.showinfo{
-  width: 30%;
-  background-color: #F4E3B2 ;
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  border-style: solid;
-  border-color: #EC7357;
-  border-width: 5px;
+label{
+  font-size: 12px;
+  color:#303030;
 }
-.right_column{
-  width: 30%;
-  background-color: #EC7357;
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  border-style: solid;
-  border-color: #CC2936;
-  padding-top: 10px;
-  border-width: 5px;
+.container label:hover{
+  color: #631212;
 }
-.show-content{
-  background-color: #FCD0A1;
-  border: #EC7357;
-}
-.showratings{
-  border-color: #CC2936  ;
-  border-style:hidden;
-}
-.collapsible .collapsible-header {
+/*.collapsible .collapsible-header {
   margin: 0;
   padding: 0;
 }
 .collapsible .collapsible-body {
   margin: 0;
   padding: 0;
-}
-
-.show_info{
-  color:white;
-  font-size: 1.1rem;
+}*/
+.info_text p{
+  font-weight: bolder;
 }
 .season_box{
   width: 65%;
-  height: 100%;
-  /*background-color: grey;*/
+  height: 60%;
   display: inline-block;
   vertical-align: top;
+ /* overflow: scroll;
+  overflow-x: hidden;*/
 }
 .season_box md-content {
   background-color: transparent !important; 
-  /*padding: 10px; */
 }
 .season_box md-content .md-padding {
-  background-color: transparent !important; 
+  background-color: transparent !important;
   padding: 10px; 
 }
 .season_box md-content md-tabs {
@@ -81,7 +64,6 @@
 .season_box md-content p{
   padding: 5px;
   font-size: 1.1rem;
-  
 }
 .toggler {
   cursor: pointer;

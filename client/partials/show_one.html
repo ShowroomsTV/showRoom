@@ -20,96 +20,56 @@
   </div>
 </nav>
 <!-- ********* End of NAV BAR **********-->
-<div class="container"><!-- =====Main Content======= -->
+<div class="container"><!-- =====Main Container======= -->
   <div class="show_info">
     <h4>{{show.name}} | 
       <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons" label="Like">favorite_border</i>
       <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons" label="Unlike">favorite</i>
     </h4>
-
-    <span id="summary" style="display:none;">{{show.summary}}</span>
-    <span id="show_summary"></span>
+    <p>Premiered: {{show.premiered}}</p>
+    <p class="summary">{{show.summary}}</p>
   </div>
   <div class="card"><!-- =====Show Picture======= -->
     <div class="card-image">
-      <img src="{{show.image.medium}}" class="img-rounded" alt="ProfilePic">
+      <img src="{{show.image.medium}}" class="img-rounded" alt="Show image" height="600px">
     </div>
-    <div class="card-action">
-      <p><a href="#!/show/{{show.name}}/chatroom">Chat about {{show.name}} <i class="material-icons">chat_bubble_outline</i></a></p>
-    </div>
-  </div>
-<!-- =====Show Description===== -->
- <!--  <div class="showinfo">
-    <h3>About the Show</h3>
-    <div class="show-content"> 
-      <ul class="showratings">
-        <li><p><i class="material-icons">tv</i></li>
-        <li><p>Rating: {{show.rating.average}}</p></li>
-        <li><p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p></li>
-        <li><p>Premiered: {{show.premiered}}</p></li>
-        <li><p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p></li>
-      </ul>
-    </div>
-    <span id="summary" style="display:none;">{{show.summary}}</span>
-    <span id="show_summary"></span>
-  </div> -->
-<!-- ======SHOW COMMANDS FOR USER========= -->
-  <!-- <div class="right_column">
-    <div class="user_commands">
-      <h2>{{show.name}}</h2>
-      <ul class="collapsible" data-collapsible="accordion">
- -->
-<!--**** add/remove to favorites hearts ******** -->
-       <!--  <li>
-          <div class="collapsible-header" >
-            <i ng-click="addFav(show.name)" ng-if="show.liked == false" class="material-icons">favorite_border</i>
-            <i ng-click="removeFav(show.name)" ng-if="show.liked == true" id="added" class="material-icons">favorite</i>
-          </div>
-        </li> -->
-<!--**** End of add/remove to favorites hearts ******** -->
-<!--**** Beginning of text notifications ******** -->
-        <!-- <li>
-          <div class="collapsible-header">
-            <i class="material-icons">smartphone</i><span>Text Notification</span>
-          </div>
-          <div class="collapsible-body">
-            <span>
-              <form class="col s12">
-                <div class="row">
-                  <label>Turn on Notifications</label>
-                  <div class="switch">
-                    <label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label>
-                  </div>
+<!-- ======SHOW COMMANDS FOR USER Collapsible========= -->
+     <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header" class="card-action">
+          <a style="" href="#!/show/{{show.name}}/chatroom"><label>Chat about {{show.name}} <i class="material-icons">chat_bubble_outline</i></label></a>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">smartphone</i><label>Text Notification</label>
+        </div>
+        <div class="collapsible-body">
+          <span>
+            <form class="col s12">
+              <div class="row">
+                <label>Turn on Notifications</label>
+                <div class="switch">
+                  <label>Off<input type="checkbox" ng-click="activateNotification(show.name)"><span class="lever"></span>On</label>
                 </div>
-             </form>
-            </span>
-          </div>
-        </li> -->
-<!-- **** End of text notifications ********  -->
-<!--**** Beginning of Seasons and episodes ******** -->
-<!--         <li ng-repeat="(key,value) in show._embedded.episodes | groupBy: 'season' ">
-          <div class="collapsible-header"><p><i class="material-icons">library_books</i>Season {{key}}</p></div>
-          <div class="collapsible-body" >
-            <div class="container">
-              <ul class="collapsible" data-collapsible="accordion">
-                <li ng-repeat="episode in value">
-                  <div class="collapsible-header">
-                   <p>Episode {{episode.number}} / {{episode.name}}</p>
-                  </div>
-                  <div class="collapsible-body">
-                    <p>Summary: {{episode.summary}}</p>
-                  </div>
-                </li>
-              </ul>
               </div>
-          </div>
-        </li>
-      </ul> -->
-    <!-- </div> -->
-    <!-- ========= end of user commands ==========  -->
-  <!-- </div> -->
-   <!-- ========= end of Right_Column ==========  -->
-
+           </form>
+          </span>
+        </div>
+      </li> 
+      <li>
+        <div class="collapsible-header" class="show-content"> 
+          <i class="material-icons">tv</i><label>Show Info</label>
+        </div>
+        <div class="collapsible-body" class="info_text">
+          <p>Rating: {{show.rating.average}}</p>
+          <p ng-repeat="days in show.schedule.days">Schedule: every {{days}} at {{show.schedule.time}}</p>
+          <p>Genres:<span ng-repeat="genres in show.genres"> {{genres}}- </span> </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+<!-- ======Beginning of Seasons tabs========= -->
   <div class="season_box">
     <div ng-cloak>
       <md-content>
@@ -133,8 +93,7 @@
         </md-tabs>
       </md-content>
     </div>
-  </div>
-</div>
+  </div><!-- ========= end of seasons tabs ==========  -->
 
 </div><!-- ========= end of container ==========  -->
 
@@ -146,19 +105,20 @@
   // ******collapsible icons********  
     $('.collapsible').collapsible();
 
-  // *******display summary text without p tags from API********
-    window.setTimeout(function() {
-      console.log($("#summary").text());
-      $("#show_summary").html($.parseHTML($('#summary').text()))
-    }, 1004)
+ /// *******display summary text without p tags from API********
+    // window.setTimeout(function() {
+    //   console.log($("#summary").text());
+    //   $("#show_summary").html($.parseHTML($('#summary').text()))
+    // }, 1004)
 
-    window.setTimeout(function() {
-      console.log($(".episode_summary").text());
-      $(".show_episode_summary").html($.parseHTML($('.episode_summary').text()))
-    }, 1004)
+    // window.setTimeout(function() {
+    //   console.log($(".episode_summary").text());
+    //   $(".show_episode_summary").html($.parseHTML($('.episode_summary').text()))
+    // }, 1004)
    // ******Tabs********  
     $('ul.tabs').tabs();
 
   })
 </script>
-
+  <!--   <span id="summary">{{show.summary}}</span>
+    <span id="show_summary"></span> -->
